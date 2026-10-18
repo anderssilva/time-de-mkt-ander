@@ -1,5 +1,15 @@
 # Histórico de versões
 
+Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
+
+## 1.2.0 — 18/10/2026
+**Como atualizar:** pelo jeito normal acima. Quem ainda está na 1.0.0 (catálogo antigo `zucchi`) precisa reinstalar uma vez, como descrito na 1.1.0. Depois, peça "configura o time de marketing" para fixar o português.
+
+- **Português garantido:** regra de idioma (português do Brasil) no início de todos os comandos e cargos; ao abrir o Claude Code, o time avisa ao Claude que a conversa é em português quando o idioma ainda não está configurado; o comando `/mkt:atualizar-time` grava `"language": "portuguese"` nas configurações do Claude Code, com autorização.
+- **Configurações iniciais:** `/mkt:atualizar-time` passa a conferir idioma, atualização automática, versão e pastas das empresas (inclusive pastas fora de `empresas/`). Novo programa `scripts/inicio-sessao.py`, chamado ao abrir, limpar ou compactar uma sessão.
+- **Design com Refero Styles:** novo passo a passo do `design.md` (material existente → referências no Refero Styles, https://styles.refero.design/ → regras item a item → amostra visual com duas lâminas). O modelo de `design.md` ganha a seção de referências e a pasta `00-contexto/referencias-design/`. O estilo de vídeo herda cores e fontes do design; o What Ships continua sendo a referência de movimento.
+- **README:** configuração inicial, garantia de português, design da marca e um guia de atualização mais direto.
+
 ## 1.1.0 — 18/10/2026
 **Atenção, reinstalação necessária:** o catálogo mudou de nome. Em quem já tinha instalado, rode uma vez:
 `claude plugin marketplace remove zucchi`, depois `claude plugin marketplace add anderssilva/time-de-mkt-ander` e `claude plugin install mkt@time-de-mkt`, e ligue a atualização automática em `/plugin` → Marketplaces.

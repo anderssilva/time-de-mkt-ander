@@ -5,6 +5,8 @@ description: Edita vídeos curtos verticais (Reels, TikTok, Shorts, anúncios) d
 
 # Editar Reels
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 Edição de vídeo curto vertical (9:16) com apresentador. O objetivo é uma peça que prenda nos primeiros segundos, prove o que é dito com material real, seja legível no celular e termine numa chamada para ação clara, sem nunca cobrir o rosto e sem cortar o que a pessoa disse.
 
 Por padrão: **uma única versão**, na **duração natural da fala**, **sem mexer na cor**.

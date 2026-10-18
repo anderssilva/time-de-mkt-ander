@@ -14,6 +14,8 @@ Pergunte: "Você tem algum vídeo da empresa de que goste do jeito que ficou? Po
 - **Se não tiver:** siga para o passo 2. Não é problema.
 
 ## Passo 2. Referências de motion graphics (obrigatório)
+
+As **cores, fontes e elementos** já vêm do `design.md` (definido com as referências do Refero Styles, https://styles.refero.design/). Aqui o foco é o **movimento**: como textos, números e telas entram, saem e trocam. Se o design ainda não estiver aprovado, faça-o antes.
 Explique ao usuário, com estas palavras ou parecidas:
 
 > "Para eu criar as animações dos seus vídeos num estilo de que você goste, preciso de 2 ou 3 vídeos de referência. O jeito mais fácil é o **What Ships** (https://whatships.com/), um catálogo gratuito com mais de 2.000 vídeos de lançamento de produtos de empresas de tecnologia. É a referência mais usada para mostrar ao Claude o estilo de animação desejado."
@@ -36,7 +38,7 @@ Monte uma tabela e confirme **linha por linha** com o usuário (sim, não ou aju
 | Item | O que a referência faz | Proposta para a marca | Ok? |
 |---|---|---|---|
 | Tipografia animada | ex.: palavras entram uma a uma, de baixo para cima | fonte do design.md, peso 800 | |
-| Cores | ex.: fundo escuro, um único destaque | cores do design.md | |
+| Cores | ex.: fundo escuro, um único destaque | cores do design.md (Refero + marca) | |
 | Entrada e saída dos textos | ex.: deslizar + esmaecer, 0,3 s | | |
 | Transições entre cenas | ex.: corte seco / zoom / máscara | | |
 | Ritmo | ex.: troca de elemento a cada 1,5 a 2 s | | |

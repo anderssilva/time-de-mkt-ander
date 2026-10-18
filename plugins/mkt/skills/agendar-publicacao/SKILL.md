@@ -5,6 +5,8 @@ description: Agenda no Metricool as peças aprovadas de uma empresa (status "pro
 
 # Agendar e registrar publicações
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Antes de começar
 1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa.
 2. Liste as peças prontas: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" listar empresas/<slug> publicacoes status=pronto`.

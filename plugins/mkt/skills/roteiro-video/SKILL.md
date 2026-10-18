@@ -5,6 +5,8 @@ description: Escreve o roteiro de Reels, TikTok ou Shorts (30 a 90 segundos) de 
 
 # Roteiro de vídeo curto
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Antes de começar
 1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa e a peça (Pnnn). A peça precisa estar com status "aprovado" em `registro/publicacoes.csv`; se não estiver, pergunte se deve seguir mesmo assim.
 2. Leia: `contexto-ia.md`, `tom-de-voz.md`, `estilo-video.md`, `provas.md`, `compliance.md`, `01-plano/estrategia.md` (funil e CTA) e as melhorias incorporadas.

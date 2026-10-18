@@ -5,6 +5,8 @@ description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo
 
 # Radar de pautas
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Antes de começar
 1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa (`empresas/<slug>/`); se houver dúvida, pergunte. Trabalhe só nela.
 2. Se não existirem `00-contexto/contexto-ia.md` e `01-plano/estrategia.md`, pare e sugira a skill estruturar-marketing-empresa.

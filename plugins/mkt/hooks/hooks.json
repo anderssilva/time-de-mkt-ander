@@ -1,14 +1,14 @@
 {
-  "description": "Time de Marketing: ao abrir uma sessão, confere (no máximo 1 vez por dia) se há versão nova do plugin no GitHub e avisa só quando houver.",
+  "description": "Time de Marketing: ao abrir uma sessão, garante as respostas em português do Brasil e confere (no máximo 1 vez por dia) se há versão nova do plugin.",
   "hooks": {
     "SessionStart": [
       {
-        "matcher": "startup",
+        "matcher": "startup|clear|compact",
         "hooks": [
           {
             "type": "command",
             "command": "python3",
-            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py", "--rapido"],
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/inicio-sessao.py"],
             "timeout": 30
           }
         ]

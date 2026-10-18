@@ -5,6 +5,8 @@ description: Lê os resultados das publicações de uma empresa (pelo Metricool 
 
 # Leitura de métricas
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Antes de começar
 1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa e o período (semanal: últimos 7 dias; mensal: mês fechado).
 2. Leia `01-plano/estrategia.md` (metas), o plano do trimestre e a leitura anterior em `04-metricas/`.

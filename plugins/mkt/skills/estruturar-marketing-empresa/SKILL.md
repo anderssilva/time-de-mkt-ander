@@ -5,6 +5,8 @@ description: Implanta o departamento de marketing de uma empresa, do diagnóstic
 
 # Estruturar o marketing de uma empresa
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Objetivo
 
 Deixar uma empresa com o marketing pronto para rodar toda semana: pasta organizada, contexto completo, identidade visual e verbal, estratégia, plano do trimestre, registro do que já foi publicado e rotinas definidas. Ao final, o responsável pela empresa (sócio ou CEO) consegue operar sozinho seguindo o `LEIA-ME.md` da pasta.
@@ -43,6 +45,8 @@ empresas/<slug>/
 ## Passo 0. Versão do time de marketing
 Antes de tudo, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"` (com `--empresa empresas/<slug>` se a pasta já existir). Se houver versão nova, mostre o que mudou e ofereça atualizar antes de continuar (`--aplicar` e, em seguida, o responsável digita `/reload-plugins`). Sem internet, siga normalmente.
 
+Se for a primeira vez neste computador, confira também as configurações iniciais (idioma em português e atualização automática) seguindo a skill atualizar-time.
+
 ## Retomada
 
 Antes de continuar, verifique se `empresas/<slug>/status-implantacao.md` existe.
@@ -69,8 +73,8 @@ Feche com os 3 principais gargalos, nas palavras do usuário.
 Acione a skill **briefing-empresa**, informando que o arquivo final deve ser salvo em `00-contexto/contexto-ia.md`. Se já houver um contexto-ia.md da empresa em outro lugar, use-o como ponto de partida.
 
 ### Etapa 3. Identidade
-Preencha, nesta ordem:
-- **`design.md`:** se houver manual de marca ou `design.md` antigo (inclusive em .docx), converta para o modelo. Se não houver, entreviste: cores (com código hex), fonte, versões do logo e onde ficam os arquivos, elementos gráficos, formatos padrão. Mostre as cores e a fonte numa amostra visual simples para validação.
+Preencha, nesta ordem (design primeiro, porque o estilo de vídeo herda cores, fontes e elementos dele):
+- **`design.md`:** siga **exatamente** o passo a passo de `referencias/design.md` (nesta pasta da skill): material existente primeiro → referências de estilo no **Refero Styles** (https://styles.refero.design/), sempre mostrando o link ao usuário → tradução em regras, item a item → amostra visual com duas lâminas → gravação do `design.md` e do `carrossel-marca.json`.
 - **`estilo-video.md`:** o padrão do time é **gravação + motion graphics** (textos, números, listas e telas animados por cima do vídeo). Siga **exatamente** o passo a passo de `referencias/estilo-video.md` (nesta pasta da skill): vídeo próprio, se houver → referências de animação no **What Ships** (https://whatships.com/), sempre mostrando o link ao usuário → tradução em regras, item a item → amostra de estilo de 5 a 8 segundos → gravação do arquivo.
 - **`tom-de-voz.md`:** peça 3 textos reais que representam a marca e 1 que não representa. Extraia o padrão (frases, tratamento, expressões) e mostre para confirmação.
 - **`provas.md`:** transfira números e cases do briefing; para cada um, pergunte a fonte e se há autorização para citar.
@@ -118,7 +122,7 @@ Proponha, com base no diagnóstico e no briefing, e peça validação:
 ## Checklist de validação
 
 - [ ] `contexto-ia.md` sem campos essenciais vazios (nome, setor, proposta de valor, perfil 1, dor comum, produto, tom principal, o que não pode dizer)
-- [ ] `design.md` com cores em hex, fonte e arquivos de logo localizados
+- [ ] `design.md` com cores em hex, fonte, arquivos de logo localizados, referências (Refero) e amostra visual aprovada
 - [ ] `tom-de-voz.md` com pelo menos 3 textos de referência reais
 - [ ] `provas.md` com fonte e autorização em cada linha
 - [ ] `compliance.md` preenchido ou marcado "validar com o responsável"

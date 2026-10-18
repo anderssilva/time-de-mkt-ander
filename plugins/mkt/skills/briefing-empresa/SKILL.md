@@ -5,6 +5,8 @@ description: Conduz o briefing (levantamento de contexto) de uma empresa ANTES d
 
 # Briefing da Empresa (contexto da empresa para a IA)
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Objetivo
 
 Antes de escrever qualquer texto, roteiro, post, e-mail ou estratégia para uma empresa, a IA precisa conhecê-la. Esta skill transforma a conversa com o usuário em um arquivo `contexto-ia.md` completo, no mesmo formato do formulário `briefing-empresa.html`. Esse arquivo vira a base de todo o trabalho seguinte.

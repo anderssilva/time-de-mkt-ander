@@ -2,7 +2,9 @@
 
 Um departamento de marketing completo dentro do Claude Code. Você implanta uma vez por empresa e, a partir daí, o time roda toda semana: pesquisa pautas, escreve roteiros e carrosséis, edita vídeos com motion graphics (animações de texto, números e telas), revisa com olhar independente, agenda, mede e aprende. **Nada é publicado sem a sua aprovação.**
 
-Feito em português do Brasil, para empresas que querem constância nas redes sem montar uma equipe inteira.
+Feito em português do Brasil, para empresas que querem constância nas redes sem montar uma equipe inteira. **Todas as respostas, perguntas e arquivos do time são em português.**
+
+> **Já instalou e quer atualizar?** No Claude Code, peça **"atualiza o time de marketing"** (ou digite `/mkt:atualizar-time`). Ele confere a versão, mostra o que mudou, atualiza com a sua autorização e confere as configurações iniciais. Depois, digite `/reload-plugins`. Detalhes em [Atualizações](#atualizações).
 
 ![Mapa da jornada do Time de Marketing](docs/mapa-time-de-marketing.png)
 
@@ -15,10 +17,12 @@ Feito em português do Brasil, para empresas que querem constância nas redes se
 - [Comandos](#comandos)
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
+- [Configuração inicial](#configuração-inicial)
 - [Primeiro uso](#primeiro-uso)
 - [A semana na prática](#a-semana-na-prática)
 - [Onde ficam as coisas](#onde-ficam-as-coisas)
 - [Registro: Planilha Google ou arquivos](#registro-planilha-google-ou-arquivos)
+- [Design da marca](#design-da-marca)
 - [Vídeos com motion graphics](#vídeos-com-motion-graphics)
 - [Atualizações](#atualizações)
 - [Ferramentas externas](#ferramentas-externas)
@@ -79,7 +83,7 @@ Todos começam com `/mkt:`. Você também pode simplesmente pedir em português 
 | `/mkt:controle-qualidade` | Revisão técnica por checklist |
 | `/mkt:agendar-publicacao` | Agendamento e registro |
 | `/mkt:leitura-metricas` | Resultados, leitura mensal e aprendizados |
-| `/mkt:atualizar-time` | Confere e aplica a versão nova e alinha as pastas das empresas |
+| `/mkt:atualizar-time` | Atualiza o time, faz as configurações iniciais (português, atualização automática) e alinha as pastas das empresas |
 
 ## Requisitos
 | Item | Para quê | Como conferir |
@@ -116,6 +120,24 @@ claude plugin install mkt@time-de-mkt
 **3. Ligue a atualização automática:** no Claude Code, digite `/plugin`, vá em **Marketplaces**, escolha **time-de-mkt** e selecione **Enable auto-update** (ativar atualização automática).
 
 **4. Confira:** abra uma sessão nova e digite `/mkt:`. Os comandos devem aparecer na lista.
+
+**5. Faça a [configuração inicial](#configuração-inicial):** peça "configura o time de marketing".
+
+## Configuração inicial
+Uma vez por computador, logo depois de instalar. No Claude Code, peça **"configura o time de marketing"** (`/mkt:atualizar-time`). Ele confere e ajusta, sempre pedindo autorização:
+
+| Item | O que faz | Por que importa |
+|---|---|---|
+| **Idioma** | Grava `"language": "portuguese"` nas configurações do Claude Code (`~/.claude/settings.json`) | O Claude responde em português em **todas** as sessões, não só nas do time |
+| **Atualização automática** | Orienta a ligar em `/plugin` → Marketplaces → time-de-mkt → Enable auto-update | As versões novas chegam sozinhas |
+| **Versão** | Confere se a instalada é a última | Evita trabalhar com regras antigas |
+
+**Garantia de português em três camadas:**
+1. **Cada comando e cada cargo** do time tem a regra de responder em português do Brasil, inclusive avisos de andamento e mensagens de erro.
+2. **Ao abrir o Claude Code**, se o idioma ainda não estiver configurado, o time avisa ao Claude que a conversa é em português do Brasil.
+3. **A configuração de idioma** do item acima fixa o português para o computador inteiro.
+
+Se ainda assim aparecer uma resposta em inglês, diga "responda em português" e peça "configura o time de marketing" para fixar.
 
 ## Primeiro uso
 1. Crie uma pasta para o marketing (por exemplo, `Marketing`, de preferência numa pasta sincronizada do Google Drive para ter cópia e acesso da equipe).
@@ -168,9 +190,9 @@ plugins/mkt/
 ├── .claude-plugin/plugin.json      ficha e versão do plugin
 ├── skills/                         comandos /mkt:...
 ├── agents/                         cargos que rodam como agente separado
-├── scripts/                        registro, verificação de versão
+├── scripts/                        registro, verificação de versão, início de sessão
 ├── referencias/                    guias compartilhados (registro em Planilha Google)
-├── hooks/                          verificação de versão ao abrir o Claude Code
+├── hooks/                          ao abrir o Claude Code: idioma e verificação de versão
 └── modelos/empresa/                modelo de pasta de empresa
 docs/                               mapa da jornada
 ```
@@ -180,8 +202,17 @@ Na implantação, você escolhe onde fica o registro de cada empresa:
 - **Planilha Google com link:** a equipe abre, consulta e edita pelo navegador ou celular. O time baixa a planilha no início de cada rotina e envia as alterações no fim; uma cópia local fica na pasta da empresa como segurança. Requer o **conector do Google Planilhas** ligado na sua conta do Claude. Se o link for "qualquer pessoa com o link pode editar", trate-o como uma senha: quem tiver o link pode alterar ou apagar.
 - **Arquivos da pasta (CSV):** mais simples, sem conector. Para visualizar, abra no Google Planilhas.
 
+## Design da marca
+Na implantação, o visual da marca é definido passo a passo:
+1. Manual de marca, `design.md` antigo, logo e cores oficiais, se houver. **O que a empresa já tem sempre prevalece.**
+2. **2 ou 3 referências de estilo** no [Refero Styles](https://styles.refero.design/), uma biblioteca com mais de 2.000 estilos de sites reais, cada um com um DESIGN.md (cores, fontes, espaçamentos e componentes) pronto para a IA ler.
+3. Tradução das referências em regras, item a item.
+4. **Amostra visual** com duas lâminas de carrossel na marca, para aprovação.
+
+O resultado vira o `design.md` da empresa, que vale para carrosséis, capas e também para as animações dos vídeos.
+
 ## Vídeos com motion graphics
-O padrão do time é **gravação + motion graphics**: você fala para a câmera (ou mostra o produto) e o time acrescenta títulos animados, números, listas, telas e transições no estilo da marca.
+O padrão do time é **gravação + motion graphics**: você fala para a câmera (ou mostra o produto) e o time acrescenta títulos animados, números, listas, telas e transições no estilo da marca. As cores e fontes vêm do design da marca (Refero); o movimento vem das referências do What Ships.
 
 Na implantação, o estilo é definido passo a passo:
 1. Vídeo da própria empresa, se houver.
@@ -192,16 +223,22 @@ Na implantação, o estilo é definido passo a passo:
 Gravou no celular? Funciona. Luz de janela de frente, celular na vertical com a câmera traseira e um microfone de lapela fazem mais diferença do que qualquer edição.
 
 ## Atualizações
-- **Automática:** com a atualização automática ligada, a versão nova chega sozinha ao abrir o Claude Code.
-- **Aviso ao abrir:** uma vez por dia, ao iniciar uma sessão, o time confere se há versão nova e avisa só quando houver.
-- **Antes de cada rotina:** os comandos de implantação e da semana conferem a versão e se a pasta da empresa precisa de arquivos novos do modelo. Nada é sobrescrito.
-- **Manual:** peça "atualiza o time de marketing" (`/mkt:atualizar-time`) ou rode no Terminal:
-  ```bash
-  claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt
-  ```
-  e depois digite `/reload-plugins` no Claude Code.
+**Jeito mais simples:** no Claude Code, peça **"atualiza o time de marketing"** (`/mkt:atualizar-time`). Ele:
+1. confere a versão e mostra o que mudou;
+2. atualiza com a sua autorização;
+3. confere idioma e atualização automática;
+4. confere se as pastas das empresas precisam de arquivos novos do modelo (copia sem sobrescrever nada).
 
-O que mudou em cada versão está no [CHANGELOG.md](CHANGELOG.md).
+Depois, digite **`/reload-plugins`** (ou abra uma sessão nova) para começar a usar a versão nova. Esse comando só você pode digitar.
+
+**Pelo Terminal**, se preferir:
+```bash
+claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt
+```
+
+**Sem fazer nada:** com a atualização automática ligada, a versão nova chega sozinha. Além disso, uma vez por dia, ao abrir o Claude Code, o time confere se há versão nova e avisa; e os comandos de implantação e da semana conferem a versão antes de começar.
+
+O que mudou em cada versão, e se alguma exige um passo extra, está no [CHANGELOG.md](CHANGELOG.md).
 
 ## Ferramentas externas
 | Ferramenta | Uso | Plano |
@@ -235,6 +272,9 @@ Não. As atualizações mudam só o motor. Arquivos novos do modelo são copiado
 
 **Preciso saber programar?**
 Não. Depois da instalação, tudo é feito conversando em português.
+
+**O Claude respondeu em inglês.**
+Peça "configura o time de marketing" para fixar o português no computador (veja [Configuração inicial](#configuração-inicial)).
 
 **Os comandos `/mkt:` não aparecem.**
 Rode `/reload-plugins` ou abra uma sessão nova. Se continuar, confira o acesso com `gh auth status` e reinstale com os comandos da [Instalação](#instalação).

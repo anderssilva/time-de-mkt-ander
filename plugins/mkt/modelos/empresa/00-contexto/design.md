@@ -2,6 +2,18 @@
 
 Fonte da verdade visual. A IA lê este arquivo antes de criar qualquer peça. Se a empresa tiver manual de marca, ele prevalece e este arquivo o resume.
 
+## 0. Referências de estilo
+Escolhidas no Refero Styles (https://styles.refero.design/). DESIGN.md baixados ficam em `referencias-design/`.
+
+| # | Link | O que usar | O que NÃO usar |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+
+Sensação geral da marca: 
+Amostra visual aprovada em: 
+
 ## 1. Cores
 | Nome | Hex | Uso |
 |---|---|---|

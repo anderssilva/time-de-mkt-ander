@@ -5,6 +5,8 @@ description: Conduz a semana de marketing de uma empresa do começo ao fim, na o
 
 # Rodar a semana de marketing
 
+> **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
+
 ## Passo 0. Atualização e registro (sempre, antes de tudo)
 1. Confira a versão do time de marketing e a pasta da empresa:
    `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --empresa empresas/<slug>`
