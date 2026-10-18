@@ -5,7 +5,7 @@ Os dados de cada empresa ficam fora daqui (pasta da empresa no Drive) e nunca s�
 
 ## Instalar (uma vez por computador)
 No Claude Code:
-1. `/plugin marketplace add anderssilva/time-de-marketing`
+1. `/plugin marketplace add anderssilva/time-de-mkt-ander`
 2. `/plugin install mkt@zucchi`
 3. Em `/plugin` → Marketplaces, ligar a atualização automática.
 
