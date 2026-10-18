@@ -1,6 +1,6 @@
 ---
 name: roteiro-video
-description: Escreve o roteiro de Reels, TikTok ou Shorts (30 a 90 segundos) de uma peça aprovada, na voz e no estilo da empresa, com orientações de gravação, legenda do post e texto derivado para LinkedIn. Use quando o usuário pedir roteiro de vídeo, roteiro de Reels, "escreve o vídeo da P012", texto para gravar, ou quando a skill rodar-semana-marketing chamar a etapa de roteiro. Vale para qualquer empresa do grupo com pasta em empresas/.
+description: Escreve o roteiro de Reels, TikTok ou Shorts (30 a 90 segundos) de uma peça aprovada, na voz e no estilo da empresa, com orientações de gravação, legenda do post e texto derivado para LinkedIn. Use quando o usuário pedir roteiro de vídeo, roteiro de Reels, "escreve o vídeo da P012", texto para gravar, ou quando a skill rodar-semana-marketing chamar a etapa de roteiro. Vale para qualquer empresa com pasta em empresas/.
 ---
 
 # Roteiro de vídeo curto

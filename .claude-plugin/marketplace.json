@@ -1,17 +1,16 @@
 {
-  "name": "zucchi",
+  "name": "time-de-mkt",
   "owner": {
-    "name": "Ander Zucchi"
+    "name": "Time de Marketing"
   },
   "metadata": {
-    "description": "Catálogo privado do grupo Zucchi: time de marketing para as empresas do grupo."
+    "description": "Catálogo do Time de Marketing para o Claude Code: um departamento de marketing completo, com cargos, rotinas e revisão independente, para qualquer empresa."
   },
   "plugins": [
     {
       "name": "mkt",
       "source": "./plugins/mkt",
-      "description": "Time de marketing plug and play (pronto para usar) por empresa: skills, cargos, rotinas e modelos de pasta.",
-      "version": "1.0.0"
+      "description": "Time de marketing pronto para usar: implantação por empresa, pautas, roteiros, carrosséis, edição de vídeo com motion graphics, controle de qualidade, agendamento, métricas e melhoria contínua."
     }
   ]
 }

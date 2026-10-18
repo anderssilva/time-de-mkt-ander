@@ -1,6 +1,6 @@
 ---
 name: leitura-metricas
-description: Lê os resultados das publicações de uma empresa do grupo (pelo Metricool ou por exportação), atualiza o registro e produz a leitura semanal ou mensal com aprendizados e melhorias propostas. Use quando o usuário pedir métricas, resultados, desempenho, "como foram os posts", "leitura do mês", relatório de marketing, ou quando a skill rodar-semana-marketing chegar à etapa de métricas. Os aprendizados seguem para o estrategista-marketing (modo melhorias).
+description: Lê os resultados das publicações de uma empresa (pelo Metricool ou por exportação), atualiza o registro e produz a leitura semanal ou mensal com aprendizados e melhorias propostas. Use quando o usuário pedir métricas, resultados, desempenho, "como foram os posts", "leitura do mês", relatório de marketing, ou quando a skill rodar-semana-marketing chegar à etapa de métricas. Os aprendizados seguem para o estrategista-marketing (modo melhorias).
 ---
 
 # Leitura de métricas

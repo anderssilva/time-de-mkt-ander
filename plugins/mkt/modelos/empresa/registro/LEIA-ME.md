@@ -1,7 +1,9 @@
 # Registro
 
-Quatro planilhas em CSV, fonte oficial do marketing desta empresa. Ficam aqui, sincronizadas pelo Google Drive.
-Para visualizar, abra no Google Planilhas. **Não edite com o Excel** (ele costuma estragar acentos e vírgulas): peça ao Claude ou use o Google Planilhas.
+Quatro tabelas com tudo o que foi pensado, produzido, publicado e aprendido. Há duas formas de guardar, definidas na implantação (arquivo `fonte.json`):
+
+- **Planilha Google com link:** a planilha é a fonte oficial; a equipe abre pelo link. Os CSV desta pasta são o espelho local e a cópia de segurança. Link: (preenchido na implantação)
+- **Arquivos da pasta (CSV):** os CSV desta pasta são a fonte oficial, sincronizados pelo Google Drive. Para visualizar, abra no Google Planilhas. **Não edite com o Excel** (ele costuma estragar acentos e vírgulas).
 
 | Arquivo | O que guarda |
 |---|---|

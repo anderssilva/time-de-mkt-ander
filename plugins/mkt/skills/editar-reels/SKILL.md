@@ -1,6 +1,6 @@
 ---
 name: editar-reels
-description: Edita vídeos curtos verticais (Reels, TikTok, Shorts, anúncios) de qualquer empresa do grupo a partir dos takes brutos e do roteiro aprovado — lê o bruto, propõe o plano de cortes, telas, animações e legendas para aprovação, e só então monta com o HyperFrames, mantendo áudio e vídeo sincronizados, sem cobrir o rosto e no estilo de vídeo da empresa. Use quando o usuário pedir para editar um vídeo, "edita o reels da P012", "monta o vídeo", "gravei, pode editar", ou quando rodar-semana-marketing chegar à edição. Adaptada do Kit de Edição com Claude.
+description: Edita vídeos curtos verticais (Reels, TikTok, Shorts, anúncios) de qualquer empresa a partir dos takes brutos e do roteiro aprovado — lê o bruto, propõe o plano de cortes, telas, animações e legendas para aprovação, e só então monta com o HyperFrames, mantendo áudio e vídeo sincronizados, sem cobrir o rosto e no estilo de vídeo da empresa. Use quando o usuário pedir para editar um vídeo, "edita o reels da P012", "monta o vídeo", "gravei, pode editar", ou quando rodar-semana-marketing chegar à edição. Adaptada do Kit de Edição com Claude.
 ---
 
 # Editar Reels
@@ -15,6 +15,8 @@ Por padrão: **uma única versão**, na **duração natural da fala**, **sem mex
   - `roteiro.md` (aprovado) · `video-bruto/` (takes) · `edicao/` (trabalho: transcrição, cortes.json, aroll, composição) · `video-final/` (entrega `Pnnn-v1.mp4`, `Pnnn-v2.mp4`…)
 - Leia **antes de tudo**: `00-contexto/estilo-video.md` (como a empresa gosta da edição), `design.md` (cores, fonte, logo), `tom-de-voz.md`, `provas.md`, `compliance.md` e as melhorias incorporadas. O estilo-video.md manda sobre as preferências padrão desta skill; se houver conflito com uma regra técnica (rosto, sincronia, áreas da plataforma), a regra técnica vence e você avisa.
 - Se `estilo-video.md` estiver vazio, pergunte as preferências principais (legenda, logo, cartela final, música) e ofereça gravar as respostas nele.
+- **Motion graphics são o padrão:** todo vídeo leva animações por cima da gravação (títulos, números, listas, telas), seguindo a seção "Linguagem de motion" do `estilo-video.md` e a **amostra de estilo** em `00-contexto/referencias-video/amostra-estilo.mp4`. Olhe a amostra antes de compor e mantenha o mesmo padrão. Vídeo sem animação só quando o responsável pedir.
+- Se não houver referências nem amostra aprovadas, avise que a Etapa 3 da implantação ficou incompleta e ofereça fazer agora o passo a passo de referências (What Ships, https://whatships.com/) antes de editar.
 
 ## Ferramentas
 - Composição e render: **HyperFrames** (skill `/hyperframes`; para recorte de vídeo falado, o fluxo `/talking-head-recut`; legendas com `/embedded-captions`). Licença Apache 2.0. Requer Node 22+ e ffmpeg.

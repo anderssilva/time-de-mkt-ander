@@ -1,0 +1,30 @@
+Licença de uso — Time de Marketing para Claude Code
+Copyright (c) 2026 — titular do repositório anderssilva/time-de-mkt-ander. Todos os direitos reservados.
+
+1. Permissão de uso
+   Quem recebeu acesso a este repositório pelo titular pode instalar e usar este material
+   (skills, agentes, programas, modelos e documentação) para operar o marketing de empresas
+   próprias ou de clientes atendidos diretamente, e pode adaptá-lo para esse uso.
+
+2. O que não é permitido sem autorização por escrito do titular
+   a) copiar, publicar, redistribuir ou compartilhar o material, no todo ou em parte, com
+      quem não recebeu acesso;
+   b) vender, sublicenciar ou oferecer o material, ou versões derivadas, como produto,
+      curso ou serviço de terceiros;
+   c) remover este aviso de licença.
+
+3. Conteúdo das empresas
+   Os arquivos e dados gerados para cada empresa (pastas em empresas/) pertencem à
+   respectiva empresa e não fazem parte desta licença.
+
+4. Componentes de terceiros
+   Componentes de terceiros seguem as próprias licenças (por exemplo, HyperFrames,
+   Apache 2.0). O uso desses componentes não é alterado por esta licença.
+
+5. Garantia
+   O material é fornecido "no estado em que se encontra", sem garantia de qualquer tipo.
+   O titular não responde por resultados, publicações, perdas ou danos decorrentes do uso.
+   Toda publicação depende da revisão e da aprovação de quem usa.
+
+6. Encerramento
+   O acesso e esta permissão podem ser encerrados pelo titular a qualquer momento.

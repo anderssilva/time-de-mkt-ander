@@ -28,6 +28,7 @@ Use os scripts da skill editar-reels quando instalados (`${CLAUDE_PLUGIN_ROOT}/s
 - Nada sobre o rosto em nenhum quadro; áreas da plataforma livres (Reels: 14% de cima, borda direita, 35% de baixo).
 - Legendas conforme estilo-video.md (grupos de 2 a 3 palavras, nunca uma sozinha, fora do rosto).
 - Gancho visível no primeiro quadro; CTA no final; logo e cartela conforme estilo-video.md.
+- Motion graphics conforme a "Linguagem de motion" do estilo-video.md e comparáveis à amostra de estilo (`00-contexto/referencias-video/amostra-estilo.mp4`): mesma tipografia, cores, entradas, transições e ritmo. Vídeo sem animação só se o responsável tiver pedido.
 - Telas legíveis no celular em 1 segundo; dados pessoais borrados.
 - Lábios sincronizados no começo, meio e fim.
 - O checklist completo da skill editar-reels (`references/checklist.md`).

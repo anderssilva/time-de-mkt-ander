@@ -1,6 +1,6 @@
 ---
 name: carrossel
-description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa do grupo, do texto às lâminas prontas — escreve lâmina a lâmina, espera aprovação e gera as imagens 1080x1350 na identidade da empresa (cores, fonte, logo, fotos reais), mais um PDF para o LinkedIn. Use quando o usuário pedir carrossel, post de carrossel, slides para Instagram, lâminas, "faz o carrossel da P013", documento para LinkedIn, ou quando rodar-semana-marketing chegar à produção de um carrossel. Substitui a antiga mkt-carrossel-instagram, que só gerava texto.
+description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa, do texto às lâminas prontas — escreve lâmina a lâmina, espera aprovação e gera as imagens 1080x1350 na identidade da empresa (cores, fonte, logo, fotos reais), mais um PDF para o LinkedIn. Use quando o usuário pedir carrossel, post de carrossel, slides para Instagram, lâminas, "faz o carrossel da P013", documento para LinkedIn, ou quando rodar-semana-marketing chegar à produção de um carrossel. Substitui a antiga mkt-carrossel-instagram, que só gerava texto.
 ---
 
 # Carrossel (texto + lâminas prontas)
@@ -86,7 +86,7 @@ Se ainda não existir `00-contexto/carrossel-marca.json`, crie a partir do `desi
   "numeros_cor": "texto"
 }
 ```
-- Caminhos relativos ao próprio arquivo (ex.: `../../../_Logos e Design/Zucchi 02.png`).
+- Caminhos relativos ao próprio arquivo (ex.: `logos/logo-colorido.png`).
 - Sem logo para fundo escuro? Avise o responsável e peça a versão branca oficial. Não invente logo.
 - Mostre ao responsável uma lâmina de teste antes de seguir. Esse arquivo garante que todos os carrosséis da empresa saiam iguais.
 

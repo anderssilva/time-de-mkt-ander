@@ -3,9 +3,39 @@
 Como esta empresa gosta que os vídeos sejam editados. A skill editar-reels lê este arquivo antes de propor o plano de edição.
 Atualize sempre que você corrigir algo na edição ("da próxima vez, faça assim").
 
-## Vídeo de referência
-- Arquivo ou link: 
-- O que copiar dele: 
+## Tipo padrão
+Gravação + motion graphics (textos, números, listas e telas animados por cima do vídeo). Vídeo sem animação só quando pedido.
+
+## Referências
+Escolhidas no What Ships (https://whatships.com/) ou em perfis indicados pelo responsável. Arquivos baixados ficam em `referencias-video/`.
+
+| # | Link ou arquivo | O que copiar | O que NÃO copiar |
+|---|---|---|---|
+| 1 | | | |
+| 2 | | | |
+| 3 | | | |
+
+Vídeo próprio da empresa usado como base (se houver): 
+
+## Linguagem de motion (aprovada item a item)
+| Item | Regra para esta marca |
+|---|---|
+| Tipografia animada | |
+| Cores | (do design.md) |
+| Entrada e saída dos textos | |
+| Transições entre cenas | |
+| Ritmo | |
+| Números e dados | |
+| Listas e passos | |
+| Telas do produto | |
+| Ícones e formas | |
+| Efeitos sonoros | |
+| Música (clima) | |
+
+## Amostra de estilo
+- Arquivo: `referencias-video/amostra-estilo.mp4`
+- Aprovada em: 
+- É o padrão de comparação do controle de qualidade.
 
 ## Formato
 - Proporção: 9:16 (1080 × 1920)

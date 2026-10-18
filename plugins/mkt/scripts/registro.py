@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Registro de marketing por empresa (planilhas em CSV dentro de empresas/<slug>/registro/).
+"""Registro de marketing por empresa (quatro tabelas: publicacoes, ideias, plano, melhorias).
 
-As quatro planilhas são a fonte oficial do que foi pensado, produzido, publicado e aprendido.
-Ficam na pasta da empresa, sincronizadas pelo Google Drive; para ver, abra no Google Planilhas.
+Duas formas de guardar, escolhidas na implantação (arquivo registro/fonte.json):
+- "csv" (padrão): os CSV em empresas/<slug>/registro/ são a fonte oficial.
+- "planilhas": uma Planilha Google (link) é a fonte oficial; os CSV viram espelho local para
+  cálculo e cópia de segurança. Leia referencias/registro-planilhas.md do plugin.
 
 Uso (sempre a partir da pasta Marketing):
   python3 registro.py iniciar   empresas/<slug>
@@ -12,6 +14,11 @@ Uso (sempre a partir da pasta Marketing):
   python3 registro.py listar    empresas/<slug> <tabela> [campo=valor ...]
   python3 registro.py repeticao empresas/<slug> "<gancho>" "<ângulo>" [--limite 0.45]
   python3 registro.py melhoria-parecida empresas/<slug> "<problema>"
+  python3 registro.py fonte     empresas/<slug> [csv | planilhas <link>]
+  python3 registro.py cabecalhos
+  python3 registro.py espelhar  empresas/<slug> <tabela> <arquivo.json>   (só no modo planilhas)
+  python3 registro.py pendentes empresas/<slug>                           (só no modo planilhas)
+  python3 registro.py sincronizado empresas/<slug>                        (só no modo planilhas)
 
 Regras:
 - "adicionar" gera o id sozinho se ele não vier (P001, I001, M001). Campos desconhecidos são recusados.
@@ -21,7 +28,11 @@ Regras:
 """
 import csv, json, os, re, sys, unicodedata
 from difflib import SequenceMatcher
-from datetime import date
+from datetime import date, datetime
+
+REF_PLANILHAS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "referencias", "registro-planilhas.md")
+ESPELHO_VALIDO_MIN = 30
+_AVISADO = False
 
 TABELAS = {
     "publicacoes": ("P", ["id", "data_publicacao", "semana", "canal", "formato", "pilar", "tema", "gancho", "angulo",
@@ -40,11 +51,121 @@ STATUS = {
 }
 
 
+def arq_fonte(emp):
+    return os.path.join(emp, "registro", "fonte.json")
+
+
+def fonte(emp):
+    p = arq_fonte(emp)
+    if os.path.exists(p):
+        with open(p, encoding="utf-8") as f:
+            return json.load(f)
+    return {"tipo": "csv"}
+
+
+def salvar_fonte(emp, dados):
+    os.makedirs(os.path.join(emp, "registro"), exist_ok=True)
+    with open(arq_fonte(emp), "w", encoding="utf-8") as f:
+        json.dump(dados, f, ensure_ascii=False, indent=2)
+
+
+def id_planilha(link):
+    m = re.search(r"/spreadsheets/d/([A-Za-z0-9_-]+)", link)
+    return m.group(1) if m else link.strip()
+
+
+def modo_planilhas(emp):
+    return fonte(emp).get("tipo") == "planilhas"
+
+
+def avisar_espelho(emp):
+    """No modo planilhas, avisa se o espelho local está velho (a planilha pode ter mudado)."""
+    global _AVISADO
+    if _AVISADO or not modo_planilhas(emp):
+        return
+    _AVISADO = True
+    ult = fonte(emp).get("ultimo_espelho")
+    idade = None
+    if ult:
+        try:
+            idade = (datetime.now() - datetime.fromisoformat(ult)).total_seconds() / 60
+        except ValueError:
+            idade = None
+    if idade is None or idade > ESPELHO_VALIDO_MIN:
+        quando = "nunca" if idade is None else f"há {int(idade)} min"
+        print(f"ATENÇÃO: esta empresa usa Planilha Google e o espelho local foi atualizado {quando}. "
+              f"Baixe as quatro abas antes de confiar nestes dados (passo 'Baixar' em {REF_PLANILHAS}).", file=sys.stderr)
+
+
+def registrar_pendente(emp, tab, acao, linha):
+    if not modo_planilhas(emp):
+        return
+    cols = TABELAS[tab][1]
+    reg = {"tabela": tab, "acao": acao, "id": linha.get("id", ""), "valores": [linha.get(c, "") for c in cols]}
+    with open(os.path.join(emp, "registro", ".pendentes.jsonl"), "a", encoding="utf-8") as f:
+        f.write(json.dumps(reg, ensure_ascii=False) + "\n")
+    print(f"PLANILHA: alteração pendente em '{tab}'. Envie para a Planilha Google (passo 'Enviar' em {REF_PLANILHAS}).")
+
+
+def pendentes(emp):
+    p = os.path.join(emp, "registro", ".pendentes.jsonl")
+    if not os.path.exists(p):
+        return []
+    with open(p, encoding="utf-8") as f:
+        return [json.loads(l) for l in f if l.strip()]
+
+
+def sincronizado(emp):
+    p = os.path.join(emp, "registro", ".pendentes.jsonl")
+    if os.path.exists(p):
+        hist = os.path.join(emp, "registro", ".sincronizados.log")
+        with open(p, encoding="utf-8") as f, open(hist, "a", encoding="utf-8") as h:
+            for l in f:
+                if l.strip():
+                    h.write(datetime.now().isoformat(timespec="seconds") + " " + l)
+        os.remove(p)
+    print("Pendências marcadas como enviadas.")
+
+
+def espelhar(emp, tab, arquivo):
+    """Grava no CSV local o conteúdo de uma aba da planilha (lista de linhas; a primeira é o cabeçalho)."""
+    if not modo_planilhas(emp):
+        sys.exit("Esta empresa não está no modo planilhas. Use: registro.py fonte empresas/<slug> planilhas <link>")
+    if pendentes(emp):
+        sys.exit("Há alterações locais ainda não enviadas para a planilha. Rode o passo 'Enviar' antes de baixar.")
+    with open(arquivo, encoding="utf-8") as f:
+        valores = json.load(f)
+    if isinstance(valores, dict):
+        valores = valores.get("values", [])
+    if not valores:
+        sys.exit(f"Aba {tab} vazia: a planilha precisa ter ao menos a linha de cabeçalho (registro.py cabecalhos).")
+    cab = [str(c).strip() for c in valores[0]]
+    cols = TABELAS[tab][1]
+    faltam = [c for c in cols if c not in cab]
+    sobram = [c for c in cab if c and c not in cols]
+    linhas = []
+    for v in valores[1:]:
+        if not any(str(x).strip() for x in v):
+            continue
+        linhas.append({c: (str(v[i]) if i < len(v) else "") for i, c in enumerate(cab) if c in cols})
+    gravar(emp, tab, linhas)
+    f = fonte(emp)
+    f["ultimo_espelho"] = datetime.now().isoformat(timespec="seconds")
+    salvar_fonte(emp, f)
+    print(f"{tab}: {len(linhas)} linhas espelhadas.")
+    if faltam:
+        print(f"Colunas que faltam na planilha (acrescente no fim da aba '{tab}'): {faltam}")
+    if sobram:
+        print(f"Colunas da planilha ignoradas (não fazem parte do registro): {sobram}")
+
+
 def caminho(emp, tab):
     return os.path.join(emp, "registro", f"{tab}.csv")
 
 
-def ler(emp, tab):
+def ler(emp, tab, avisar=True):
+    if avisar:
+        avisar_espelho(emp)
     p = caminho(emp, tab)
     if not os.path.exists(p):
         sys.exit(f"Arquivo não encontrado: {p}. Rode: registro.py iniciar {emp}")
@@ -73,7 +194,7 @@ def iniciar(emp):
                 atuais = next(csv.reader(f), [])
             faltam = [c for c in cols if c not in atuais]
             if faltam:  # migra colunas novas sem perder dados
-                linhas = ler(emp, tab)
+                linhas = ler(emp, tab, avisar=False)
                 gravar(emp, tab, linhas)
                 print(f"{tab}: colunas adicionadas {faltam}")
             else:
@@ -117,6 +238,7 @@ def adicionar(emp, tab, dados):
     linhas.append(dados)
     gravar(emp, tab, linhas)
     print(dados.get("id", "linha adicionada"))
+    registrar_pendente(emp, tab, "adicionar", dados)
 
 
 def atualizar(emp, tab, ident, dados):
@@ -127,6 +249,7 @@ def atualizar(emp, tab, ident, dados):
             l.update(dados)
             gravar(emp, tab, linhas)
             print(f"{ident} atualizado")
+            registrar_pendente(emp, tab, "atualizar", l)
             return
     sys.exit(f"Id {ident} não encontrado em {tab}.")
 
@@ -176,6 +299,9 @@ def melhoria_parecida(emp, problema):
 
 def main():
     a = sys.argv[1:]
+    if a[:1] == ["cabecalhos"]:
+        print(json.dumps({t: c for t, (_, c) in TABELAS.items()}, ensure_ascii=False, indent=2))
+        return
     if len(a) < 2:
         sys.exit(__doc__)
     cmd, emp = a[0], a[1].rstrip("/")
@@ -197,6 +323,23 @@ def main():
         repeticao(emp, a[2], a[3], lim)
     elif cmd == "melhoria-parecida":
         melhoria_parecida(emp, a[2])
+    elif cmd == "fonte":
+        if len(a) == 2:
+            print(json.dumps(fonte(emp), ensure_ascii=False, indent=2))
+        elif a[2] == "csv":
+            salvar_fonte(emp, {"tipo": "csv"})
+            print("Fonte oficial: CSV na pasta registro/.")
+        elif a[2] == "planilhas" and len(a) >= 4:
+            salvar_fonte(emp, {"tipo": "planilhas", "link": a[3], "id_planilha": id_planilha(a[3])})
+            print(f"Fonte oficial: Planilha Google {id_planilha(a[3])}. Os CSV passam a ser espelho local. Veja {REF_PLANILHAS}.")
+        else:
+            sys.exit("Uso: registro.py fonte empresas/<slug> [csv | planilhas <link>]")
+    elif cmd == "espelhar":
+        espelhar(emp, a[2], a[3])
+    elif cmd == "pendentes":
+        print(json.dumps(pendentes(emp), ensure_ascii=False, indent=2))
+    elif cmd == "sincronizado":
+        sincronizado(emp)
     else:
         sys.exit(__doc__)
 

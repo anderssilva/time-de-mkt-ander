@@ -16,15 +16,15 @@ Caminhos de arquivos (logo, fotos, fontes) podem ser absolutos ou relativos ao l
 
 {
   "marca": {
-    "cores": {"fundo": "#FFFFFF", "fundo_alt": "#F7F7FA", "escuro": "#1F1F44", "escuro_2": "#2B2B5C",
-              "texto": "#1F1F44", "texto_suave": "#55557A", "destaque": "#FF6600", "destaque_2": "#FF9500",
+    "cores": {"fundo": "#FFFFFF", "fundo_alt": "#F7F7FA", "escuro": "#14213D", "escuro_2": "#1F3460",
+              "texto": "#14213D", "texto_suave": "#4A5675", "destaque": "#2A6FDB", "destaque_2": "#5B93EA",
               "linha": "#E4E4EC"},
     "fonte": "Montserrat",
     "fonte_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap",
     "fonte_arquivos": {"400": "fontes/m-400.woff2", "700": "fontes/m-700.woff2"},   (opcional, sem internet)
     "logo": "logo-colorido.png", "logo_claro": "logo-branco.png",
     "marca_dagua": "simbolo.png",            (opcional, 4 a 7% de opacidade)
-    "assinatura": "zucchi.com.br",           (opcional, aparece na última lâmina)
+    "assinatura": "suaempresa.com.br",               (opcional, aparece na última lâmina)
     "numeros_cor": "texto"                   ("texto" ou "destaque": cor dos números grandes)
   },
   "laminas": [

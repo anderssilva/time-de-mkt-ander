@@ -1,6 +1,6 @@
 ---
 name: radar-pautas
-description: Pesquisa e propõe as pautas da semana para uma empresa do grupo, conferindo o plano trimestral, as métricas e o histórico para não repetir conteúdo. Use quando o usuário pedir "radar da semana", "pautas da semana", "o que vamos publicar", "ideias de conteúdo para a [empresa]", ou quando a skill rodar-semana-marketing chamar a etapa de pautas. Não escolhe as pautas finais: entrega para a skill estrategista-marketing (modo seleção).
+description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo o plano trimestral, as métricas e o histórico para não repetir conteúdo. Use quando o usuário pedir "radar da semana", "pautas da semana", "o que vamos publicar", "ideias de conteúdo para a [empresa]", ou quando a skill rodar-semana-marketing chamar a etapa de pautas. Não escolhe as pautas finais: entrega para a skill estrategista-marketing (modo seleção).
 ---
 
 # Radar de pautas

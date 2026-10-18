@@ -1,6 +1,6 @@
 ---
 name: agendar-publicacao
-description: Agenda no Metricool as peças aprovadas de uma empresa do grupo (status "pronto") e mantém o registro atualizado, preparando a publicação manual no LinkedIn quando necessário. Use quando o usuário pedir "agenda as peças", "programa as publicações", "sobe no Metricool", "marca como publicado", ou quando a skill rodar-semana-marketing chegar à etapa de agendamento. Nunca agenda nada sem confirmação explícita.
+description: Agenda no Metricool as peças aprovadas de uma empresa (status "pronto") e mantém o registro atualizado, preparando a publicação manual no LinkedIn quando necessário. Use quando o usuário pedir "agenda as peças", "programa as publicações", "sobe no Metricool", "marca como publicado", ou quando a skill rodar-semana-marketing chegar à etapa de agendamento. Nunca agenda nada sem confirmação explícita.
 ---
 
 # Agendar e registrar publicações

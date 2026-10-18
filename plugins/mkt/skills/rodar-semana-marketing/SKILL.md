@@ -1,16 +1,24 @@
 ---
 name: rodar-semana-marketing
-description: Conduz a semana de marketing de uma empresa do grupo do começo ao fim, na ordem da jornada (radar, seleção do estrategista, roteiros e carrosséis, gravação, edição, controle de qualidade, revisão final, ok do responsável, agendamento, métricas e melhorias), mostrando um painel do que está em cada etapa e chamando a skill certa. Use quando o usuário disser "roda a semana", "roda a máquina", "o que falta essa semana", "painel do marketing", "começa a semana da [empresa]", ou pedir o próximo passo do marketing de uma empresa.
+description: Conduz a semana de marketing de uma empresa do começo ao fim, na ordem da jornada (radar, seleção do estrategista, roteiros e carrosséis, gravação, edição, controle de qualidade, revisão final, ok do responsável, agendamento, métricas e melhorias), mostrando um painel do que está em cada etapa e chamando a skill certa. Use quando o usuário disser "roda a semana", "roda a máquina", "o que falta essa semana", "painel do marketing", "começa a semana da [empresa]", ou pedir o próximo passo do marketing de uma empresa.
 ---
 
 # Rodar a semana de marketing
+
+## Passo 0. Atualização e registro (sempre, antes de tudo)
+1. Confira a versão do time de marketing e a pasta da empresa:
+   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --empresa empresas/<slug>`
+   - Se houver versão nova: mostre ao responsável o que mudou e pergunte se atualiza agora. Com o ok, rode o mesmo comando com `--aplicar` e peça para ele digitar `/reload-plugins`; depois recomece por este passo.
+   - Se a pasta da empresa tiver arquivos novos do modelo faltando: ofereça copiá-los (nunca sobrescrever) e registrar a nova "Versão do modelo" no `status-implantacao.md`.
+   - Sem internet ou sem acesso: siga normalmente.
+2. Se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
 
 ## Antes de começar
 1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa (`empresas/<slug>/`). Se a implantação não estiver concluída (`status-implantacao.md`), ofereça continuar com a skill estruturar-marketing-empresa.
 2. Defina a semana (`AAAA-Sxx`, padrão ISO; padrão: a semana atual).
 
 ## Painel
-Monte e mostre o painel, lendo `registro/publicacoes.csv`, `02-pautas/` e as pastas das peças:
+Monte e mostre o painel, lendo `registro/publicacoes.csv` (no modo Planilha Google, depois do passo Baixar), `02-pautas/` e as pastas das peças:
 ```
 Semana AAAA-Sxx — [Empresa] — tema do mês: ...
 Pautas: proposta? selecionada? escolhida?
@@ -37,7 +45,7 @@ Melhorias propostas aguardando decisão: n
 - Faça uma etapa por vez e pare em cada aprovação. Não pule etapas, nem para "ganhar tempo".
 - Nas etapas 2, 6, 7 e 10, use os **agentes separados** quando estiver no Claude Code e eles existirem (`estrategista-marketing` e `controle-qualidade`). Eles avaliam sem ter visto a produção e usam um modelo mais forte. Passe para o agente só a empresa, a peça e o modo; ele lê os arquivos.
 - Peça reprovada volta à etapa de produção com as observações. Na segunda reprovação, a decisão é do responsável.
-- Ao final de cada sessão, mostre o painel atualizado e o próximo passo.
+- Ao final de cada sessão: no modo Planilha Google, faça o passo **Enviar**; depois mostre o painel atualizado e o próximo passo.
 - Se o responsável pedir para medir o tempo, registre início e fim de cada etapa em `02-pautas/tempo-AAAA-Sxx.md` com o comando date, separando o tempo de trabalho do tempo esperando aprovação.
 
 ## Fim do mês e do trimestre

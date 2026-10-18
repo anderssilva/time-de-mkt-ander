@@ -9,7 +9,7 @@ description: Conduz o briefing (levantamento de contexto) de uma empresa ANTES d
 
 Antes de escrever qualquer texto, roteiro, post, e-mail ou estratégia para uma empresa, a IA precisa conhecê-la. Esta skill transforma a conversa com o usuário em um arquivo `contexto-ia.md` completo, no mesmo formato do formulário `briefing-empresa.html`. Esse arquivo vira a base de todo o trabalho seguinte.
 
-Quem usa: o sócio ou responsável pelo marketing de cada empresa do grupo.
+Quem usa: o sócio ou responsável pelo marketing de cada empresa atendida.
 
 **Onde salvar:** em `Marketing/empresas/<slug>/00-contexto/contexto-ia.md`. Se a skill foi chamada pela estruturar-marketing-empresa, use o caminho que ela indicar. Se a pasta da empresa ainda não existir, pergunte se o usuário quer rodar a implantação completa antes.
 

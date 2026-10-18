@@ -1,0 +1,113 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#14213D;--sub:#55607A;--line:#DCE2EE;--bg:#F4F6FA;--card:#fff;--blue:#2A6FDB;--blue-s:#E8F0FD;--you:#E59A1F;--you-s:#FDF3E2;--ag:#6B4FD8;--ag-s:#EFEBFC;--ok:#1E9E6A;--ok-s:#E4F5EE}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);width:1600px;padding:56px 56px 48px}
+h1{font-size:40px;font-weight:800;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--sub);margin-top:8px}
+.legend{display:flex;gap:22px;margin-top:18px;font-size:14px;color:var(--sub)}
+.legend span{display:flex;align-items:center;gap:8px}
+.sw{width:14px;height:14px;border-radius:4px;display:inline-block}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-top:22px}
+.sec h2{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:flex;align-items:center;gap:12px}
+.sec h2 em{font-style:normal;font-weight:500;text-transform:none;letter-spacing:0;color:var(--sub);font-size:14px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:16px}
+.st{background:var(--blue-s);border-radius:12px;padding:11px 14px;font-size:15px;font-weight:600;min-width:118px;display:flex;flex-direction:column;justify-content:center}
+.st small{display:block;font-size:12px;font-weight:500;color:var(--sub);margin-top:3px}
+.st.you{background:var(--you-s);box-shadow:inset 0 0 0 2px var(--you)}
+.st.ag{background:var(--ag-s);box-shadow:inset 0 0 0 2px var(--ag)}
+.st.pub{background:var(--ok-s);box-shadow:inset 0 0 0 2px var(--ok)}
+.st.plan{background:#fff;box-shadow:none;border:2px dashed #B7C0D3;color:var(--sub)}
+.ar{align-self:center;color:#9AA6BF;font-size:20px;font-weight:700}
+.n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;align-items:center;justify-content:center;margin-right:6px;flex:none}
+.back{margin-top:12px;font-size:13px;color:var(--sub)}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.grid3 .sec{margin-top:22px}
+.col{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.col .ar{align-self:flex-start;margin-left:18px;font-size:16px;line-height:1}
+.roles{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+.role{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.role b{font-size:15px;display:block}
+.role span{font-size:12.5px;color:var(--sub);display:block;margin-top:4px;line-height:1.35}
+.role.ag{border-color:var(--ag);background:var(--ag-s)}
+.foot{margin-top:20px;font-size:13px;color:var(--sub);display:flex;justify-content:space-between}
+</style></head><body>
+<h1>Time de Marketing — mapa da jornada</h1>
+<p class="lead">Um departamento de marketing completo dentro do Claude Code: implanta uma vez por empresa e roda toda semana, com revisão independente e aprovação humana antes de publicar.</p>
+<div class="legend">
+<span><i class="sw" style="background:var(--blue-s)"></i>Etapa feita pelo time</span>
+<span><i class="sw" style="background:var(--you-s);box-shadow:inset 0 0 0 2px var(--you)"></i>Você aprova</span>
+<span><i class="sw" style="background:var(--ag-s);box-shadow:inset 0 0 0 2px var(--ag)"></i>Revisor independente (agente separado)</span>
+<span><i class="sw" style="border:2px dashed #B7C0D3"></i>Planejado</span>
+</div>
+
+<div class="sec"><h2><span class="n">1</span>Implantação <em>uma vez por empresa · revista a cada trimestre · /mkt:estruturar-marketing-empresa</em></h2>
+<div class="flow">
+<div class="st">Pasta da empresa<small>a partir do modelo</small></div><div class="ar">→</div>
+<div class="st">Diagnóstico<small>objetivo, canais, tempo</small></div><div class="ar">→</div>
+<div class="st">Briefing<small>empresa, público, oferta</small></div><div class="ar">→</div>
+<div class="st">Identidade<small>design · estilo de vídeo · tom</small></div><div class="ar">→</div>
+<div class="st">Estratégia<small>pilares · funil · metas</small></div><div class="ar">→</div>
+<div class="st">Plano do trimestre<small>tema e peça-mãe por mês</small></div><div class="ar">→</div>
+<div class="st">Registro<small>Planilha Google ou CSV</small></div><div class="ar">→</div>
+<div class="st">Ferramentas e rotinas<small>agendador, métricas</small></div><div class="ar">→</div>
+<div class="st you">Passagem<small>checklist e guia</small></div>
+</div></div>
+
+<div class="sec"><h2><span class="n">2</span>Semana de produção <em>/mkt:rodar-semana-marketing · confere atualização e baixa o registro antes de começar</em></h2>
+<div class="flow">
+<div class="st">Radar de pautas<small>nicho, métricas, sem repetir</small></div><div class="ar">→</div>
+<div class="st ag">Estrategista<small>seleção com notas</small></div><div class="ar">→</div>
+<div class="st you">Você escolhe<small>as pautas</small></div><div class="ar">→</div>
+<div class="st">Roteiro ou texto<small>esqueleto → texto</small></div><div class="ar">→</div>
+<div class="st you">Você aprova<small>o texto</small></div><div class="ar">→</div>
+<div class="st">Gravação<small>celular ou câmera</small></div><div class="ar">→</div>
+<div class="st">Edição + motion<small>ou lâminas do carrossel</small></div>
+</div>
+<div class="flow">
+<div class="ar">↳</div>
+<div class="st ag">Controle de qualidade<small>checklist técnico</small></div><div class="ar">→</div>
+<div class="st ag">Estrategista<small>revisão final</small></div><div class="ar">→</div>
+<div class="st you">Seu ok final<small>nada sai sem ele</small></div><div class="ar">→</div>
+<div class="st">Agendamento<small>e registro</small></div><div class="ar">→</div>
+<div class="st pub">Publicado<small>Instagram · LinkedIn · outras</small></div>
+</div>
+<p class="back">Peça reprovada volta para a produção com as observações. Na segunda reprovação, a decisão é sua.</p>
+</div>
+
+<div class="grid3">
+<div class="sec"><h2><span class="n">3</span>Dia a dia <em>planejado</em></h2>
+<div class="col">
+<div class="st plan">Triagem de comentários e mensagens</div><div class="ar">↓</div>
+<div class="st plan">Contatos viram oportunidades no CRM</div><div class="ar">↓</div>
+<div class="st plan">Comentários estratégicos no LinkedIn</div>
+</div></div>
+<div class="sec"><h2><span class="n">4</span>Métricas e melhoria <em>semanal e mensal</em></h2>
+<div class="col">
+<div class="st">Leitura semanal e mensal<small>/mkt:leitura-metricas</small></div><div class="ar">↓</div>
+<div class="st ag">Estrategista propõe melhorias</div><div class="ar">↓</div>
+<div class="st you">Você aprova item a item</div><div class="ar">↓</div>
+<div class="st">Viram regras nas skills e arquivos<small>nova versão chega a todos</small></div>
+</div></div>
+<div class="sec"><h2><span class="n">5</span>Trimestre <em>revisão</em></h2>
+<div class="col">
+<div class="st">Revisão da estratégia<small>o que funcionou e o que não</small></div><div class="ar">↓</div>
+<div class="st you">Novo plano do trimestre</div><div class="ar">↓</div>
+<div class="st">Volta para a semana<small>com temas e metas novas</small></div>
+</div></div>
+</div>
+
+<div class="sec"><h2>Cargos do time <em>a etapa diz o que acontece; o cargo diz quem faz · organização por cargos em implantação (hoje já são agentes separados: estrategista e controle de qualidade)</em></h2>
+<div class="roles">
+<div class="role"><b>Gerente de marketing</b><span>conduz a semana, junta as aprovações</span></div>
+<div class="role ag"><b>Estrategista</b><span>plano, seleção, revisão final, melhorias</span></div>
+<div class="role ag"><b>Pesquisador</b><span>radar, concorrentes, tendências</span></div>
+<div class="role"><b>Redator</b><span>roteiros, carrosséis, legendas, LinkedIn</span></div>
+<div class="role"><b>Designer</b><span>lâminas, capas, identidade visual</span></div>
+<div class="role ag"><b>Editor de vídeo</b><span>tratamento, cortes, legendas, motion, trilha</span></div>
+<div class="role ag"><b>Controle de qualidade</b><span>revisão técnica independente</span></div>
+<div class="role"><b>Social media</b><span>adapta por rede, agenda, cuida do perfil</span></div>
+<div class="role"><b>Relacionamento</b><span>comentários, mensagens, contatos</span></div>
+<div class="role ag"><b>Analista</b><span>métricas e relatório mensal</span></div>
+</div></div>
+<div class="foot"><span>Motor no GitHub (skills, cargos, programas, modelos) · dados de cada empresa na pasta dela, nunca sobrescritos</span><span>Time de Marketing para Claude Code</span></div>
+</body></html>

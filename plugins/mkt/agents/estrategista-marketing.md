@@ -1,6 +1,6 @@
 ---
 name: estrategista-marketing
-description: Revisor estratégico independente do marketing das empresas do grupo. Use para selecionar as pautas da semana (modo A), fazer a revisão final de uma peça antes de ir ao ar (modo B) e revisar as melhorias do mês (modo C). Recebe só a empresa, a peça ou a semana e o modo; lê os arquivos sozinho.
+description: Revisor estratégico independente do marketing das empresas atendidas. Use para selecionar as pautas da semana (modo A), fazer a revisão final de uma peça antes de ir ao ar (modo B) e revisar as melhorias do mês (modo C). Recebe só a empresa, a peça ou a semana e o modo; lê os arquivos sozinho.
 model: opus
 ---
 

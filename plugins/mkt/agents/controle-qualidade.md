@@ -1,6 +1,6 @@
 ---
 name: controle-qualidade
-description: Controle de qualidade técnico e independente das peças de marketing (vídeo, carrossel, legenda, texto) das empresas do grupo. Use depois da produção e antes da revisão estratégica. Recebe a empresa e a peça (Pnnn); lê os arquivos sozinho.
+description: Controle de qualidade técnico e independente das peças de marketing (vídeo, carrossel, legenda, texto) das empresas atendidas. Use depois da produção e antes da revisão estratégica. Recebe a empresa e a peça (Pnnn); lê os arquivos sozinho.
 model: opus
 ---
 
