@@ -1,0 +1,17 @@
+{
+  "name": "zucchi",
+  "owner": {
+    "name": "Ander Zucchi"
+  },
+  "metadata": {
+    "description": "Catálogo privado do grupo Zucchi: time de marketing para as empresas do grupo."
+  },
+  "plugins": [
+    {
+      "name": "mkt",
+      "source": "./plugins/mkt",
+      "description": "Time de marketing plug and play (pronto para usar) por empresa: skills, cargos, rotinas e modelos de pasta.",
+      "version": "1.0.0"
+    }
+  ]
+}
