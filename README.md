@@ -33,7 +33,7 @@ Feito em português do Brasil, para empresas que querem constância nas redes se
 ---
 
 ## O que você recebe
-- **Implantação guiada por empresa:** diagnóstico, briefing, identidade (design, estilo de vídeo, tom de voz, provas, regras do setor, fotos), estratégia, plano do trimestre, registro e rotinas. Um passo de cada vez, sempre com a sua validação.
+- **Implantação guiada por empresa:** diagnóstico (objetivo, jogo do mercado, modelo de crescimento e maturidade nos 4 pilares de receita), briefing, identidade (design, estilo de vídeo, tom de voz, provas, regras do setor, fotos), estratégia com pilar de crescimento, plano do trimestre, registro e rotinas. Um passo de cada vez, sempre com a sua validação.
 - **Rotina semanal conduzida:** um painel mostra o que está em cada etapa e o que depende de você.
 - **Produção:** roteiros de Reels, TikTok e Shorts; carrosséis prontos em imagem (PNG) e PDF para o LinkedIn, na identidade da marca; edição de vídeo a partir da gravação bruta.
 - **Revisão independente:** um estrategista e um controle de qualidade que avaliam sem ter participado da produção e dão notas.

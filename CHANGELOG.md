@@ -2,6 +2,13 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.3.0 — 19/10/2026
+**Como atualizar:** pelo jeito normal acima. Empresas com o diagnóstico ainda em branco podem receber o modelo novo de `diagnostico.md` e `estrategia.md`; nas já preenchidas, nada é sobrescrito.
+
+- **Diagnóstico novo, com exemplos:** passo a passo em `skills/estruturar-marketing-empresa/referencias/diagnostico.md`, em cinco blocos: objetivo do marketing (com exemplos de cada opção), qual jogo a empresa joga (monopólio, oligopólio, competição com diferenciação, competição pura — matriz da Kaiser Associates Latam), modelo de crescimento (pelo produto, pelo marketing ou pelo vendedor, com perguntas de apoio), maturidade nos 4 pilares de receita (Marca, Demanda, Vendas, Dados) e canais/operação/ferramentas. Novo modelo de `00-contexto/diagnostico.md`.
+- **Pilar de crescimento na estratégia:** a IA avalia o diagnóstico e propõe um pilar foco para o trimestre, com o porquê, as ações e as estratégias do jogo (`referencias/pilar-crescimento.md`). O modelo de `01-plano/estrategia.md` ganha a seção "Pilar de crescimento do trimestre"; pilares de conteúdo, funil e metas passam a derivar dela.
+- **Checklist da implantação** inclui o diagnóstico completo e o pilar de crescimento validado.
+
 ## 1.2.0 — 18/10/2026
 **Como atualizar:** pelo jeito normal acima. Quem ainda está na 1.0.0 (catálogo antigo `zucchi`) precisa reinstalar uma vez, como descrito na 1.1.0. Depois, peça "configura o time de marketing" para fixar o português.
 

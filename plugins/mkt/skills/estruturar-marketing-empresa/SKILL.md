@@ -61,12 +61,12 @@ Antes de continuar, verifique se `empresas/<slug>/status-implantacao.md` existe.
 3. Preencha o cabeçalho do `status-implantacao.md`, incluindo a **Versão do modelo** (a `version` de `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`), e marque a etapa 0 como concluída.
 
 ### Etapa 1. Diagnóstico (arquivo `00-contexto/diagnostico.md`)
-Pergunte, em blocos curtos:
-- **Objetivo principal** do marketing agora: gerar contatos, construir autoridade, vender direto ou outro. Peça para escolher **um**.
-- **Canais atuais:** links, frequência, o que funcionou e o que não funcionou.
-- **Operação:** quem opera, quanto tempo por semana, quem aprova, se grava vídeo, orçamento de mídia paga.
-- **Ferramentas:** Metricool (qual conta/e-mail), Canva, outras.
-- **Material existente.**
+Siga **exatamente** o passo a passo de `referencias/diagnostico.md` (nesta pasta da skill): um bloco por vez, sempre com exemplos e opções de múltipla escolha.
+- **A. Objetivo** do marketing nos próximos 3 meses (um principal e até dois secundários, com exemplos), por que agora e como saber que deu certo.
+- **B. Qual jogo a empresa joga:** monopólio, oligopólio, competição com diferenciação ou competição pura; número de concorrentes; por que ganha cliente.
+- **C. Modelo de crescimento:** pelo produto, pelo marketing ou pelo vendedor (com perguntas de apoio sobre ciclo, valor médio e reunião).
+- **D. Maturidade nos 4 pilares de receita** (Marca, Demanda, Vendas, Dados), nota de 0 a 2 por item.
+- **E. Canais, operação, ferramentas e material** (Metricool: qual conta/e-mail; Canva; outras).
 Feche com os 3 principais gargalos, nas palavras do usuário.
 
 ### Etapa 2. Briefing (arquivo `00-contexto/contexto-ia.md`)
@@ -82,9 +82,11 @@ Preencha, nesta ordem (design primeiro, porque o estilo de vídeo herda cores, f
 - **`fotos/fotos.md`:** peça de 15 a 20 fotos reais (pessoas da empresa, bastidores, eventos). Para cada foto colocada na pasta, preencha uma linha do índice. Não altere rosto ou corpo com IA.
 
 ### Etapa 4. Estratégia (arquivo `01-plano/estrategia.md`)
-Proponha, com base no diagnóstico e no briefing, e peça validação:
-- **3 a 5 pilares de conteúdo**, com o porquê e a porcentagem do conteúdo.
-- **Funil:** o que cada estágio faz, em qual canal, em qual formato e com qual chamada para ação.
+Primeiro, o **pilar de crescimento do trimestre**: siga `referencias/pilar-crescimento.md` (nesta pasta da skill). A IA avalia (não pergunta) com base nos blocos A a D do diagnóstico e no briefing, propõe **um** pilar foco (Marca, Demanda, Vendas ou Dados) com o porquê, as ações e as estratégias do jogo, e pede validação. Os itens abaixo derivam desse foco.
+
+Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça validação:
+- **3 a 5 pilares de conteúdo**, com o porquê e a porcentagem do conteúdo (pelo menos 40% servindo ao pilar de crescimento).
+- **Funil:** o que cada estágio faz, em qual canal, em qual formato e com qual chamada para ação (a padrão vem do modelo de crescimento).
 - **Metas do trimestre:** pelo menos uma de entrada (alcance, salvamentos, seguidores qualificados) e uma de saída (contatos, reuniões, vendas). Peça o valor atual antes de propor a meta.
 - **Cadência realista:** proporcional ao tempo semanal declarado. Com até 2 horas por semana, não proponha mais de 3 peças por semana.
 - Lembre que o **Metricool Free** agenda uma marca e **não tem LinkedIn**: o LinkedIn entra como publicação manual.
@@ -126,7 +128,8 @@ Proponha, com base no diagnóstico e no briefing, e peça validação:
 - [ ] `tom-de-voz.md` com pelo menos 3 textos de referência reais
 - [ ] `provas.md` com fonte e autorização em cada linha
 - [ ] `compliance.md` preenchido ou marcado "validar com o responsável"
-- [ ] Estratégia com pilares, funil, metas com valor atual e cadência
+- [ ] `diagnostico.md` com objetivo, jogo, modelo de crescimento e notas dos 4 pilares
+- [ ] Estratégia com pilar de crescimento validado, pilares de conteúdo, funil, metas com valor atual e cadência
 - [ ] Plano do trimestre com os 3 meses preenchidos
 - [ ] `estilo-video.md` com 2 ou 3 referências de motion graphics, tabela de regras aprovada e amostra de estilo aprovada (ou marcada como pendente)
 - [ ] Registro iniciado (Planilha Google com link ou CSV), histórico importado com gancho e ângulo, plano do trimestre na aba plano
