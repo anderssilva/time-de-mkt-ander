@@ -1,0 +1,4 @@
+{
+  "descricao": "Mudanças de estrutura das pastas de empresa, por versão. O scripts/atualizar-pasta.py aplica, em ordem, as migrações mais novas que a 'Versão do modelo' da empresa. Cada item de 'mover' é [origem, destino], relativo à pasta da empresa; nada é apagado nem sobrescrito. Pastas e arquivos novos do modelo não precisam ser listados aqui: são criados automaticamente.",
+  "migracoes": []
+}

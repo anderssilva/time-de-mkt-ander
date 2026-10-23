@@ -3,7 +3,9 @@
 
 1. Idioma: se o Claude Code ainda não estiver configurado para responder em português,
    acrescenta ao contexto da sessão que o usuário trabalha em português do Brasil.
-2. Versão: confere, no máximo uma vez por dia, se há versão nova (verificar-atualizacao.py --rapido).
+2. Pasta de empresa: se a sessão foi aberta numa pasta de empresa, lembra que os arquivos
+   enviados no chat devem ser guardados nela.
+3. Versão: confere, no máximo uma vez por dia, se há versão nova (verificar-atualizacao.py --rapido).
 
 Uso manual:
   python3 inicio-sessao.py                      o mesmo que o gancho faz
@@ -73,6 +75,11 @@ def main():
                       "andamento e arquivos em português do Brasil, inclusive quando ferramentas ou erros aparecem em inglês. "
                       "O idioma padrão do Claude Code ainda não está em português; o comando /mkt:atualizar-time faz essa "
                       "configuração com a autorização do usuário.")
+    proj = os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd()
+    if os.path.exists(os.path.join(proj, "status-implantacao.md")) or os.path.isdir(os.path.join(proj, "00-contexto")):
+        linhas.append("Esta pasta é a pasta de marketing de uma empresa. Todo arquivo que o usuário enviar no chat deve ser "
+                      "guardado nela, na subpasta certa, com o programa guardar-arquivo.py do plugin mkt "
+                      "(regras em referencias/arquivos-recebidos.md do plugin).")
     try:
         r = subprocess.run([sys.executable, os.path.join(AQUI, "verificar-atualizacao.py"), "--rapido"],
                            capture_output=True, text=True, timeout=25)

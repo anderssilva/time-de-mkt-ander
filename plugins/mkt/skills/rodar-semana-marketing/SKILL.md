@@ -7,13 +7,21 @@ description: Conduz a semana de marketing de uma empresa do começo ao fim, na o
 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
-## Passo 0. Atualização e registro (sempre, antes de tudo)
-1. Confira a versão do time de marketing e a pasta da empresa:
-   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --empresa .`
-   - Se houver versão nova: mostre ao responsável o que mudou e pergunte se atualiza agora. Com o ok, rode o mesmo comando com `--aplicar` e peça para ele digitar `/reload-plugins`; depois recomece por este passo.
-   - Se a pasta da empresa tiver arquivos novos do modelo faltando: ofereça copiá-los (nunca sobrescrever) e registrar a nova "Versão do modelo" no `status-implantacao.md`.
-   - Sem internet ou sem acesso: siga normalmente.
-2. Se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
+> **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
+
+## Passo 0. Atualização do time e da pasta (sempre, no início de cada semana)
+Faça sempre, antes de qualquer outra coisa, e sem pular mesmo que o usuário peça pressa (leva menos de um minuto):
+1. **Versão:** `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"`. Ele consulta o GitHub na hora.
+   - **Há versão nova:** mostre em linguagem simples o que mudou e pergunte **uma única vez**: "Há uma versão nova do Time de Marketing (x.y.z). Quer atualizar agora? Eu atualizo o time e ajusto as pastas da empresa." Com o ok:
+     1. rode o mesmo programa com `--aplicar`;
+     2. peça ao usuário para digitar `/reload-plugins` e depois dizer "continua" (esse comando só ele pode digitar);
+     3. ao continuar, faça o item 2 abaixo **sem perguntar de novo** (a autorização já foi dada).
+   - **Sem versão nova, ou o usuário preferiu não atualizar agora:** siga para o item 2.
+   - **Sem internet ou sem acesso:** avise em uma linha e siga.
+2. **Pasta da empresa:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" .` para ver se a estrutura da pasta está igual à do modelo da versão instalada.
+   - Se houver mudanças, **aplique você mesmo** com `--aplicar`: o programa cria pastas, copia arquivos novos, move o que mudou de lugar e acrescenta colunas no registro, sem apagar nem sobrescrever nada, e anota tudo no `status-implantacao.md`.
+   - Mostre ao usuário a lista do que foi feito.
+3. **Registro:** se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
 
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Se a implantação não estiver concluída (`status-implantacao.md`), ofereça continuar com a skill estruturar-marketing-empresa.

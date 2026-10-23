@@ -7,6 +7,8 @@ description: Implanta o departamento de marketing de uma empresa, do diagnóstic
 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
+> **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
+
 ## Objetivo
 
 Deixar uma empresa com o marketing pronto para rodar toda semana: pasta organizada, contexto completo, identidade visual e verbal, estratégia, plano do trimestre, registro do que já foi publicado e rotinas definidas. Ao final, o responsável pela empresa (sócio ou CEO) consegue operar sozinho seguindo o `LEIA-ME.md` da pasta.
@@ -46,7 +48,7 @@ Estrutura esperada, direto na pasta da empresa (se o modelo não for encontrado,
 6. **Nada é publicado ou agendado** nesta skill. Ela prepara; quem publica são as rotinas, sempre com aprovação.
 
 ## Passo 0. Versão do time de marketing
-Antes de tudo, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"` (com `--empresa .` se a pasta já existir). Se houver versão nova, mostre o que mudou e ofereça atualizar antes de continuar (`--aplicar` e, em seguida, o responsável digita `/reload-plugins`). Sem internet, siga normalmente.
+Antes de tudo, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"`. Se houver versão nova, mostre o que mudou e pergunte uma vez se atualiza antes de continuar. Com o ok: `--aplicar`, o usuário digita `/reload-plugins` e diz "continua". Se a pasta da empresa já existir (retomada), rode em seguida `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` e mostre o que mudou. Sem internet, siga normalmente.
 
 Se for a primeira vez neste computador, confira também as configurações iniciais (idioma em português e atualização automática) seguindo a skill atualizar-time.
 

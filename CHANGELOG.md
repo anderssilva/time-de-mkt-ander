@@ -2,6 +2,14 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.5.0 — 23/10/2026
+**Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o próprio time confere e ajusta as pastas das empresas (cria `00-contexto/materiais/`).
+
+- **Arquivos do chat guardados na pasta do projeto:** novo `scripts/guardar-arquivo.py` e regras em `referencias/arquivos-recebidos.md`. Todo arquivo enviado no chat é copiado para a pasta certa da empresa (marca, fotos, documentos, redes, referências, trilhas ou a pasta da peça), sem sobrescrever, e anotado em `00-contexto/materiais/indice.md`. A regra está em todos os comandos e cargos, e é lembrada ao abrir o Claude Code numa pasta de empresa.
+- **Atualização em toda semana:** o Passo 0 do planejamento semanal consulta o GitHub na hora, mostra o que mudou e pergunta uma vez se atualiza; com o ok, atualiza o time e, depois do `/reload-plugins`, ajusta a pasta da empresa sem perguntar de novo.
+- **Pastas ajustadas pelo próprio Claude:** novo `scripts/atualizar-pasta.py` (mostra o que mudaria; com `--aplicar`, cria pastas, copia arquivos novos, aplica as mudanças de estrutura de `modelos/migracoes.json`, acrescenta colunas no registro e anota tudo no `status-implantacao.md`). Nunca apaga nem sobrescreve.
+- Nova pasta no modelo: `00-contexto/materiais/` (marca, documentos, redes, trilhas, outros).
+
 ## 1.4.0 — 23/10/2026
 **Como atualizar:** pelo jeito normal acima. Empresas já implantadas não precisam mudar nada: as pastas antigas em `Marketing/empresas/<nome>/` continuam funcionando, basta abrir o Claude Code dentro delas.
 

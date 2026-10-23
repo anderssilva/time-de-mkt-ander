@@ -152,6 +152,8 @@ O time cria as pastas do marketing **direto nessa pasta** (`00-contexto/`, `01-p
 
 Para trabalhar com a empresa depois, abra sempre o Claude Code **dentro da pasta dela**. Cada empresa tem a sua pasta.
 
+**Arquivos enviados no chat ficam na pasta do projeto.** Todo logo, manual, apresentação, foto, exportação das redes, trilha ou vídeo que você mandar no chat é copiado para a pasta certa da empresa (por exemplo, `00-contexto/materiais/marca/` ou a pasta da peça) e anotado em `00-contexto/materiais/indice.md`. O original fica onde estava, e nada é sobrescrito.
+
 ## A semana na prática
 Peça: **"Roda a semana de marketing da [empresa]."**
 
@@ -162,7 +164,7 @@ Peça: **"Roda a semana de marketing da [empresa]."**
 | Durante a semana | Aprova o plano de edição | 5 min por vídeo |
 | Sexta | Dá o ok final nas peças prontas | 15 min |
 
-Antes de cada semana, o time confere sozinho se há versão nova e, no modo Planilha Google, baixa o registro atualizado.
+No início de cada semana, o time consulta o GitHub: se houver versão nova, mostra o que mudou e pergunta se você quer atualizar. Com o seu ok, atualiza o time e **ajusta sozinho as pastas da empresa** (cria o que for novo e move o que mudou de lugar, sem apagar nem sobrescrever nada). No modo Planilha Google, também baixa o registro atualizado.
 
 ## Onde ficam as coisas
 O time separa o **motor** dos **dados**:
@@ -191,10 +193,11 @@ plugins/mkt/
 ├── .claude-plugin/plugin.json      ficha e versão do plugin
 ├── skills/                         comandos /mkt:...
 ├── agents/                         cargos que rodam como agente separado
-├── scripts/                        registro, verificação de versão, início de sessão
+├── scripts/                        registro, versão, atualização da pasta, arquivos recebidos, início de sessão
 ├── referencias/                    guias compartilhados (registro em Planilha Google)
 ├── hooks/                          ao abrir o Claude Code: idioma e verificação de versão
-└── modelos/empresa/                modelo de pasta de empresa
+├── modelos/empresa/                modelo de pasta de empresa
+└── modelos/migracoes.json          mudanças de estrutura das pastas, por versão
 docs/                               mapa da jornada
 ```
 

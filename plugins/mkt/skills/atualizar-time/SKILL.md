@@ -7,6 +7,8 @@ description: Confere e aplica a atualização do Time de Marketing (o plugin mkt
 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
+> **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
+
 ## Configurações iniciais (conferir sempre)
 1. **Idioma:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/inicio-sessao.py" --ver-idioma`.
    Se não estiver em português, explique: "Vou configurar o Claude Code para responder sempre em português, em todas as sessões deste computador." Com o ok, rode o mesmo programa com `--configurar-idioma`. Vale a partir da próxima sessão.
@@ -20,10 +22,11 @@ description: Confere e aplica a atualização do Time de Marketing (o plugin mkt
    - peça ao usuário para digitar `/reload-plugins` (ou abrir uma sessão nova). Esse comando só pode ser digitado por ele.
 
 ## Pastas das empresas
-4. Pasta da empresa: normalmente é a pasta atual (a que tem `status-implantacao.md`). Se o usuário cuidar de outras empresas, pergunte os caminhos das pastas delas. Para cada uma, rode o programa com `--empresa <caminho da pasta>` (`.` para a pasta atual).
-   - Arquivos novos do modelo faltando: ofereça copiar de `${CLAUDE_PLUGIN_ROOT}/modelos/empresa/` **sem sobrescrever nada** que já exista.
-   - Depois, atualize a linha "Versão do modelo" no `status-implantacao.md` da empresa.
-   - Planilhas de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar .` acrescenta colunas novas sem perder dados. No modo Planilha Google, acrescente as mesmas colunas no fim de cada aba.
+4. Pasta da empresa: normalmente é a pasta atual (a que tem `status-implantacao.md`). Se o usuário cuidar de outras empresas, pergunte os caminhos das pastas delas. Para cada uma:
+   - rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" <caminho da pasta>` para ver o que mudaria;
+   - se houver mudanças, aplique com `--aplicar` (cria pastas, copia arquivos novos, move o que mudou de lugar, acrescenta colunas no registro; nunca apaga nem sobrescreve) e mostre a lista do que foi feito;
+   - no modo Planilha Google, acrescente também as colunas novas no fim de cada aba da planilha.
+   Se o plugin acabou de ser atualizado, faça isto **depois** do `/reload-plugins`, para usar o modelo novo.
 5. Sem internet ou sem acesso ao GitHub: avise e siga; nada é bloqueado.
 
 Ao terminar, mostre um resumo: idioma, atualização automática, versão instalada e situação de cada pasta de empresa.
