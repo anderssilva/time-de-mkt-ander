@@ -2,6 +2,14 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.4.0 — 23/10/2026
+**Como atualizar:** pelo jeito normal acima. Empresas já implantadas não precisam mudar nada: as pastas antigas em `Marketing/empresas/<nome>/` continuam funcionando, basta abrir o Claude Code dentro delas.
+
+- **Pasta da empresa = pasta do projeto:** a implantação cria `00-contexto/`, `01-plano/`, `02-pautas/`, `03-producao/`, `04-metricas/` e `registro/` direto na pasta onde o Claude Code foi aberto, sem criar `empresas/` nem uma subpasta com o nome da empresa. Antes de criar, confirma a pasta com o usuário.
+- Todos os comandos e cargos passam a trabalhar dentro da pasta da empresa; nos programas, o caminho da empresa é `.` (pasta atual).
+- `/mkt:atualizar-time` confere a pasta atual e pergunta os caminhos das outras empresas, quando houver.
+- README atualizado com a nova estrutura.
+
 ## 1.3.0 — 19/10/2026
 **Como atualizar:** pelo jeito normal acima. Empresas com o diagnóstico ainda em branco podem receber o modelo novo de `diagnostico.md` e `estrategia.md`; nas já preenchidas, nada é sobrescrito.
 

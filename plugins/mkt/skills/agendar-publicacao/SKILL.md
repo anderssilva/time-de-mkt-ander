@@ -8,8 +8,8 @@ description: Agenda no Metricool as peças aprovadas de uma empresa (status "pro
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa.
-2. Liste as peças prontas: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" listar empresas/<slug> publicacoes status=pronto`.
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é.
+2. Liste as peças prontas: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" listar . publicacoes status=pronto`.
    Só entram peças com `aprovado_por` e `data_aprovacao` preenchidos e com `revisao-qualidade.md` e `revisao-estrategica.md` aprovados na pasta. Se faltar algo, pare e diga o quê.
 3. Leia `01-plano/rotinas.md` e `01-plano/estrategia.md` (canais e horários).
 
@@ -28,6 +28,6 @@ description: Agenda no Metricool as peças aprovadas de uma empresa (status "pro
 - Lembre o responsável de publicar e de colar o link aqui para registrar.
 
 ## Registro
-- Ao agendar: `registro.py atualizar empresas/<slug> publicacoes Pnnn '{"status": "agendado", "data_publicacao": "AAAA-MM-DD HH:MM", "link": "<link do planejador>"}'`.
+- Ao agendar: `registro.py atualizar . publicacoes Pnnn '{"status": "agendado", "data_publicacao": "AAAA-MM-DD HH:MM", "link": "<link do planejador>"}'`.
 - Ao confirmar a publicação (pelo Metricool ou pelo responsável): status "publicado" e `link` do post publicado.
 - Nunca apague linhas; peça cancelada vira "descartado" com o motivo em `observacoes`.

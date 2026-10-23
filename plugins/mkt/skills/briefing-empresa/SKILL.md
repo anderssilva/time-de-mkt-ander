@@ -13,7 +13,7 @@ Antes de escrever qualquer texto, roteiro, post, e-mail ou estratégia para uma 
 
 Quem usa: o sócio ou responsável pelo marketing de cada empresa atendida.
 
-**Onde salvar:** em `Marketing/empresas/<slug>/00-contexto/contexto-ia.md`. Se a skill foi chamada pela estruturar-marketing-empresa, use o caminho que ela indicar. Se a pasta da empresa ainda não existir, pergunte se o usuário quer rodar a implantação completa antes.
+**Onde salvar:** em `00-contexto/contexto-ia.md`, dentro da pasta da empresa. Se a skill foi chamada pela estruturar-marketing-empresa, use o caminho que ela indicar. Se a pasta da empresa ainda não existir, pergunte se o usuário quer rodar a implantação completa antes.
 
 ## Regras de ouro
 

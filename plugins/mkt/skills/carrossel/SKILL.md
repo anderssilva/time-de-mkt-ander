@@ -8,10 +8,10 @@ description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa, do 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa e a peça (Pnnn, status "aprovado"). Pasta da peça: `03-producao/AAAA-MM/Sxx_Pnnn_tema/`.
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn, status "aprovado"). Pasta da peça: `03-producao/AAAA-MM/Sxx_Pnnn_tema/`.
 2. Leia: `contexto-ia.md`, `design.md`, `tom-de-voz.md`, `provas.md`, `compliance.md`, `fotos/fotos.md`, `01-plano/estrategia.md` e as melhorias incorporadas.
 3. Pergunte se o responsável já tem material para esta peça (artigo, roteiro de vídeo do mesmo tema, rascunho, foto específica) ou se quer do zero.
-- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre a partir da pasta Marketing.
+- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre de dentro da pasta da empresa (o caminho da empresa nos comandos é `.`).
 
 ## Regra de ouro do conteúdo: mais ação que dor
 O cliente salva e compartilha o que consegue **aplicar**. A dor só serve para abrir a conversa.
@@ -107,7 +107,7 @@ Se ainda não existir `00-contexto/carrossel-marca.json`, crie a partir do `desi
 Abra cada imagem e confira: leitura no tamanho do celular, nada cortado, destaque no lugar certo, foto bem enquadrada, logo correto para o fundo, numeração. Monte uma folha com todas as lâminas lado a lado para o responsável ver a sequência.
 
 ## Passo 6. Encaminhar
-- Atualize a planilha: `registro.py atualizar empresas/<slug> publicacoes Pnnn '{"status": "em revisão", "pasta": "..."}'`.
+- Atualize a planilha: `registro.py atualizar . publicacoes Pnnn '{"status": "em revisão", "pasta": "..."}'`.
 - Encaminhe para a skill **controle-qualidade** e depois **estrategista-marketing (revisão final)**.
 
 ## Alternativa editável (Canva)

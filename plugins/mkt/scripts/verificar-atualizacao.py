@@ -7,7 +7,7 @@ Uso:
   python3 verificar-atualizacao.py --rapido            para o início de sessão: no máximo 1 consulta a cada 20 h,
                                                        e só escreve algo se houver novidade
   python3 verificar-atualizacao.py --aplicar           atualiza o catálogo e o plugin (pede /reload-plugins depois)
-  python3 verificar-atualizacao.py --empresa empresas/<slug>
+  python3 verificar-atualizacao.py --empresa <pasta da empresa>   ("." para a pasta atual)
                                                        também confere a pasta da empresa contra o modelo
 
 Como descobre a última versão (na ordem, até uma funcionar):

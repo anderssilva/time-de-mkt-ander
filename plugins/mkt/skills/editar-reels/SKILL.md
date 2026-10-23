@@ -12,8 +12,8 @@ Edição de vídeo curto vertical (9:16) com apresentador. O objetivo é uma pe�
 Por padrão: **uma única versão**, na **duração natural da fala**, **sem mexer na cor**.
 
 ## Onde as coisas ficam
-- Trabalhe a partir da pasta `Marketing`. Identifique a empresa e a peça (Pnnn).
-- Pasta da peça: `empresas/<slug>/03-producao/AAAA-MM/Sxx_Pnnn_tema/`
+- Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn).
+- Pasta da peça: `03-producao/AAAA-MM/Sxx_Pnnn_tema/`
   - `roteiro.md` (aprovado) · `video-bruto/` (takes) · `edicao/` (trabalho: transcrição, cortes.json, aroll, composição) · `video-final/` (entrega `Pnnn-v1.mp4`, `Pnnn-v2.mp4`…)
 - Leia **antes de tudo**: `00-contexto/estilo-video.md` (como a empresa gosta da edição), `design.md` (cores, fonte, logo), `tom-de-voz.md`, `provas.md`, `compliance.md` e as melhorias incorporadas. O estilo-video.md manda sobre as preferências padrão desta skill; se houver conflito com uma regra técnica (rosto, sincronia, áreas da plataforma), a regra técnica vence e você avisa.
 - Se `estilo-video.md` estiver vazio, pergunte as preferências principais (legenda, logo, cartela final, música) e ofereça gravar as respostas nele.
@@ -159,6 +159,6 @@ Localize na pasta da peça e pergunte só o que faltar: takes brutos, roteiro ap
 
 ## 7. Integração com a jornada
 38. **O plano de edição (etapa 5) é obrigatório e precisa de aprovação** antes de qualquer montagem. Grave-o também em `edicao/plano.md`.
-39. Ao terminar a montagem e a sua própria revisão: atualize a planilha (`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" atualizar empresas/<slug> publicacoes Pnnn '{"status": "em revisão"}'`) e encaminhe para a skill **controle-qualidade** (de preferência o agente separado) e depois **estrategista-marketing, revisão final**.
-40. Correções pedidas pelo responsável que valem para os próximos vídeos ("sempre faça assim") viram melhoria: registre com `registro.py adicionar empresas/<slug> melhorias '{...}'` (origem "responsável") e ofereça atualizar o `estilo-video.md`.
+39. Ao terminar a montagem e a sua própria revisão: atualize a planilha (`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" atualizar . publicacoes Pnnn '{"status": "em revisão"}'`) e encaminhe para a skill **controle-qualidade** (de preferência o agente separado) e depois **estrategista-marketing, revisão final**.
+40. Correções pedidas pelo responsável que valem para os próximos vídeos ("sempre faça assim") viram melhoria: registre com `registro.py adicionar . melhorias '{...}'` (origem "responsável") e ofereça atualizar o `estilo-video.md`.
 41. Nunca publique, agende ou envie nada. O agendamento é da skill agendar-publicacao, depois do ok final.

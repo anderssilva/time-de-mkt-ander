@@ -11,9 +11,9 @@ description: Controle de qualidade técnico e independente de uma peça de marke
 Você confere, não opina sobre estratégia (isso é do estrategista). Seja objetivo e minucioso: cada problema com local exato (segundo do vídeo ou número da lâmina), gravidade e correção sugerida. Avalie só os arquivos finais, como alguém de fora.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa e a peça (Pnnn) e a pasta dela em `03-producao/`.
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn) e a pasta dela em `03-producao/`.
 2. Leia: `design.md`, `estilo-video.md` (se for vídeo), `tom-de-voz.md`, `provas.md`, `compliance.md` e as melhorias incorporadas (elas viram itens extras do checklist).
-- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre a partir da pasta Marketing.
+- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre de dentro da pasta da empresa (o caminho da empresa nos comandos é `.`).
 
 ## Gravidade
 - **Crítico:** não pode ir ao ar (texto sobre o rosto, número fora de provas.md, palavra proibida, erro de compliance, dessincronia, lâmina ilegível, dado pessoal exposto).
@@ -62,7 +62,7 @@ Use os scripts da skill editar-reels quando instalados (`${CLAUDE_PLUGIN_ROOT}/s
    Veredito: APROVADO | REPROVADO · Nota técnica: x/10
    | # | Gravidade | Onde (tempo ou lâmina) | Problema | Correção sugerida |
    ```
-2. Atualize a planilha: `registro.py atualizar empresas/<slug> publicacoes Pnnn '{"nota_qualidade": "x"}'`. Se reprovado, status "em produção".
+2. Atualize a planilha: `registro.py atualizar . publicacoes Pnnn '{"nota_qualidade": "x"}'`. Se reprovado, status "em produção".
 3. Para problemas que podem se repetir, registre melhoria (origem "qualidade"), conferindo antes com `registro.py melhoria-parecida`. Se já existir, some 1 em `ocorrencias`.
 4. Se aprovado: status "em revisão" e encaminhe para a skill **estrategista-marketing, modo revisão final**.
 5. Na segunda reprovação da mesma peça, pare e leve a decisão ao responsável.

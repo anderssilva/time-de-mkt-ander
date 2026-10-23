@@ -2,23 +2,23 @@
 """Registro de marketing por empresa (quatro tabelas: publicacoes, ideias, plano, melhorias).
 
 Duas formas de guardar, escolhidas na implantação (arquivo registro/fonte.json):
-- "csv" (padrão): os CSV em empresas/<slug>/registro/ são a fonte oficial.
+- "csv" (padrão): os CSV em <pasta da empresa>/registro/ são a fonte oficial.
 - "planilhas": uma Planilha Google (link) é a fonte oficial; os CSV viram espelho local para
   cálculo e cópia de segurança. Leia referencias/registro-planilhas.md do plugin.
 
-Uso (sempre a partir da pasta Marketing):
-  python3 registro.py iniciar   empresas/<slug>
-  python3 registro.py proximo   empresas/<slug> publicacoes|ideias|melhorias
-  python3 registro.py adicionar empresas/<slug> <tabela> '{"campo": "valor", ...}'
-  python3 registro.py atualizar empresas/<slug> <tabela> <id> '{"campo": "valor", ...}'
-  python3 registro.py listar    empresas/<slug> <tabela> [campo=valor ...]
-  python3 registro.py repeticao empresas/<slug> "<gancho>" "<ângulo>" [--limite 0.45]
-  python3 registro.py melhoria-parecida empresas/<slug> "<problema>"
-  python3 registro.py fonte     empresas/<slug> [csv | planilhas <link>]
+Uso (de dentro da pasta da empresa, onde o caminho é "."; ou passando o caminho da pasta):
+  python3 registro.py iniciar   <pasta>
+  python3 registro.py proximo   <pasta> publicacoes|ideias|melhorias
+  python3 registro.py adicionar <pasta> <tabela> '{"campo": "valor", ...}'
+  python3 registro.py atualizar <pasta> <tabela> <id> '{"campo": "valor", ...}'
+  python3 registro.py listar    <pasta> <tabela> [campo=valor ...]
+  python3 registro.py repeticao <pasta> "<gancho>" "<ângulo>" [--limite 0.45]
+  python3 registro.py melhoria-parecida <pasta> "<problema>"
+  python3 registro.py fonte     <pasta> [csv | planilhas <link>]
   python3 registro.py cabecalhos
-  python3 registro.py espelhar  empresas/<slug> <tabela> <arquivo.json>   (só no modo planilhas)
-  python3 registro.py pendentes empresas/<slug>                           (só no modo planilhas)
-  python3 registro.py sincronizado empresas/<slug>                        (só no modo planilhas)
+  python3 registro.py espelhar  <pasta> <tabela> <arquivo.json>   (só no modo planilhas)
+  python3 registro.py pendentes <pasta>                           (só no modo planilhas)
+  python3 registro.py sincronizado <pasta>                        (só no modo planilhas)
 
 Regras:
 - "adicionar" gera o id sozinho se ele não vier (P001, I001, M001). Campos desconhecidos são recusados.
@@ -130,7 +130,7 @@ def sincronizado(emp):
 def espelhar(emp, tab, arquivo):
     """Grava no CSV local o conteúdo de uma aba da planilha (lista de linhas; a primeira é o cabeçalho)."""
     if not modo_planilhas(emp):
-        sys.exit("Esta empresa não está no modo planilhas. Use: registro.py fonte empresas/<slug> planilhas <link>")
+        sys.exit("Esta empresa não está no modo planilhas. Use: registro.py fonte <pasta> planilhas <link>")
     if pendentes(emp):
         sys.exit("Há alterações locais ainda não enviadas para a planilha. Rode o passo 'Enviar' antes de baixar.")
     with open(arquivo, encoding="utf-8") as f:
@@ -333,7 +333,7 @@ def main():
             salvar_fonte(emp, {"tipo": "planilhas", "link": a[3], "id_planilha": id_planilha(a[3])})
             print(f"Fonte oficial: Planilha Google {id_planilha(a[3])}. Os CSV passam a ser espelho local. Veja {REF_PLANILHAS}.")
         else:
-            sys.exit("Uso: registro.py fonte empresas/<slug> [csv | planilhas <link>]")
+            sys.exit("Uso: registro.py fonte <pasta> [csv | planilhas <link>]")
     elif cmd == "espelhar":
         espelhar(emp, a[2], a[3])
     elif cmd == "pendentes":

@@ -9,14 +9,14 @@ description: Conduz a semana de marketing de uma empresa do começo ao fim, na o
 
 ## Passo 0. Atualização e registro (sempre, antes de tudo)
 1. Confira a versão do time de marketing e a pasta da empresa:
-   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --empresa empresas/<slug>`
+   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --empresa .`
    - Se houver versão nova: mostre ao responsável o que mudou e pergunte se atualiza agora. Com o ok, rode o mesmo comando com `--aplicar` e peça para ele digitar `/reload-plugins`; depois recomece por este passo.
    - Se a pasta da empresa tiver arquivos novos do modelo faltando: ofereça copiá-los (nunca sobrescrever) e registrar a nova "Versão do modelo" no `status-implantacao.md`.
    - Sem internet ou sem acesso: siga normalmente.
 2. Se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa (`empresas/<slug>/`). Se a implantação não estiver concluída (`status-implantacao.md`), ofereça continuar com a skill estruturar-marketing-empresa.
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Se a implantação não estiver concluída (`status-implantacao.md`), ofereça continuar com a skill estruturar-marketing-empresa.
 2. Defina a semana (`AAAA-Sxx`, padrão ISO; padrão: a semana atual).
 
 ## Painel

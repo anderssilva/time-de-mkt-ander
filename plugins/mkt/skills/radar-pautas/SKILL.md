@@ -8,9 +8,9 @@ description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa (`empresas/<slug>/`); se houver dúvida, pergunte. Trabalhe só nela.
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Trabalhe só nela.
 2. Se não existirem `00-contexto/contexto-ia.md` e `01-plano/estrategia.md`, pare e sugira a skill estruturar-marketing-empresa.
-3. Leia: `contexto-ia.md`, `tom-de-voz.md`, `compliance.md`, `01-plano/estrategia.md`, o plano do trimestre atual (`01-plano/plano-AAAA-Tn.md`), a última leitura em `04-metricas/` e as melhorias aprovadas ou incorporadas (`registro.py listar empresas/<slug> melhorias`).
+3. Leia: `contexto-ia.md`, `tom-de-voz.md`, `compliance.md`, `01-plano/estrategia.md`, o plano do trimestre atual (`01-plano/plano-AAAA-Tn.md`), a última leitura em `04-metricas/` e as melhorias aprovadas ou incorporadas (`registro.py listar . melhorias`).
 4. Defina a semana no formato `AAAA-Sxx` (semana do ano, padrão ISO). Padrão: a próxima semana.
 
 ## Passo 1. Entender a semana
@@ -35,14 +35,14 @@ Equilibre pilares e formatos conforme a estratégia. Nada de número, case ou de
 
 ## Passo 4. Conferir repetição (obrigatório)
 Para cada candidata:
-`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" repeticao empresas/<slug> "<gancho>" "<ângulo>"`
+`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" repeticao . "<gancho>" "<ângulo>"`
 - Nota ≥ 0,65 (REPETIÇÃO): troque o ângulo ou descarte. Nunca proponha repetição sem dizer.
 - Nota entre 0,45 e 0,65 (atenção): mantenha só se o ângulo for realmente novo e diga qual peça é parecida (Pnnn ou Innn).
 
 ## Passo 5. Gravar
 1. Crie `02-pautas/pautas-AAAA-Sxx.md` a partir de `02-pautas/_modelo-pautas-semana.md` com a tabela de candidatas (gancho, ângulo, pilar, formato, por que agora, peça parecida, fonte).
 2. Registre cada candidata na aba ideias:
-   `registro.py adicionar empresas/<slug> ideias '{"ideia": "...", "gancho": "...", "angulo": "...", "pilar": "...", "formato": "...", "origem": "radar AAAA-Sxx", "decisao": "proposta"}'`
+   `registro.py adicionar . ideias '{"ideia": "...", "gancho": "...", "angulo": "...", "pilar": "...", "formato": "...", "origem": "radar AAAA-Sxx", "decisao": "proposta"}'`
 3. Entregue para a skill **estrategista-marketing, modo seleção**. Se estiver no Claude Code e existir o agente `estrategista-marketing`, use-o (ele avalia sem ter visto a pesquisa).
 
 ## Regras

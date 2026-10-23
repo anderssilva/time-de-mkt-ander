@@ -140,15 +140,17 @@ Uma vez por computador, logo depois de instalar. No Claude Code, peça **"config
 Se ainda assim aparecer uma resposta em inglês, diga "responda em português" e peça "configura o time de marketing" para fixar.
 
 ## Primeiro uso
-1. Crie uma pasta para o marketing (por exemplo, `Marketing`, de preferência numa pasta sincronizada do Google Drive para ter cópia e acesso da equipe).
+1. Crie **uma pasta para a empresa** (por exemplo, `Marketing-Padaria`), de preferência numa pasta sincronizada do Google Drive, para ter cópia e acesso da equipe.
 2. No Terminal, entre nela e abra o Claude Code:
    ```bash
-   cd ~/Marketing
+   cd ~/Marketing-Padaria
    claude
    ```
 3. Peça: **"Estruturar o marketing da [nome da empresa]."**
 
-O time cria `empresas/<empresa>/` a partir do modelo e conduz as etapas uma a uma. Separe material que já existe (manual de marca, logos, textos, vídeos, fotos, exportação das redes): ele é sempre aproveitado antes de criar algo do zero. A implantação pode ser feita em várias sessões; o andamento fica salvo em `status-implantacao.md`.
+O time cria as pastas do marketing **direto nessa pasta** (`00-contexto/`, `01-plano/` e as demais), sem pastas intermediárias, e conduz as etapas uma a uma. Separe o material que já existe (manual de marca, logos, textos, vídeos, fotos, exportação das redes): ele é sempre aproveitado antes de criar algo do zero. A implantação pode ser feita em várias sessões; o andamento fica salvo em `status-implantacao.md`.
+
+Para trabalhar com a empresa depois, abra sempre o Claude Code **dentro da pasta dela**. Cada empresa tem a sua pasta.
 
 ## A semana na prática
 Peça: **"Roda a semana de marketing da [empresa]."**
@@ -168,19 +170,18 @@ O time separa o **motor** dos **dados**:
 | | O que é | Onde fica | Atualização |
 |---|---|---|---|
 | **Motor** | Comandos, cargos, programas e modelos | Este repositório, instalado no Claude Code | Por versão; nunca toca nos dados |
-| **Dados** | Tudo de cada empresa | `Marketing/empresas/<empresa>/` no seu computador ou Drive | Só pelo trabalho do time |
+| **Dados** | Tudo de cada empresa | A pasta da empresa (uma por empresa), no seu computador ou Drive | Só pelo trabalho do time |
 
 ```
-Marketing/
-└── empresas/<empresa>/
-    ├── LEIA-ME.md               guia de operação do responsável
-    ├── status-implantacao.md    andamento e versão do modelo
-    ├── 00-contexto/             briefing, design, estilo de vídeo, tom, provas, regras do setor, fotos
-    ├── 01-plano/                estratégia, plano do trimestre, rotinas
-    ├── 02-pautas/               pautas de cada semana
-    ├── 03-producao/             uma pasta por peça (AAAA-MM/Sxx_Pnnn_tema)
-    ├── 04-metricas/             leituras mensais
-    └── registro/                publicações, ideias, plano e melhorias
+Marketing-Padaria/               a pasta da empresa (o projeto)
+├── LEIA-ME.md                   guia de operação do responsável
+├── status-implantacao.md        andamento e versão do modelo
+├── 00-contexto/                 briefing, design, estilo de vídeo, tom, provas, regras do setor, fotos
+├── 01-plano/                    estratégia, plano do trimestre, rotinas
+├── 02-pautas/                   pautas de cada semana
+├── 03-producao/                 uma pasta por peça (AAAA-MM/Sxx_Pnnn_tema)
+├── 04-metricas/                 leituras mensais
+└── registro/                    publicações, ideias, plano e melhorias
 ```
 
 Estrutura deste repositório:
@@ -265,7 +266,7 @@ Crie as contas no e-mail da empresa, não no pessoal de um sócio.
 A parte de texto sim, mas a geração de lâminas, a edição de vídeo e o registro precisam do Claude Code.
 
 **Posso usar para várias empresas?**
-Sim. Cada empresa tem a sua pasta, e o time trabalha só na pasta da empresa da vez.
+Sim. Cada empresa tem a sua própria pasta. Abra o Claude Code dentro da pasta da empresa com que vai trabalhar, e o time mexe só nela.
 
 **Uma atualização pode apagar o histórico de alguma empresa?**
 Não. As atualizações mudam só o motor. Arquivos novos do modelo são copiados para as empresas apenas com a sua autorização e sem sobrescrever nada.

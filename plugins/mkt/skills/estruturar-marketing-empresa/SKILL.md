@@ -15,14 +15,17 @@ Esta skill roda **uma vez por empresa** e é revisitada **a cada trimestre**. O 
 
 ## Onde as coisas ficam
 
-- Pasta-raiz do marketing: a pasta `Marketing` (sincronizada no Google Drive do usuário). Se não souber onde está, pergunte.
+- **Pasta da empresa = a pasta do projeto.** As pastas do marketing (`00-contexto/`, `01-plano/` etc.) são criadas **diretamente** na pasta da empresa, que normalmente é a pasta onde o Claude Code foi aberto (por exemplo, `Marketing-Sellou/`). **Não crie** pastas intermediárias como `empresas/` ou `<nome-da-empresa>/`.
+- Se a pasta atual não for adequada (tem arquivos de outro projeto ou de outra empresa), pergunte em qual pasta criar e sugira abrir o Claude Code nela.
 - Modelo: `${CLAUDE_PLUGIN_ROOT}/modelos/empresa/` (modelo que vem no plugin mkt). Nunca edite o modelo durante uma implantação; copie.
-- Empresa: `Marketing/empresas/<slug>/` (slug em minúsculas, sem acento, com hífen; ex.: `padaria-central`, `clinica-sorriso`, `acme-software`).
+- Nome curto da empresa (slug): minúsculas, sem acento, com hífen (ex.: `padaria-central`). Ele vai só no `status-implantacao.md` e nos nomes de arquivos, não vira pasta.
 - Trabalhe **somente** dentro da pasta da empresa em implantação. Não leia nem altere a pasta de outra empresa, salvo pedido explícito.
+- Pastas antigas no formato `Marketing/empresas/<nome>/` continuam funcionando: basta abrir o Claude Code dentro delas.
+- Todos os comandos dos programas (`registro.py`, `verificar-atualizacao.py`) rodam de dentro da pasta da empresa, por isso o caminho da empresa neles é `.`.
 
-Estrutura esperada (se o modelo não for encontrado, crie esta):
+Estrutura esperada, direto na pasta da empresa (se o modelo não for encontrado, crie esta):
 ```
-empresas/<slug>/
+<pasta da empresa>/
 ├── LEIA-ME.md               guia de operação do responsável
 ├── status-implantacao.md    andamento desta skill
 ├── 00-contexto/             diagnostico, contexto-ia, design, estilo-video, tom-de-voz, provas, compliance, fotos/fotos.md
@@ -43,21 +46,21 @@ empresas/<slug>/
 6. **Nada é publicado ou agendado** nesta skill. Ela prepara; quem publica são as rotinas, sempre com aprovação.
 
 ## Passo 0. Versão do time de marketing
-Antes de tudo, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"` (com `--empresa empresas/<slug>` se a pasta já existir). Se houver versão nova, mostre o que mudou e ofereça atualizar antes de continuar (`--aplicar` e, em seguida, o responsável digita `/reload-plugins`). Sem internet, siga normalmente.
+Antes de tudo, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"` (com `--empresa .` se a pasta já existir). Se houver versão nova, mostre o que mudou e ofereça atualizar antes de continuar (`--aplicar` e, em seguida, o responsável digita `/reload-plugins`). Sem internet, siga normalmente.
 
 Se for a primeira vez neste computador, confira também as configurações iniciais (idioma em português e atualização automática) seguindo a skill atualizar-time.
 
 ## Retomada
 
-Antes de continuar, verifique se `empresas/<slug>/status-implantacao.md` existe.
+Antes de continuar, verifique se `status-implantacao.md` existe na pasta da empresa.
 - Se existir: leia, diga em 3 linhas onde parou e pergunte se continua dali.
 - Se a última implantação tiver mais de 3 meses: ofereça a **revisão trimestral** (etapas 1, 4, 5 e 8, mais a atualização do briefing).
 
 ## Etapas
 
 ### Etapa 0. Preparação da pasta
-1. Confirme o nome da empresa e o slug.
-2. Copie `${CLAUDE_PLUGIN_ROOT}/modelos/empresa/` para `empresas/<slug>/` (sem sobrescrever arquivos que já existam).
+1. Confirme o nome da empresa, o nome curto (slug) e a pasta: "Vou criar a estrutura do marketing direto nesta pasta: `<caminho atual>`. Pode ser?"
+2. Copie o **conteúdo** de `${CLAUDE_PLUGIN_ROOT}/modelos/empresa/` para dentro da pasta da empresa (sem criar subpasta com o nome da empresa e sem sobrescrever arquivos que já existam).
 3. Preencha o cabeçalho do `status-implantacao.md`, incluindo a **Versão do modelo** (a `version` de `${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`), e marque a etapa 0 como concluída.
 
 ### Etapa 1. Diagnóstico (arquivo `00-contexto/diagnostico.md`)
@@ -100,14 +103,14 @@ Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça
 1. **Escolha onde guardar.** Pergunte: "Prefere o registro numa **Planilha Google com link** (a equipe vê e edita pelo navegador ou celular) ou nos **arquivos da pasta**?"
    - **Planilha Google:** siga a seção "Implantação" de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` (cria a planilha com as quatro abas, define o compartilhamento escolhido e registra o link). Requer o conector do Google Planilhas.
    - **Arquivos da pasta:** os quatro CSV em `registro/` são a fonte oficial e sincronizam pelo Drive; para ver, abra no Google Planilhas e não edite com o Excel.
-   Em ambos os casos, crie o registro local (a partir da pasta Marketing):
-   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar empresas/<slug>`
+   Em ambos os casos, crie o registro local (de dentro da pasta da empresa):
+   `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar .`
 2. **Importe o histórico** dos últimos 6 meses, por um destes caminhos (pergunte qual):
    - exportação de dados feita pelo usuário na própria rede social;
    - leitura pelo conector do Metricool (se já conectado);
    - leitura do perfil pelo navegador, com a conta do usuário logada e com a autorização dele.
-3. Para cada publicação antiga, grave uma linha com `registro.py adicionar empresas/<slug> publicacoes '{...}'`, com pelo menos: data_publicacao, canal, formato, **gancho**, **angulo**, resumo, link e status "publicado", em ordem de data (os ids P001, P002… são gerados sozinhos). Gancho e ângulo são o que evita repetir conteúdo.
-4. Grave na aba plano os 3 meses do plano trimestral (`registro.py adicionar empresas/<slug> plano '{...}'`).
+3. Para cada publicação antiga, grave uma linha com `registro.py adicionar . publicacoes '{...}'`, com pelo menos: data_publicacao, canal, formato, **gancho**, **angulo**, resumo, link e status "publicado", em ordem de data (os ids P001, P002… são gerados sozinhos). Gancho e ângulo são o que evita repetir conteúdo.
+4. Grave na aba plano os 3 meses do plano trimestral (`registro.py adicionar . plano '{...}'`).
 5. No modo Planilha Google, termine com o passo **Enviar** da referência e confira as quatro abas.
 
 ### Etapa 7. Ferramentas e rotinas (arquivo `01-plano/rotinas.md`)

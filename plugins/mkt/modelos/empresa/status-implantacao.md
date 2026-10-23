@@ -1,6 +1,6 @@
 # Status da implantação — [EMPRESA]
 
-Pasta: `empresas/[slug]/` · Início: [dd/mm/aaaa] · Conduzido por: [nome]
+Empresa: [nome] · Nome curto: [slug] · Pasta: [caminho da pasta do projeto] · Início: [dd/mm/aaaa] · Conduzido por: [nome]
 
 Versão do modelo: [x.y.z]  (versão do plugin mkt usada para criar ou atualizar esta pasta)
 

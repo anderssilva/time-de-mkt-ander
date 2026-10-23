@@ -20,10 +20,10 @@ description: Confere e aplica a atualização do Time de Marketing (o plugin mkt
    - peça ao usuário para digitar `/reload-plugins` (ou abrir uma sessão nova). Esse comando só pode ser digitado por ele.
 
 ## Pastas das empresas
-4. Localize as pastas de empresa: as que têm `status-implantacao.md`, em `empresas/` ou em outro lugar indicado pelo usuário (ignore `_modelo`). Para cada uma, rode o programa com `--empresa empresas/<slug>`.
+4. Pasta da empresa: normalmente é a pasta atual (a que tem `status-implantacao.md`). Se o usuário cuidar de outras empresas, pergunte os caminhos das pastas delas. Para cada uma, rode o programa com `--empresa <caminho da pasta>` (`.` para a pasta atual).
    - Arquivos novos do modelo faltando: ofereça copiar de `${CLAUDE_PLUGIN_ROOT}/modelos/empresa/` **sem sobrescrever nada** que já exista.
    - Depois, atualize a linha "Versão do modelo" no `status-implantacao.md` da empresa.
-   - Planilhas de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar empresas/<slug>` acrescenta colunas novas sem perder dados. No modo Planilha Google, acrescente as mesmas colunas no fim de cada aba.
+   - Planilhas de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar .` acrescenta colunas novas sem perder dados. No modo Planilha Google, acrescente as mesmas colunas no fim de cada aba.
 5. Sem internet ou sem acesso ao GitHub: avise e siga; nada é bloqueado.
 
 Ao terminar, mostre um resumo: idioma, atualização automática, versão instalada e situação de cada pasta de empresa.

@@ -8,15 +8,15 @@ description: Lê os resultados das publicações de uma empresa (pelo Metricool 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.
 
 ## Antes de começar
-1. Trabalhe a partir da pasta `Marketing`. Identifique a empresa e o período (semanal: últimos 7 dias; mensal: mês fechado).
+1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique o período (semanal: últimos 7 dias; mensal: mês fechado).
 2. Leia `01-plano/estrategia.md` (metas), o plano do trimestre e a leitura anterior em `04-metricas/`.
-- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre a partir da pasta Marketing.
+- Ferramenta de registro: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py"` (abreviada abaixo como `registro.py`), sempre de dentro da pasta da empresa (o caminho da empresa nos comandos é `.`).
 
 ## Coletar (nunca invente números)
 - **Com o conector do Metricool:** busque as métricas por publicação da marca da empresa: alcance, curtidas, comentários, salvamentos, compartilhamentos, cliques, seguidores ganhos.
 - **Sem conector:** peça a exportação (CSV do Metricool ou da rede) ou prints. O que não vier fica vazio, nunca estimado.
 - Associe cada post a uma peça (Pnnn) pelo link ou pela data e legenda. Post sem peça no registro: crie a linha com status "publicado" e marque `origem` = "fora do fluxo".
-- Atualize cada peça: `registro.py atualizar empresas/<slug> publicacoes Pnnn '{"alcance": "...", "salvamentos": "...", ...}'`.
+- Atualize cada peça: `registro.py atualizar . publicacoes Pnnn '{"alcance": "...", "salvamentos": "...", ...}'`.
 
 ## Leitura semanal (curta, no chat)
 - Números da semana contra a média das 4 semanas anteriores.
