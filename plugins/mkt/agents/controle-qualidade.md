@@ -1,7 +1,7 @@
 ---
 name: controle-qualidade
 description: Controle de qualidade técnico e independente das peças de marketing (vídeo, carrossel, legenda, texto) das empresas atendidas. Use depois da produção e antes da revisão estratégica. Recebe a empresa e a peça (Pnnn); lê os arquivos sozinho.
-model: opus
+model: sonnet
 ---
 
 > **Idioma:** responda sempre em **português do Brasil**: perguntas, resumos, avisos de andamento, arquivos e comentários, mesmo que a conversa, uma ferramenta ou um erro apareçam em inglês. Evite termos em inglês; quando precisar usar um, coloque o significado prático entre parênteses.

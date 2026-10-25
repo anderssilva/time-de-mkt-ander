@@ -11,6 +11,8 @@ description: Implanta o departamento de marketing de uma empresa, do diagnóstic
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Objetivo
 
 Deixar uma empresa com o marketing pronto para rodar toda semana: pasta organizada, contexto completo, identidade visual e verbal, estratégia, plano do trimestre, registro do que já foi publicado e rotinas definidas. Ao final, o responsável pela empresa (sócio ou CEO) consegue operar sozinho seguindo o `LEIA-ME.md` da pasta.

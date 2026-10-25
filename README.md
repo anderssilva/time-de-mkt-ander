@@ -52,20 +52,27 @@ Feito em português do Brasil, para empresas que querem constância nas redes se
 Peça reprovada volta para a produção com as observações. Na segunda reprovação, a decisão é sua.
 
 ## Cargos do time
-A etapa diz **o que** acontece; o cargo diz **quem** faz. Os cargos marcados como agente trabalham separados da conversa, para avaliar sem viés ou fazer trabalho pesado.
+A conversa principal é o **gerente de marketing**: conversa com você, decide, define os padrões e distribui o trabalho. Quem executa são os cargos, cada um no modelo certo, para render mais no limite do plano.
 
-| Cargo | O que faz | Forma |
+| Cargo | Modelo | O que faz |
 |---|---|---|
-| Gerente de marketing | Conduz a semana, cobra pendências, junta as aprovações | Na conversa |
-| Estrategista | Plano, seleção de pautas, revisão final, melhorias | **Agente** |
-| Pesquisador | Radar, concorrentes, tendências | Agente *(em implantação)* |
-| Redator | Roteiros, textos de carrossel, legendas, LinkedIn | Na conversa |
-| Designer | Lâminas, capas, identidade visual | Na conversa |
-| Editor de vídeo | Tratamento, cortes, legendas, motion graphics, trilha | Agente *(em implantação)* |
-| Controle de qualidade | Revisão técnica independente | **Agente** |
-| Social media | Adapta para cada rede, agenda, cuida do perfil | Na conversa |
-| Relacionamento | Comentários, mensagens, contatos | Na conversa *(planejado)* |
-| Analista | Métricas e relatório mensal | Agente *(em implantação)* |
+| **Gerente** (conversa principal) | Opus | Conversa, aprovações, decisões, padrões (diagnóstico, estratégia, design), distribuição das tarefas |
+| Estrategista | Sonnet | Seleção de pautas, revisão final, melhorias |
+| Controle de qualidade | Sonnet | Revisão técnica independente |
+| Redator | Sonnet | Roteiros, textos de carrossel, legendas, LinkedIn |
+| Designer | Sonnet | Lâminas, PDF e folha de revisão |
+| Editor de vídeo | Sonnet | Plano de edição, montagem com motion graphics, capa |
+| Operador | Haiku | Organizar a pasta, guardar arquivos, sincronizar a planilha, conferir versão |
+| Assistente de navegador | Haiku | Preparar as publicações no Chrome (para antes do botão final) e coletar números |
+
+Os cargos não falam com você: o gerente mostra o que eles entregam e pede as suas aprovações. Pesquisador, social media, relacionamento e analista seguem planejados.
+
+## Economia no plano Pro
+- **Gerente no Opus, equipe no Sonnet e no Haiku.** O Opus não lê os arquivos inteiros, não abre imagens e não escreve os textos longos; só conversa, decide e distribui.
+- **Limite apertado?** Rode o gerente no Sonnet (`/model sonnet`). Os cargos continuam nos mesmos modelos.
+- **Uma peça por conversa:** ao terminar, digite `/clear`. Tudo já está salvo na pasta.
+- **Texto antes de imagem**, e revisão do carrossel pela **folha de revisão** (todas as lâminas numa imagem só).
+- Detalhes em `plugins/mkt/referencias/economia.md` e `plugins/mkt/referencias/orquestracao.md`.
 
 ## Comandos
 Todos começam com `/mkt:`. Você também pode simplesmente pedir em português ("roda a semana da Padaria Central") que o Claude escolhe o comando certo.

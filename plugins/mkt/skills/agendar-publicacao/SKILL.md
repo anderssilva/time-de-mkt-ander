@@ -11,6 +11,8 @@ description: Agenda ou publica as peças aprovadas de uma empresa (status "pront
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é.
 2. Liste as peças prontas: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" listar . publicacoes status=pronto`.
@@ -40,8 +42,8 @@ description: Agenda ou publica as peças aprovadas de uma empresa (status "pront
 ## Publicar pelo Chrome (quando não há Metricool)
 Requer o Claude no Chrome (extensão) ligado e o Chrome aberto.
 1. **Contas logadas:** peça ao responsável para entrar, no próprio Chrome, nas contas da empresa no **Instagram** (de preferência pelo **Meta Business Suite**, que permite agendar Instagram e Facebook) e no **LinkedIn**. O login é sempre dele: nunca digite senha nem códigos.
-2. **Uma peça por vez:** abra a área de criação, envie a mídia (lâminas na ordem ou vídeo e capa), cole a legenda aprovada, acrescente as marcações e escolha publicar agora ou agendar (o LinkedIn e o Meta Business Suite permitem agendar).
-3. **Pare antes do botão final.** Mostre um resumo (rede, mídia, início da legenda, marcações, data e hora) e só clique em **Publicar** ou **Agendar** depois do "pode publicar" do responsável, peça por peça.
+2. **Uma peça por vez, com o assistente de navegador (modelo leve, economiza o limite do plano):** passe ao agente `assistente-navegador` a tarefa fechada: rede e conta, caminhos das mídias na ordem (lâminas ou vídeo e capa), legenda aprovada, marcações e se é para publicar agora ou agendar (data e hora; o LinkedIn e o Meta Business Suite permitem agendar). Ele prepara tudo e **para antes do botão final**. Se o agente não estiver disponível, faça você mesmo, do mesmo jeito.
+3. **Confirmação peça por peça.** Mostre ao responsável o resumo que o agente devolveu (rede, mídia, início da legenda, marcações, data e hora). Só depois do "pode publicar" chame o agente de novo com "o usuário autorizou publicar esta peça" para clicar em **Publicar** ou **Agendar**.
 4. Se a página pedir algo inesperado (verificação, novo login, aceite de termos), pare e peça para o responsável resolver.
 5. Ao terminar, copie o link do post ou do agendamento para o registro.
 

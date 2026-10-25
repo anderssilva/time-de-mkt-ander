@@ -11,6 +11,8 @@ description: Conduz a semana de marketing de uma empresa do começo ao fim, na o
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Passo 0. Atualização do time e da pasta (sempre, no início de cada semana)
 Faça sempre, antes de qualquer outra coisa, e sem pular mesmo que o usuário peça pressa (leva menos de um minuto):
 1. **Versão:** `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"`. Ele consulta o GitHub na hora.
@@ -55,8 +57,9 @@ Melhorias propostas aguardando decisão: n
 | 10 | Melhorias do mês | estrategista-marketing (modo C) | aprova item a item |
 
 ## Como conduzir
+- **Você é o gerente (orquestrador).** Não produza as peças você mesmo: passe cada etapa ao cargo certo, conforme a tabela de `${CLAUDE_PLUGIN_ROOT}/referencias/orquestracao.md`, e mostre ao responsável o resumo que voltar. Isso deixa o modelo mais forte só para conversar e decidir, e economiza o limite do plano.
 - Faça uma etapa por vez e pare em cada aprovação. Não pule etapas, nem para "ganhar tempo".
-- Nas etapas 2, 6, 7 e 10, use os **agentes separados** quando estiver no Claude Code e eles existirem (`estrategista-marketing` e `controle-qualidade`). Eles avaliam sem ter visto a produção e usam um modelo mais forte. Passe para o agente só a empresa, a peça e o modo; ele lê os arquivos.
+- Nas etapas 2, 6, 7 e 10, use os **agentes separados** quando estiver no Claude Code e eles existirem (`estrategista-marketing` e `controle-qualidade`). Eles avaliam sem ter visto a produção. Passe para o agente só a empresa, a peça e o modo; ele lê os arquivos.
 - Peça reprovada volta à etapa de produção com as observações. Na segunda reprovação, a decisão é do responsável.
 - Ao final de cada sessão: no modo Planilha Google, faça o passo **Enviar**; depois mostre o painel atualizado e o próximo passo.
 - Se o responsável pedir para medir o tempo, registre início e fim de cada etapa em `02-pautas/tempo-AAAA-Sxx.md` com o comando date, separando o tempo de trabalho do tempo esperando aprovação.

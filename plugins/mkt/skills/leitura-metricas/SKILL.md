@@ -11,6 +11,8 @@ description: Lê os resultados das publicações de uma empresa (pelo Metricool 
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique o período (semanal: últimos 7 dias; mensal: mês fechado).
 2. Leia `01-plano/estrategia.md` (metas), o plano do trimestre e a leitura anterior em `04-metricas/`.

@@ -11,6 +11,10 @@ description: Edita vídeos curtos verticais (Reels, TikTok, Shorts, anúncios) d
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
+> **Quem executa:** na conversa principal (gerente), passe o trabalho ao cargo `editor-video`, que roda num modelo mais leve, e mostre ao responsável o que voltar (veja `${CLAUDE_PLUGIN_ROOT}/referencias/orquestracao.md`). Se você já é esse cargo, execute.
+
 Edição de vídeo curto vertical (9:16) com apresentador. O objetivo é uma peça que prenda nos primeiros segundos, prove o que é dito com material real, seja legível no celular e termine numa chamada para ação clara, sem nunca cobrir o rosto e sem cortar o que a pessoa disse.
 
 Por padrão: **uma única versão**, na **duração natural da fala**, **sem mexer na cor**.

@@ -11,6 +11,10 @@ description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa, do 
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
+> **Quem executa:** na conversa principal (gerente), passe o trabalho ao cargo `redator` (texto) e `designer` (lâminas), que roda num modelo mais leve, e mostre ao responsável o que voltar (veja `${CLAUDE_PLUGIN_ROOT}/referencias/orquestracao.md`). Se você já é esse cargo, execute.
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn, status "aprovado"). Pasta da peça: `03-producao/AAAA-MM/Sxx_Pnnn_tema/`.
 2. Leia: `contexto-ia.md`, `design.md`, `tom-de-voz.md`, `provas.md`, `compliance.md`, `fotos/fotos.md`, `01-plano/estrategia.md` e as melhorias incorporadas.
@@ -110,7 +114,7 @@ Se ainda não existir `00-contexto/carrossel-marca.json`, crie a partir do `desi
    - Se o destaque da marca não tiver contraste em fundo claro, o script troca automaticamente por marca-texto. Isso é esperado; informe o responsável na primeira vez.
 
 ## Passo 5. Olhar antes de entregar
-Abra cada imagem e confira: leitura no tamanho do celular, nada cortado, destaque no lugar certo, foto bem enquadrada, logo correto para o fundo, numeração. Monte uma folha com todas as lâminas lado a lado para o responsável ver a sequência.
+Abra **a folha de revisão** (`carrossel/folha-revisao.jpg`, gerada junto com as lâminas, com todas lado a lado) e confira: sequência, leitura, nada cortado, destaque no lugar certo, foto bem enquadrada, logo correto para o fundo, numeração. **Abra uma lâmina em tamanho real só se a folha mostrar um problema** nela: cada imagem aberta consome bastante do limite do plano. Mostre a folha ao responsável para ele ver a sequência.
 
 ## Passo 6. Encaminhar
 - Atualize a planilha: `registro.py atualizar . publicacoes Pnnn '{"status": "em revisão", "pasta": "..."}'`.

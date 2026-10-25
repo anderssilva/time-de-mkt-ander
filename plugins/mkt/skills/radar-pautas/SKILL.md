@@ -11,6 +11,8 @@ description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Trabalhe só nela.
 2. Se não existirem `00-contexto/contexto-ia.md` e `01-plano/estrategia.md`, pare e sugira a skill estruturar-marketing-empresa.

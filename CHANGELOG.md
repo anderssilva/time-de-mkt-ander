@@ -2,6 +2,15 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.7.0 — 25/10/2026
+**Como atualizar:** pelo jeito normal acima. Recomendado: conversa principal no Opus (`/model opus`) como gerente; se o limite apertar, `/model sonnet`.
+
+- **Gerente e cargos (orquestração):** a conversa principal vira o gerente de marketing, que conversa, decide e distribui; a execução vai para os cargos (`referencias/orquestracao.md`).
+- **Modelo certo para cada tarefa:** novos cargos `redator`, `designer` e `editor-video` (Sonnet), `operador` e `assistente-navegador` (Haiku); `estrategista-marketing` e `controle-qualidade` passam de Opus para Sonnet; `/mkt:atualizar-time` roda no Haiku.
+- **Publicação pelo Chrome com o assistente de navegador (Haiku):** prepara cada post e para antes do botão final; o clique só acontece depois do ok do responsável, peça por peça.
+- **Folha de revisão do carrossel:** o gerador cria `folha-revisao.jpg` com todas as lâminas lado a lado; revisão e controle de qualidade usam a folha e só abrem uma lâmina em tamanho real se houver problema.
+- **Guia de economia** (`referencias/economia.md`): uma peça por conversa, texto antes de imagem, ajustes só nas lâminas alteradas, aprovações em lote.
+
 ## 1.6.0 — 25/10/2026
 **Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o time cria `00-contexto/marcacoes.md` nas empresas e propõe organizar o que estiver solto na raiz.
 

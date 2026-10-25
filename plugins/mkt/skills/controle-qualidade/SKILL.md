@@ -11,6 +11,8 @@ description: Controle de qualidade técnico e independente de uma peça de marke
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
 
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
+
 ## Papel
 Você confere, não opina sobre estratégia (isso é do estrategista). Seja objetivo e minucioso: cada problema com local exato (segundo do vídeo ou número da lâmina), gravidade e correção sugerida. Avalie só os arquivos finais, como alguém de fora.
 
@@ -26,6 +28,8 @@ Você confere, não opina sobre estratégia (isso é do estrategista). Seja obje
 Aprovado = **zero críticos e zero importantes**.
 
 ## Checklist de vídeo
+**Carrossel:** revise primeiro a `carrossel/folha-revisao.jpg` (todas as lâminas numa imagem só) e abra em tamanho real apenas as lâminas em que a folha mostrar dúvida (texto pequeno, corte, contraste). Isso economiza muito do limite do plano.
+
 Use os scripts da skill editar-reels quando instalados (`${CLAUDE_PLUGIN_ROOT}/skills/editar-reels/scripts/revisar.py <video> --palavras <words.json>`) e olhe as folhas de quadros.
 - Arquivo: 1080 × 1920, 9:16, áudio e vídeo com a mesma duração.
 - Capa do Reels: título e rosto dentro da janela central 1080 × 1440 (3:4) da grade do perfil. Carrossel: 1080 × 1350 (4:5), nada importante a menos de 60 px das laterais (`referencias/formatos-redes.md`).

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Gera as lâminas de um carrossel (PNG 1080x1350) e um PDF para o LinkedIn a partir de um laminas.json.
+"""Gera as lâminas de um carrossel (PNG 1080x1350), um PDF para o LinkedIn e uma folha de revisão leve
+(folha-revisao.jpg, todas as lâminas lado a lado) a partir de um laminas.json.
 
 Uso:
   python3 renderizar.py <laminas.json> [--saida <pasta>] [--sem-pdf] [--so-validar] [--laminas 1,3]
@@ -401,6 +402,7 @@ def renderizar(arq, saida=None, pdf=True, so_validar=False, so=None):
                 os.remove(tmp)
         nav.close()
     print(f"{len(arquivos)} lâminas geradas em {saida}")
+    folha(arquivos, os.path.join(saida, "folha-revisao.jpg"))
     if so:
         pdf = False
     if pdf:
@@ -412,6 +414,32 @@ def renderizar(arq, saida=None, pdf=True, so_validar=False, so=None):
             print("PDF para LinkedIn:", destpdf)
         except ImportError:
             print("AVISO: Pillow não instalado; PDF não gerado (pip install pillow).")
+
+
+def folha(arquivos, destino, larg=360, por_linha=5):
+    """Uma imagem única e leve com todas as lâminas lado a lado (para revisar sem abrir cada PNG)."""
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return
+    if not arquivos:
+        return
+    alt = int(larg * ALT / LARG)
+    por_linha = min(por_linha, len(arquivos))
+    linhas = (len(arquivos) + por_linha - 1) // por_linha
+    m = 16
+    W = por_linha * larg + (por_linha + 1) * m
+    H = linhas * (alt + 28) + (linhas + 1) * m
+    f = Image.new("RGB", (W, H), "#E9ECF2")
+    d = ImageDraw.Draw(f)
+    for i, a in enumerate(arquivos):
+        im = Image.open(a).convert("RGB").resize((larg, alt))
+        x = m + (i % por_linha) * (larg + m)
+        y = m + (i // por_linha) * (alt + 28 + m)
+        f.paste(im, (x, y + 28))
+        d.text((x, y + 6), os.path.splitext(os.path.basename(a))[0], fill="#14213D")
+    f.save(destino, quality=82)
+    print("Folha de revisão (use esta para revisar):", destino)
 
 
 if __name__ == "__main__":

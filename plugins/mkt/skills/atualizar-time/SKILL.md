@@ -1,6 +1,7 @@
 ---
 name: atualizar-time
 description: Confere e aplica a atualização do Time de Marketing (o plugin mkt), faz as configurações iniciais do computador (respostas em português, atualização automática) e alinha as pastas das empresas com o modelo novo. Use quando o usuário disser "atualiza o time de marketing", "configura o time de marketing", "tem versão nova?", "qual versão está instalada", "atualizar as skills", "o Claude está respondendo em inglês", ou quando outra skill avisar que há versão nova.
+model: haiku
 ---
 
 # Atualizar e configurar o Time de Marketing
@@ -10,6 +11,8 @@ description: Confere e aplica a atualização do Time de Marketing (o plugin mkt
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
 > **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
+> **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
 ## Configurações iniciais (conferir sempre)
 1. **Idioma:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/inicio-sessao.py" --ver-idioma`.
