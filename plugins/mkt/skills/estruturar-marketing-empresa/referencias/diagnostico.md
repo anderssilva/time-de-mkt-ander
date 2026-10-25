@@ -113,7 +113,27 @@ Some a nota de cada pilar (Marca, Demanda e Vendas vão de 0 a 6; Dados, de 0 a 
 
 ---
 
+## Bloco F. Presença atual: prints das bios e do site
+Peça, de uma vez, os prints de como a empresa aparece hoje. Explique: "Agora preciso ver como a empresa aparece hoje nas redes e no site. Pode me mandar os prints abaixo? Arraste os arquivos para o chat, que eu guardo na pasta. Se colar a imagem direto, também serve, que eu transcrevo o que estiver escrito."
+
+| Onde | O que printar |
+|---|---|
+| Instagram | Topo do perfil (foto, nome, bio, link, destaques) e a grade com os primeiros 9 a 12 posts |
+| LinkedIn da empresa | Topo da página (banner, logo, título, botão) e a seção "Sobre" |
+| LinkedIn dos sócios | Topo do perfil (foto, banner, título) e o "Sobre" de cada sócio que publica |
+| Site | Primeira tela da página inicial (no computador e no celular), com o endereço |
+| Outros que a empresa use | TikTok, YouTube, Facebook, WhatsApp Business, perfil no Google (Google Meu Negócio) |
+
+Para cada print:
+1. Guarde com `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/guardar-arquivo.py" "<arquivo>" perfis "<rede> — <data>"`.
+2. **Transcreva** no `diagnostico.md` (seção F) o que está escrito: nome, título, bio, link, nomes dos destaques, botão, chamada do site. Assim o contexto fica completo mesmo que a imagem tenha vindo sem arquivo.
+3. Não avalie ainda: a avaliação é feita pela skill **perfil-redes**, depois da estratégia, quando já há posicionamento, público e chamada para ação definidos.
+
+Se o usuário não tiver tempo agora, siga e marque a seção F como pendente no `status-implantacao.md`; os prints podem vir depois, direto na skill perfil-redes.
+
+---
+
 ## Fechamento
 1. Grave tudo em `00-contexto/diagnostico.md`, no formato do modelo.
-2. Mostre o resumo: objetivo, jogo, modelo, notas dos 4 pilares e gargalos.
+2. Mostre o resumo: objetivo, jogo, modelo, notas dos 4 pilares, gargalos e os prints recebidos (ou pendentes).
 3. Diga que o **pilar de crescimento** será proposto na etapa 4, depois do briefing, e peça o ok para seguir.

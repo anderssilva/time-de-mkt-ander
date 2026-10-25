@@ -68,6 +68,17 @@ Escala: 0 = não existe · 1 = existe, mas fraco · 2 = funciona bem.
 ## Material que já existe
 - 
 
+## F. Presença atual (prints das bios e do site)
+Prints em `00-contexto/materiais/perfis/`. Transcrição do que está escrito hoje; a avaliação fica em `05-canais/perfil-redes.md`.
+
+| Onde | Link | Arquivo do print | Nome / título | Bio ou "Sobre" (transcrito) | Link e botão | Destaques / seções |
+|---|---|---|---|---|---|---|
+| Instagram | | | | | | |
+| LinkedIn (empresa) | | | | | | |
+| LinkedIn (sócio) | | | | | | |
+| Site | | | | (chamada da primeira tela) | | |
+| Outro | | | | | | |
+
 ## Principais gargalos (nas palavras do responsável)
 1. 
 2. 

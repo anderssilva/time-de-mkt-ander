@@ -13,11 +13,12 @@
 | Pautas de cada semana | `02-pautas/pautas-AAAA-Sxx.md` |
 | **Tudo de uma peça** (roteiro, texto, lâminas, PDF, vídeo bruto, edição, vídeo final, capa, legenda) | `03-producao/AAAA-MM/Sxx_Pnnn_tema/` |
 | Leituras de métricas | `04-metricas/` |
+| Perfil das redes e artes do perfil | `05-canais/` |
 | Registro (CSV, `fonte.json`, atalho da Planilha Google) | `registro/` |
 | Arquivos temporários do trabalho | `03-producao/.../edicao/` da peça, ou apagados ao terminar |
 | O que for descartado | `_lixeira/` (nunca apague de vez) |
 
-Outras pastas numeradas que a empresa já tenha (por exemplo, `05-canais/`) são mantidas.
+Outras pastas numeradas que a empresa já tenha são mantidas.
 
 ## Na prática
 - **Ao gerar qualquer arquivo**, salve direto no lugar certo. Lâminas de carrossel saem em `<pasta da peça>/carrossel/`, nunca na raiz.

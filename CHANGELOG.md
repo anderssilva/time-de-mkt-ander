@@ -2,6 +2,15 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.8.0 — 25/10/2026
+**Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o time cria `05-canais/` nas empresas. Para empresas já implantadas, peça "avalia o perfil das redes" e mande os prints.
+
+- **Prints das bios no diagnóstico:** novo Bloco F ("Presença atual") pede os prints do Instagram, LinkedIn (empresa e sócios), site e outras redes; guarda em `00-contexto/materiais/perfis/` (novo atalho `perfis` no `guardar-arquivo.py`) e transcreve o que está escrito na seção F do `diagnostico.md`.
+- **Nova skill `perfil-redes`:** com os prints e todo o contexto, dá nota por item (nome pesquisável, bio, link, destaques, posts fixados, grade, título, "Sobre", banner, botão, primeira tela do site), compara com concorrentes, propõe 2 ou 3 versões de cada texto e registra antes e depois em `05-canais/perfil-redes.md`.
+- **Artes do perfil na marca:** novo `skills/perfil-redes/scripts/artes-perfil.py` gera as capas dos destaques (1080 × 1920, conteúdo no círculo central) e o banner do LinkedIn (1584 × 396), com folha de revisão.
+- **Novo cargo `social-media` (Sonnet)** e nova etapa 4b na implantação (depois da estratégia), também incluída na revisão trimestral.
+- Nova pasta no modelo: `05-canais/`.
+
 ## 1.7.0 — 25/10/2026
 **Como atualizar:** pelo jeito normal acima. Recomendado: conversa principal no Opus (`/model opus`) como gerente; se o limite apertar, `/model sonnet`.
 

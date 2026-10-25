@@ -63,9 +63,10 @@ A conversa principal é o **gerente de marketing**: conversa com você, decide, 
 | Designer | Sonnet | Lâminas, PDF e folha de revisão |
 | Editor de vídeo | Sonnet | Plano de edição, montagem com motion graphics, capa |
 | Operador | Haiku | Organizar a pasta, guardar arquivos, sincronizar a planilha, conferir versão |
+| Social media | Sonnet | Avaliação e propostas para o perfil das redes e o site |
 | Assistente de navegador | Haiku | Preparar as publicações no Chrome (para antes do botão final) e coletar números |
 
-Os cargos não falam com você: o gerente mostra o que eles entregam e pede as suas aprovações. Pesquisador, social media, relacionamento e analista seguem planejados.
+Os cargos não falam com você: o gerente mostra o que eles entregam e pede as suas aprovações. Pesquisador, relacionamento e analista seguem planejados.
 
 ## Economia no plano Pro
 - **Gerente no Opus, equipe no Sonnet e no Haiku.** O Opus não lê os arquivos inteiros, não abre imagens e não escreve os textos longos; só conversa, decide e distribui.
@@ -90,6 +91,7 @@ Todos começam com `/mkt:`. Você também pode simplesmente pedir em português 
 | `/mkt:controle-qualidade` | Revisão técnica por checklist |
 | `/mkt:agendar-publicacao` | Agendamento e registro |
 | `/mkt:leitura-metricas` | Resultados, leitura mensal e aprendizados |
+| `/mkt:perfil-redes` | Avalia e melhora bio, nome, destaques, posts fixados, LinkedIn e site, com as capas e o banner na marca |
 | `/mkt:atualizar-time` | Atualiza o time, faz as configurações iniciais (português, atualização automática) e alinha as pastas das empresas |
 
 ## Requisitos
@@ -192,6 +194,7 @@ Marketing-Padaria/               a pasta da empresa (o projeto)
 ├── 02-pautas/                   pautas de cada semana
 ├── 03-producao/                 uma pasta por peça (AAAA-MM/Sxx_Pnnn_tema)
 ├── 04-metricas/                 leituras mensais
+├── 05-canais/                   perfil das redes e artes do perfil
 └── registro/                    publicações, ideias, plano e melhorias
 ```
 
@@ -258,6 +261,15 @@ Conferidos em outubro de 2026 (detalhes em `plugins/mkt/referencias/formatos-red
 - **Carrossel e post no Instagram:** 1080 × 1350 (4:5). A grade do perfil mostra um retângulo 3:4 e corta cerca de 34 px de cada lado, por isso nada importante fica perto das laterais. O 3:4 inteiro (1080 × 1440) só funciona publicando pelo aplicativo.
 - **Reels e Stories:** 1080 × 1920 (9:16), sem texto nas faixas dos botões do aplicativo.
 - **Capa de Reels:** 1080 × 1920, com título e rosto dentro da janela central 1080 × 1440, que é o que aparece na grade (o recorte quadrado deixou de existir em 2025).
+
+## Perfil das redes
+No diagnóstico, o time pede os **prints de como a empresa aparece hoje**: topo e grade do Instagram, página e "Sobre" do LinkedIn (empresa e sócios), primeira tela do site e outras redes. Guarda tudo em `00-contexto/materiais/perfis/` e transcreve o que está escrito. Depois da estratégia, a skill **perfil-redes** usa esse material e todo o contexto para:
+- dar nota a cada item (nome pesquisável, bio, link, destaques, posts fixados, título, "Sobre", banner, site);
+- comparar com 2 ou 3 concorrentes;
+- propor 2 ou 3 versões de cada texto;
+- gerar as **capas dos destaques** e o **banner do LinkedIn** na marca.
+
+As mudanças são aplicadas com o seu ok, item a item, e ficam registradas com o antes e o depois em `05-canais/perfil-redes.md`.
 
 ## Marcações e recompartilhamento
 Na implantação, você informa os **donos das empresas** e as pessoas autorizadas a serem marcadas, com o @ do Instagram e o perfil do LinkedIn (`00-contexto/marcacoes.md`). Em cada publicação o time propõe as marcações e, depois de publicar, deixa pronta uma mensagem para cada dono pedindo o recompartilhamento, que você envia.

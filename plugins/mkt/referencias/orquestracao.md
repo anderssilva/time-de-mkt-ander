@@ -16,6 +16,7 @@ Na conversa principal, o Claude é o **gerente de marketing**. Ele não produz a
 | 6. Qualidade | `controle-qualidade` | Mostra o veredito |
 | 7. Revisão final | `estrategista-marketing` (modo B) | Pede o ok final do responsável |
 | 8. Publicação | `assistente-navegador` (ou Metricool) | Mostra o resumo de cada peça e só autoriza o clique final com o ok |
+| Perfil das redes (implantação e trimestre) | `social-media` (avaliação e propostas) e `designer` (artes) | Mostra notas e versões; o responsável escolhe |
 | 9. Métricas | `operador` copia os números; o gerente faz a leitura | — |
 
 ## Como passar uma tarefa

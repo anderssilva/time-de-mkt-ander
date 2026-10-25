@@ -39,6 +39,7 @@ Estrutura esperada, direto na pasta da empresa (se o modelo não for encontrado,
 ├── 02-pautas/               pautas-AAAA-Sxx.md (radar semanal)
 ├── 03-producao/             AAAA-MM/Sxx_Pnnn_tema-curto/
 ├── 04-metricas/             leitura-AAAA-MM.md
+├── 05-canais/               perfil-redes.md, artes-perfil/
 └── registro/                publicacoes.csv, ideias.csv, plano.csv, melhorias.csv
 ```
 
@@ -60,7 +61,7 @@ Se for a primeira vez neste computador, confira também as configurações inici
 
 Antes de continuar, verifique se `status-implantacao.md` existe na pasta da empresa.
 - Se existir: leia, diga em 3 linhas onde parou e pergunte se continua dali.
-- Se a última implantação tiver mais de 3 meses: ofereça a **revisão trimestral** (etapas 1, 4, 5 e 8, mais a atualização do briefing).
+- Se a última implantação tiver mais de 3 meses: ofereça a **revisão trimestral** (etapas 1, 4, 4b, 5 e 8, mais a atualização do briefing).
 
 ## Etapas
 
@@ -99,6 +100,9 @@ Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça
 - **Metas do trimestre:** pelo menos uma de entrada (alcance, salvamentos, seguidores qualificados) e uma de saída (contatos, reuniões, vendas). Peça o valor atual antes de propor a meta.
 - **Cadência realista:** proporcional ao tempo semanal declarado. Com até 2 horas por semana, não proponha mais de 3 peças por semana.
 - Lembre que o **Metricool Free** agenda uma marca e **não tem LinkedIn**: o LinkedIn entra como publicação manual.
+
+### Etapa 4b. Perfil das redes (arquivo `05-canais/perfil-redes.md`)
+Com a estratégia aprovada, rode a skill **perfil-redes**: avaliação da bio, nome, destaques, posts fixados, LinkedIn e primeira tela do site a partir dos prints do Bloco F do diagnóstico (peça os que faltarem), propostas para o responsável escolher e as capas dos destaques e o banner na marca. Se o responsável preferir, marque como pendente e siga; a skill pode ser chamada depois a qualquer momento.
 
 ### Etapa 5. Plano trimestral (arquivo `01-plano/plano-AAAA-Tn.md`)
 - Renomeie o modelo para o trimestre corrente (ex.: `plano-2026-T4.md`).
@@ -141,6 +145,8 @@ Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça
 - [ ] `compliance.md` preenchido ou marcado "validar com o responsável"
 - [ ] `diagnostico.md` com objetivo, jogo, modelo de crescimento e notas dos 4 pilares
 - [ ] Estratégia com pilar de crescimento validado, pilares de conteúdo, funil, metas com valor atual e cadência
+- [ ] Prints das bios e do site guardados e transcritos (diagnóstico, seção F)
+- [ ] Perfil das redes avaliado e mudanças aprovadas (`05-canais/perfil-redes.md`), ou marcado como pendente
 - [ ] Plano do trimestre com os 3 meses preenchidos
 - [ ] `estilo-video.md` com 2 ou 3 referências de motion graphics, tabela de regras aprovada e amostra de estilo aprovada (ou marcada como pendente)
 - [ ] Registro iniciado (Planilha Google com link ou CSV), histórico importado com gancho e ângulo, plano do trimestre na aba plano

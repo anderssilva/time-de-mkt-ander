@@ -9,6 +9,7 @@ Uso (de dentro da pasta da empresa):
   fotos        00-contexto/fotos                    (fotos reais de pessoas, bastidores, eventos)
   documentos   00-contexto/materiais/documentos     (apresentações, PDFs, textos, planilhas)
   redes        00-contexto/materiais/redes          (exportações e capturas das redes sociais)
+  perfis       00-contexto/materiais/perfis         (prints das bios e perfis das redes e do site)
   design       00-contexto/referencias-design       (referências de estilo, DESIGN.md)
   video-ref    00-contexto/referencias-video        (vídeos de referência, gravações de tela)
   trilhas      00-contexto/materiais/trilhas        (músicas e efeitos licenciados)
@@ -26,6 +27,7 @@ ATALHOS = {
     "fotos": "00-contexto/fotos",
     "documentos": "00-contexto/materiais/documentos",
     "redes": "00-contexto/materiais/redes",
+    "perfis": "00-contexto/materiais/perfis",
     "design": "00-contexto/referencias-design",
     "video-ref": "00-contexto/referencias-video",
     "trilhas": "00-contexto/materiais/trilhas",

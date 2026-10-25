@@ -14,6 +14,7 @@
 | Foto real de pessoas, bastidores, eventos | `fotos` |
 | Apresentação, PDF, texto, planilha | `documentos` |
 | Exportação ou captura das redes sociais | `redes` |
+| Print de bio, perfil ou topo do site | `perfis` |
 | Referência de estilo, DESIGN.md | `design` |
 | Vídeo de referência, gravação de tela de referência | `video-ref` |
 | Música ou efeito sonoro licenciado | `trilhas` |

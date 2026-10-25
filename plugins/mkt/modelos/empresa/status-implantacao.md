@@ -11,6 +11,7 @@ Versão do modelo: [x.y.z]  (versão do plugin mkt usada para criar ou atualizar
 | 2. Briefing (contexto-ia.md) | pendente | | |
 | 3. Identidade (design, estilo de vídeo, tom, provas, compliance, fotos) | pendente | | |
 | 4. Estratégia | pendente | | |
+| 4b. Perfil das redes | pendente | | |
 | 5. Plano trimestral | pendente | | |
 | 6. Registro e histórico | pendente | | |
 | 7. Ferramentas e rotinas | pendente | | |
