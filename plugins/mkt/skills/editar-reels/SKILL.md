@@ -9,6 +9,8 @@ description: Edita vídeos curtos verticais (Reels, TikTok, Shorts, anúncios) d
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 Edição de vídeo curto vertical (9:16) com apresentador. O objetivo é uma peça que prenda nos primeiros segundos, prove o que é dito com material real, seja legível no celular e termine numa chamada para ação clara, sem nunca cobrir o rosto e sem cortar o que a pessoa disse.
 
 Por padrão: **uma única versão**, na **duração natural da fala**, **sem mexer na cor**.
@@ -156,6 +158,7 @@ Localize na pasta da peça e pergunte só o que faltar: takes brutos, roteiro ap
 36. Na entrega: duração real, volume (LUFS), o que mudou, o que ficou fora das regras e por quê, o que
     conferir no preview da plataforma. Mantenha versões anteriores com sufixo (v1, v2…). Se útil, entregue
     um `.srt` gerado do tempo das palavras.
+    **Capa do Reels:** entregue `video-final/Pnnn-capa.png` (1080 × 1920) com o gancho e o rosto dentro da janela central 1080 × 1440 (3:4), que é o que aparece na grade do perfil; nada importante nos 240 px de cima e de baixo. Regras em `${CLAUDE_PLUGIN_ROOT}/referencias/formatos-redes.md`.
 37. **Reprodutível:** cortes num arquivo de dados (`cortes.json`) e visual gerado por script, para que
     ajustes de texto, tempo e layout não exijam refazer do zero.
 

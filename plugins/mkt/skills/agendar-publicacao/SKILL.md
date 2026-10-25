@@ -1,6 +1,6 @@
 ---
 name: agendar-publicacao
-description: Agenda no Metricool as peças aprovadas de uma empresa (status "pronto") e mantém o registro atualizado, preparando a publicação manual no LinkedIn quando necessário. Use quando o usuário pedir "agenda as peças", "programa as publicações", "sobe no Metricool", "marca como publicado", ou quando a skill rodar-semana-marketing chegar à etapa de agendamento. Nunca agenda nada sem confirmação explícita.
+description: Agenda ou publica as peças aprovadas de uma empresa (status "pronto") pelo Metricool ou, sem ele, pelo Chrome com as contas do Instagram e do LinkedIn já logadas; marca os donos e pessoas da lista de marcações, prepara as mensagens de recompartilhamento e mantém o registro atualizado. Use quando o usuário pedir "agenda as peças", "programa as publicações", "posta no Instagram", "sobe no Metricool", "marca como publicado", ou quando a skill rodar-semana-marketing chegar à etapa de agendamento. Nunca publica nem agenda nada sem confirmação explícita.
 ---
 
 # Agendar e registrar publicações
@@ -9,11 +9,23 @@ description: Agenda no Metricool as peças aprovadas de uma empresa (status "pro
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é.
 2. Liste as peças prontas: `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" listar . publicacoes status=pronto`.
    Só entram peças com `aprovado_por` e `data_aprovacao` preenchidos e com `revisao-qualidade.md` e `revisao-estrategica.md` aprovados na pasta. Se faltar algo, pare e diga o quê.
 3. Leia `01-plano/rotinas.md` e `01-plano/estrategia.md` (canais e horários).
+
+## Marcações (sempre)
+- Leia `00-contexto/marcacoes.md`. Para cada peça, proponha quem marcar (donos das empresas e pessoas autorizadas, conforme o tema) com o @ de cada rede.
+- Se a lista estiver vazia, peça uma vez: "Quem devo marcar nas publicações? Me passe os donos das empresas e outras pessoas autorizadas, com o @ do Instagram e o perfil do LinkedIn, que eu guardo em `00-contexto/marcacoes.md` para as próximas."
+- Inclua as marcações no resumo da peça para confirmação.
+
+## Qual caminho usar
+1. **Conector do Metricool disponível nesta sessão:** use a seção Metricool.
+2. **Sem Metricool:** use a seção **Publicar pelo Chrome**.
+3. **Sem Metricool e sem Chrome:** gere o pacote manual (fim da seção Metricool).
 
 ## Metricool
 - Verifique se o conector do Metricool está disponível nesta sessão. Liste as marcas e confirme qual é a da empresa. **Nunca agende na marca de outra empresa.**
@@ -24,6 +36,17 @@ description: Agenda no Metricool as peças aprovadas de uma empresa (status "pro
 - **Espere a confirmação do responsável.** Só então agende.
 - Se o conector não aceitar o envio do arquivo de vídeo ou das imagens, crie o rascunho com a legenda e peça ao responsável para anexar a mídia no planejador do Metricool, pelo link retornado.
 - Se não houver conector, gere um pacote por peça (`publicar/` dentro da pasta da peça, com mídia, legenda e horário) e um passo a passo para agendar à mão.
+
+## Publicar pelo Chrome (quando não há Metricool)
+Requer o Claude no Chrome (extensão) ligado e o Chrome aberto.
+1. **Contas logadas:** peça ao responsável para entrar, no próprio Chrome, nas contas da empresa no **Instagram** (de preferência pelo **Meta Business Suite**, que permite agendar Instagram e Facebook) e no **LinkedIn**. O login é sempre dele: nunca digite senha nem códigos.
+2. **Uma peça por vez:** abra a área de criação, envie a mídia (lâminas na ordem ou vídeo e capa), cole a legenda aprovada, acrescente as marcações e escolha publicar agora ou agendar (o LinkedIn e o Meta Business Suite permitem agendar).
+3. **Pare antes do botão final.** Mostre um resumo (rede, mídia, início da legenda, marcações, data e hora) e só clique em **Publicar** ou **Agendar** depois do "pode publicar" do responsável, peça por peça.
+4. Se a página pedir algo inesperado (verificação, novo login, aceite de termos), pare e peça para o responsável resolver.
+5. Ao terminar, copie o link do post ou do agendamento para o registro.
+
+## Recompartilhamento
+Depois de publicado, prepare em `publicar/recompartilhar.md` (na pasta da peça) uma mensagem curta e pronta para cada dono da lista de marcações, com o link do post e o pedido de recompartilhamento. O envio é feito pelo responsável; não envie mensagens em nome dele.
 
 ## LinkedIn (publicação manual no plano gratuito)
 - Gere `linkedin.md` na pasta da peça (texto do derivado aprovado) e indique o arquivo de mídia (imagem ou PDF do carrossel).

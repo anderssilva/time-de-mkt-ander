@@ -152,6 +152,8 @@ O time cria as pastas do marketing **direto nessa pasta** (`00-contexto/`, `01-p
 
 Para trabalhar com a empresa depois, abra sempre o Claude Code **dentro da pasta dela**. Cada empresa tem a sua pasta.
 
+**Pasta sempre organizada.** Na raiz da pasta da empresa ficam só o `LEIA-ME.md`, o `status-implantacao.md` e as pastas numeradas. Tudo de uma peça (texto, lâminas, vídeo, capa, legenda) fica na pasta da peça. No início e no fim de cada semana, o time confere se há algo fora do lugar e propõe onde guardar.
+
 **Arquivos enviados no chat ficam na pasta do projeto.** Todo logo, manual, apresentação, foto, exportação das redes, trilha ou vídeo que você mandar no chat é copiado para a pasta certa da empresa (por exemplo, `00-contexto/materiais/marca/` ou a pasta da peça) e anotado em `00-contexto/materiais/indice.md`. O original fica onde estava, e nada é sobrescrito.
 
 ## A semana na prática
@@ -244,10 +246,20 @@ claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de
 
 O que mudou em cada versão, e se alguma exige um passo extra, está no [CHANGELOG.md](CHANGELOG.md).
 
+## Formatos das redes
+Conferidos em outubro de 2026 (detalhes em `plugins/mkt/referencias/formatos-redes.md`):
+- **Carrossel e post no Instagram:** 1080 × 1350 (4:5). A grade do perfil mostra um retângulo 3:4 e corta cerca de 34 px de cada lado, por isso nada importante fica perto das laterais. O 3:4 inteiro (1080 × 1440) só funciona publicando pelo aplicativo.
+- **Reels e Stories:** 1080 × 1920 (9:16), sem texto nas faixas dos botões do aplicativo.
+- **Capa de Reels:** 1080 × 1920, com título e rosto dentro da janela central 1080 × 1440, que é o que aparece na grade (o recorte quadrado deixou de existir em 2025).
+
+## Marcações e recompartilhamento
+Na implantação, você informa os **donos das empresas** e as pessoas autorizadas a serem marcadas, com o @ do Instagram e o perfil do LinkedIn (`00-contexto/marcacoes.md`). Em cada publicação o time propõe as marcações e, depois de publicar, deixa pronta uma mensagem para cada dono pedindo o recompartilhamento, que você envia.
+
 ## Ferramentas externas
 | Ferramenta | Uso | Plano |
 |---|---|---|
 | Metricool | Agendamento e métricas | Gratuito (1 marca por conta; sem LinkedIn) |
+| Chrome com o Claude no Chrome | Publicar e agendar sem Metricool, com as contas do Instagram (ou Meta Business Suite) e do LinkedIn logadas por você. O Claude prepara e só publica com o seu ok em cada peça | Gratuito |
 | Publora ou similar | Agendamento do LinkedIn | Gratuito |
 | Google Planilhas | Registro com link (opcional) | Conector do Claude |
 | Windsor.ai | Métricas de todas as redes e concorrentes *(em avaliação)* | Pago a partir do plano básico |

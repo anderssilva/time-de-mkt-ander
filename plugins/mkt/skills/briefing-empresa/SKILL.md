@@ -9,6 +9,8 @@ description: Conduz o briefing (levantamento de contexto) de uma empresa ANTES d
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Objetivo
 
 Antes de escrever qualquer texto, roteiro, post, e-mail ou estratégia para uma empresa, a IA precisa conhecê-la. Esta skill transforma a conversa com o usuário em um arquivo `contexto-ia.md` completo, no mesmo formato do formulário `briefing-empresa.html`. Esse arquivo vira a base de todo o trabalho seguinte.

@@ -9,6 +9,8 @@ description: Conduz a semana de marketing de uma empresa do começo ao fim, na o
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Passo 0. Atualização do time e da pasta (sempre, no início de cada semana)
 Faça sempre, antes de qualquer outra coisa, e sem pular mesmo que o usuário peça pressa (leva menos de um minuto):
 1. **Versão:** `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py"`. Ele consulta o GitHub na hora.
@@ -21,7 +23,8 @@ Faça sempre, antes de qualquer outra coisa, e sem pular mesmo que o usuário pe
 2. **Pasta da empresa:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" .` para ver se a estrutura da pasta está igual à do modelo da versão instalada.
    - Se houver mudanças, **aplique você mesmo** com `--aplicar`: o programa cria pastas, copia arquivos novos, move o que mudou de lugar e acrescenta colunas no registro, sem apagar nem sobrescrever nada, e anota tudo no `status-implantacao.md`.
    - Mostre ao usuário a lista do que foi feito.
-3. **Registro:** se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
+3. **Organização:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/organizar-pasta.py" .`. Se houver arquivos soltos na raiz, mostre a lista com os destinos sugeridos e, com o ok, mova cada um (`--mover`). Repita no fim da sessão.
+4. **Registro:** se `registro/fonte.json` indicar Planilha Google, faça o passo **Baixar** de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` e, ao fim da sessão, o passo **Enviar**.
 
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Se a implantação não estiver concluída (`status-implantacao.md`), ofereça continuar com a skill estruturar-marketing-empresa.

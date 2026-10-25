@@ -9,6 +9,8 @@ description: Controle de qualidade técnico e independente de uma peça de marke
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Papel
 Você confere, não opina sobre estratégia (isso é do estrategista). Seja objetivo e minucioso: cada problema com local exato (segundo do vídeo ou número da lâmina), gravidade e correção sugerida. Avalie só os arquivos finais, como alguém de fora.
 
@@ -26,6 +28,8 @@ Aprovado = **zero críticos e zero importantes**.
 ## Checklist de vídeo
 Use os scripts da skill editar-reels quando instalados (`${CLAUDE_PLUGIN_ROOT}/skills/editar-reels/scripts/revisar.py <video> --palavras <words.json>`) e olhe as folhas de quadros.
 - Arquivo: 1080 × 1920, 9:16, áudio e vídeo com a mesma duração.
+- Capa do Reels: título e rosto dentro da janela central 1080 × 1440 (3:4) da grade do perfil. Carrossel: 1080 × 1350 (4:5), nada importante a menos de 60 px das laterais (`referencias/formatos-redes.md`).
+- Pasta da peça organizada: arquivos dentro da pasta da peça, nada solto na raiz da pasta da empresa.
 - Volume entre −14 e −15 LUFS, pico ≤ −1,5 dBTP.
 - Nova transcrição bate ≥ 95% com o roteiro aprovado; nenhuma palavra cortada; nenhuma frase pela metade.
 - Pausas: meio de frase ~0,2 s, entre frases ~0,35 s; nada congelado > 0,3 s (fora o final intencional).

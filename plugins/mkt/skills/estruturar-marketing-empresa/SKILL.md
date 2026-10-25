@@ -9,6 +9,8 @@ description: Implanta o departamento de marketing de uma empresa, do diagnóstic
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Objetivo
 
 Deixar uma empresa com o marketing pronto para rodar toda semana: pasta organizada, contexto completo, identidade visual e verbal, estratégia, plano do trimestre, registro do que já foi publicado e rotinas definidas. Ao final, o responsável pela empresa (sócio ou CEO) consegue operar sozinho seguindo o `LEIA-ME.md` da pasta.
@@ -118,7 +120,9 @@ Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça
 ### Etapa 7. Ferramentas e rotinas (arquivo `01-plano/rotinas.md`)
 1. **Metricool:** confirme que a conta está no e-mail da empresa (não no pessoal de um sócio), que a marca foi criada e quais redes estão conectadas. Se o conector do Metricool estiver disponível, teste listando as marcas.
 2. **Canva:** confirme se será usado para ajustes manuais dos carrosséis.
-3. **Rotinas:** ajuste a tabela do modelo (dias, horários, quem aprova). Pergunte quais devem virar tarefa agendada. Crie tarefas agendadas **somente** com aprovação explícita, e explique que, para ler a pasta do computador, o computador precisa estar ligado com o app do Claude aberto.
+3. **Sem Metricool por enquanto:** sugira publicar pelo Chrome. Peça ao responsável para deixar logadas no Chrome as contas da empresa no **Instagram** (ou no Meta Business Suite) e no **LinkedIn**, e para ligar o Claude no Chrome. O login é sempre dele; o Claude prepara as publicações e só publica com o ok de cada uma.
+4. **Marcações:** peça a lista dos **donos das empresas** e de outras pessoas autorizadas a serem marcadas, com o @ do Instagram e o perfil do LinkedIn, e grave em `00-contexto/marcacoes.md`. Ela é usada em toda publicação e nos pedidos de recompartilhamento.
+5. **Rotinas:** ajuste a tabela do modelo (dias, horários, quem aprova). Pergunte quais devem virar tarefa agendada. Crie tarefas agendadas **somente** com aprovação explícita, e explique que, para ler a pasta do computador, o computador precisa estar ligado com o app do Claude aberto.
 
 ### Etapa 8. Passagem e validação
 1. Preencha o `LEIA-ME.md` da empresa: responsável, datas, links, a semana típica e os pedidos de exemplo.
@@ -138,7 +142,8 @@ Depois, proponha, com base no diagnóstico, no briefing e no pilar foco, e peça
 - [ ] Plano do trimestre com os 3 meses preenchidos
 - [ ] `estilo-video.md` com 2 ou 3 referências de motion graphics, tabela de regras aprovada e amostra de estilo aprovada (ou marcada como pendente)
 - [ ] Registro iniciado (Planilha Google com link ou CSV), histórico importado com gancho e ângulo, plano do trimestre na aba plano
-- [ ] Metricool na conta da empresa, marca criada, redes conectadas
+- [ ] Metricool na conta da empresa, marca criada, redes conectadas (ou, sem Metricool, Instagram e LinkedIn logados no Chrome)
+- [ ] `marcacoes.md` com os donos das empresas e os @ de cada rede
 - [ ] Rotinas definidas (e agendadas, se aprovado)
 - [ ] `LEIA-ME.md` pronto para o responsável operar sozinho
 

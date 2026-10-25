@@ -79,7 +79,8 @@ def main():
     if os.path.exists(os.path.join(proj, "status-implantacao.md")) or os.path.isdir(os.path.join(proj, "00-contexto")):
         linhas.append("Esta pasta é a pasta de marketing de uma empresa. Todo arquivo que o usuário enviar no chat deve ser "
                       "guardado nela, na subpasta certa, com o programa guardar-arquivo.py do plugin mkt "
-                      "(regras em referencias/arquivos-recebidos.md do plugin).")
+                      "(regras em referencias/arquivos-recebidos.md do plugin). Nenhum arquivo fica solto na raiz da pasta: cada "
+                      "arquivo vai direto para o lugar certo (referencias/organizacao-pasta.md do plugin).")
     try:
         r = subprocess.run([sys.executable, os.path.join(AQUI, "verificar-atualizacao.py"), "--rapido"],
                            capture_output=True, text=True, timeout=25)

@@ -9,6 +9,8 @@ description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa, do 
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn, status "aprovado"). Pasta da peça: `03-producao/AAAA-MM/Sxx_Pnnn_tema/`.
 2. Leia: `contexto-ia.md`, `design.md`, `tom-de-voz.md`, `provas.md`, `compliance.md`, `fotos/fotos.md`, `01-plano/estrategia.md` e as melhorias incorporadas.
@@ -53,6 +55,7 @@ Na prática: Item da pauta: "Aprovar ou não..."
 Peça a aprovação por número ("ok", ou "lâmina 4: troque o exemplo"). Ao ajustar, **reescreva só as lâminas citadas** e mostre só elas; não repita o carrossel inteiro. Repita até tudo estar aprovado.
 
 Regras do texto:
+- **Formato:** 1080 × 1350 (4:5), o padrão que funciona no aplicativo, no navegador e nos agendadores. A grade do perfil mostra só o retângulo central 3:4 (corta ~34 px de cada lado): nada importante a menos de 60 px das laterais. Detalhes e a opção 3:4 em `${CLAUDE_PLUGIN_ROOT}/referencias/formatos-redes.md`.
 - **7 a 10 lâminas.** Estrutura padrão: capa → 1 lâmina de problema → 3 a 5 lâminas de ação → resumo em checklist → chamada final.
 - **Capa:** gancho com até 8 palavras, concreto, legível em miniatura. Subtítulo curto com a promessa.
 - **Uma ideia por lâmina.** Lâminas comuns até ~35 palavras; lâminas de ação até ~60 (título + passos + exemplo).
@@ -93,6 +96,7 @@ Se ainda não existir `00-contexto/carrossel-marca.json`, crie a partir do `desi
 - Caminhos relativos ao próprio arquivo (ex.: `logos/logo-colorido.png`).
 - Sem logo para fundo escuro? Avise o responsável e peça a versão branca oficial. Não invente logo.
 - Mostre ao responsável uma lâmina de teste antes de seguir. Esse arquivo garante que todos os carrosséis da empresa saiam iguais.
+- **Sugira o modo Design do Claude para montar o padrão.** Antes de criar o `carrossel-marca.json` pela primeira vez (ou quando a identidade mudar), diga: "Para deixar o padrão dos carrosséis bem acabado e dentro da marca, sugiro montar as lâminas-modelo no **modo Design** do Claude (no aplicativo do Claude, crie um design de carrossel 1080 × 1350 com capa, lâmina de conteúdo, lâmina de ação, checklist e chamada final, usando o `design.md` da empresa). Quando aprovar, me mande o link ou as imagens exportadas e eu replico o padrão aqui." Com o modelo aprovado, ajuste cores, fonte, tamanhos e espaçamentos do `carrossel-marca.json` para ficar igual e confira com a prova visual (Passo 4). Se o usuário preferir não usar o modo Design, siga direto com a lâmina de teste.
 
 ## Passo 4. Gerar as lâminas
 1. Requisitos (confira; se faltar, peça autorização antes de instalar): Python 3, `pip install playwright pillow` e `python3 -m playwright install chromium`.

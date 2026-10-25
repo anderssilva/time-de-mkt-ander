@@ -44,6 +44,7 @@ Confirme **linha por linha** (sim, não ou ajustar):
 Regras que não mudam: logo e cores oficiais da empresa vêm antes de qualquer referência; contraste legível (o gerador de carrossel confere); nada copiado de marca de terceiros (logos, nomes, ilustrações próprias).
 
 ## Passo 4. Amostra visual
+Sugira montar as lâminas-modelo no **modo Design** do Claude (capa, conteúdo, ação, checklist e chamada final, 1080 × 1350), a partir das regras aprovadas no passo 3. É o jeito mais fácil de deixar tudo dentro do padrão antes de fixar o gerador. Com o modelo aprovado (link ou imagens exportadas, guardados em `00-contexto/referencias-design/`), siga:
 1. Monte o `00-contexto/carrossel-marca.json` com as cores, a fonte e os logos aprovados (formato no cabeçalho do `renderizar.py` da skill carrossel).
 2. Gere uma prova com duas lâminas de exemplo, uma capa e uma lâmina de ação, usando `renderizar.py --laminas 1,2`.
 3. Mostre ao usuário e ajuste até aprovar.

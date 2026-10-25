@@ -9,6 +9,8 @@ description: Escreve o roteiro de Reels, TikTok ou Shorts (30 a 90 segundos) de 
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Identifique a peça (Pnnn). A peça precisa estar com status "aprovado" em `registro/publicacoes.csv`; se não estiver, pergunte se deve seguir mesmo assim.
 2. Leia: `contexto-ia.md`, `tom-de-voz.md`, `estilo-video.md`, `provas.md`, `compliance.md`, `01-plano/estrategia.md` (funil e CTA) e as melhorias incorporadas.

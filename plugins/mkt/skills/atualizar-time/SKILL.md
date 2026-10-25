@@ -9,6 +9,8 @@ description: Confere e aplica a atualização do Time de Marketing (o plugin mkt
 
 > **Arquivos recebidos:** todo arquivo que o usuário enviar no chat é guardado na pasta da empresa antes de ser usado, com `scripts/guardar-arquivo.py` (veja `${CLAUDE_PLUGIN_ROOT}/referencias/arquivos-recebidos.md`).
 
+> **Pasta organizada:** nada fica solto na raiz da pasta da empresa; salve cada arquivo direto no lugar certo (tudo de uma peça vai na pasta da peça). Veja `${CLAUDE_PLUGIN_ROOT}/referencias/organizacao-pasta.md`.
+
 ## Configurações iniciais (conferir sempre)
 1. **Idioma:** rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/inicio-sessao.py" --ver-idioma`.
    Se não estiver em português, explique: "Vou configurar o Claude Code para responder sempre em português, em todas as sessões deste computador." Com o ok, rode o mesmo programa com `--configurar-idioma`. Vale a partir da próxima sessão.

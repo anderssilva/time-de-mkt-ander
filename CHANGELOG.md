@@ -2,6 +2,15 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.6.0 — 25/10/2026
+**Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o time cria `00-contexto/marcacoes.md` nas empresas e propõe organizar o que estiver solto na raiz.
+
+- **Formatos atualizados do Instagram:** novo `referencias/formatos-redes.md`. Carrossel segue em 1080 × 1350 (4:5), com a regra da grade 3:4 do perfil (nada importante a menos de 60 px das laterais); capa de Reels com título e rosto na janela central 1080 × 1440 (o recorte 1:1 saiu do modelo); opção 3:4 só para publicação pelo aplicativo. O `design.md`, a edição de vídeo (agora entrega a capa) e o controle de qualidade seguem essas regras.
+- **Modo Design para o padrão dos carrosséis:** ao montar o padrão visual pela primeira vez, o time sugere criar as lâminas-modelo no modo Design do Claude e depois replica o padrão no gerador.
+- **Pasta sempre organizada:** regra em todos os comandos e cargos, novo `referencias/organizacao-pasta.md` e novo `scripts/organizar-pasta.py`, que lista o que está solto na raiz, sugere o destino e move com segurança (nunca sobrescreve; anota no índice de materiais). Roda no início e no fim de cada semana.
+- **Publicar pelo Chrome sem Metricool:** com as contas do Instagram (ou Meta Business Suite) e do LinkedIn logadas pelo responsável, o Claude prepara cada publicação e só publica ou agenda depois do ok de cada peça.
+- **Marcações e recompartilhamento:** novo `00-contexto/marcacoes.md` com os donos das empresas e os @ de cada rede; as publicações já saem com as marcações, e o time prepara as mensagens de recompartilhamento para o responsável enviar.
+
 ## 1.5.0 — 23/10/2026
 **Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o próprio time confere e ajusta as pastas das empresas (cria `00-contexto/materiais/`).
 

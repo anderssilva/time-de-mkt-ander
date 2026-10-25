@@ -46,13 +46,15 @@ Nunca: distorcer, recolorir, aplicar sombra, colocar sobre fundo sem contraste.
 - Proibido: 
 
 ## 5. Formatos padrão
+Regras completas e atualizadas em `referencias/formatos-redes.md` do plugin (conferir na revisão trimestral).
+
 | Peça | Tamanho | Observação |
 |---|---|---|
-| Carrossel | 1080 × 1350 | Capa com gancho em até 8 palavras |
-| Post único | 1080 × 1350 | |
-| Story | 1080 × 1920 | Área segura: 250 px em cima e embaixo |
-| Capa de Reels | 1080 × 1920 | Título legível no recorte 1:1 do perfil |
-| LinkedIn | 1200 × 1500 ou documento PDF | |
+| Carrossel e post único (Instagram) | 1080 × 1350 (4:5) | Capa com gancho em até 8 palavras. A grade do perfil corta ~34 px de cada lado: nada importante a menos de 60 px das laterais |
+| Story | 1080 × 1920 (9:16) | Livres: 14% de cima e 35% de baixo |
+| Reels | 1080 × 1920 (9:16) | Livres: 14% de cima, 35% de baixo e 6% das laterais |
+| Capa de Reels | 1080 × 1920 (9:16) | Título e rosto dentro da janela central 1080 × 1440 (3:4), que é o que aparece na grade do perfil |
+| LinkedIn | Documento PDF das lâminas, ou imagem 1080 × 1350 / 1200 × 1500 | |
 
 ## 6. Fotos
 - Estilo: (natural, corporativo, bastidores…)
