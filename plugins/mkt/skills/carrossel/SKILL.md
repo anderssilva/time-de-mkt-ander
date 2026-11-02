@@ -13,6 +13,8 @@ description: Cria carrosséis para Instagram e LinkedIn de qualquer empresa, do 
 
 > **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
+> **Atualização (início de toda atividade):** antes de começar, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --rapido --intervalo 1` (rápido, silencioso quando está tudo em dia). Se avisar versão nova: mostre o que mudou e pergunte uma vez se atualiza agora. Com o ok, rode o mesmo programa com `--aplicar`, peça ao usuário para digitar `/reload-plugins` e dizer "continua", rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` (ajusta a pasta da empresa sem apagar nada) e retome a atividade. Se ele preferir depois, rode com `--adiar 12` e siga. Se você é um cargo (agente separado), pule esta verificação: o gerente já fez.
+
 > **Quem executa:** na conversa principal (gerente), passe o trabalho ao cargo `redator` (texto) e `designer` (lâminas), que roda num modelo mais leve, e mostre ao responsável o que voltar (veja `${CLAUDE_PLUGIN_ROOT}/referencias/orquestracao.md`). Se você já é esse cargo, execute.
 
 ## Antes de começar
@@ -56,6 +58,8 @@ Título: Envie tudo *48 horas antes*
 Passos: Pauta com no máximo 5 itens... / Números e anexos no mesmo envio / ...
 Na prática: Item da pauta: "Aprovar ou não..."
 ```
+Antes de mostrar o texto: dê nota às opções de título da capa com `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/gancho.py" "<opção 1>" "<opção 2>" "<opção 3>"` (fórmulas em `${CLAUDE_PLUGIN_ROOT}/referencias/ganchos.md`) e passe o texto pelo `scripts/humanizar.py` (nota mínima 80).
+
 Peça a aprovação por número ("ok", ou "lâmina 4: troque o exemplo"). Ao ajustar, **reescreva só as lâminas citadas** e mostre só elas; não repita o carrossel inteiro. Repita até tudo estar aprovado.
 
 Regras do texto:
@@ -80,7 +84,7 @@ Com tudo aprovado, grave o `texto.md` na pasta da peça (é ele que o controle d
 ## Legenda do post
 ## Derivado para LinkedIn (texto do post que acompanha o PDF)
 ```
-A legenda e o derivado para LinkedIn são escritos **depois** do texto das lâminas aprovado e validados numa mensagem só.
+A legenda e o derivado para LinkedIn são escritos **depois** do texto das lâminas aprovado e validados numa mensagem só. Confira a legenda com `scripts/legenda.py` antes de mostrar.
 
 ## Passo 3. Identidade da empresa (uma vez por empresa)
 Se ainda não existir `00-contexto/carrossel-marca.json`, crie a partir do `design.md`:

@@ -6,6 +6,9 @@ Uso:
   python3 verificar-atualizacao.py                     confere agora e mostra o resultado
   python3 verificar-atualizacao.py --rapido            para o início de sessão: no máximo 1 consulta a cada 20 h,
                                                        e só escreve algo se houver novidade
+  python3 verificar-atualizacao.py --rapido --intervalo 1
+                                                       no início de cada atividade: consulta no máximo 1 vez por hora
+  python3 verificar-atualizacao.py --adiar 12          o usuário preferiu atualizar depois: não avisa de novo por 12 h
   python3 verificar-atualizacao.py --aplicar           atualiza o catálogo e o plugin (pede /reload-plugins depois)
   python3 verificar-atualizacao.py --empresa <pasta da empresa>   ("." para a pasta atual)
                                                        também confere a pasta da empresa contra o modelo
@@ -170,13 +173,24 @@ def main():
     empresa = a[a.index("--empresa") + 1] if "--empresa" in a and a.index("--empresa") + 1 < len(a) else None
     local = versao_local()
     cache = ler_cache()
+    intervalo = float(a[a.index("--intervalo") + 1]) if "--intervalo" in a else INTERVALO_H
 
-    if rapido and time.time() - cache.get("quando", 0) < INTERVALO_H * 3600:
+    if "--adiar" in a:
+        horas = float(a[a.index("--adiar") + 1]) if a.index("--adiar") + 1 < len(a) else 12
+        cache["adiado_ate"] = time.time() + horas * 3600
+        gravar_cache(cache)
+        print(f"Combinado: não aviso de novo sobre a atualização nas próximas {int(horas)} horas.")
+        return
+    if rapido and time.time() < cache.get("adiado_ate", 0):
+        return
+
+    if rapido and time.time() - cache.get("quando", 0) < intervalo * 3600:
         remota, hist = cache.get("remota"), cache.get("hist", "")
     else:
         remota, hist = versao_remota()
         if remota:
-            gravar_cache({"quando": time.time(), "remota": remota, "hist": hist})
+            cache.update({"quando": time.time(), "remota": remota, "hist": hist})
+            gravar_cache(cache)
 
     cmd_shell, cmd_sessao = comandos()
     if not remota:

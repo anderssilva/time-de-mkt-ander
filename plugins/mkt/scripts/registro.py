@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Registro de marketing por empresa (quatro tabelas: publicacoes, ideias, plano, melhorias).
+"""Registro de marketing por empresa (cinco tabelas: publicacoes, ideias, plano, melhorias, contatos).
 
 Duas formas de guardar, escolhidas na implantação (arquivo registro/fonte.json):
 - "csv" (padrão): os CSV em <pasta da empresa>/registro/ são a fonte oficial.
@@ -8,7 +8,7 @@ Duas formas de guardar, escolhidas na implantação (arquivo registro/fonte.json
 
 Uso (de dentro da pasta da empresa, onde o caminho é "."; ou passando o caminho da pasta):
   python3 registro.py iniciar   <pasta>
-  python3 registro.py proximo   <pasta> publicacoes|ideias|melhorias
+  python3 registro.py proximo   <pasta> publicacoes|ideias|melhorias|contatos
   python3 registro.py adicionar <pasta> <tabela> '{"campo": "valor", ...}'
   python3 registro.py atualizar <pasta> <tabela> <id> '{"campo": "valor", ...}'
   python3 registro.py listar    <pasta> <tabela> [campo=valor ...]
@@ -44,10 +44,13 @@ TABELAS = {
     "plano": (None, ["trimestre", "mes", "tema", "pilar_foco", "peca_mae", "meta_entrada", "meta_saida", "resultado"]),
     "melhorias": ("M", ["id", "data", "peca", "origem", "problema", "causa", "regra_proposta", "onde_aplicar",
                         "ocorrencias", "status", "data_incorporacao"]),
+    "contatos": ("C", ["id", "data", "canal", "nome", "usuario", "origem_peca", "tipo", "mensagem", "status",
+                       "proximo_passo", "data_proximo", "observacoes"]),
 }
 STATUS = {
     "publicacoes": {"ideia", "aprovado", "em produção", "em revisão", "pronto", "agendado", "publicado", "descartado"},
     "melhorias": {"proposta", "aprovada", "incorporada", "recusada"},
+    "contatos": {"novo", "respondido", "em conversa", "oportunidade", "cliente", "descartado"},
 }
 
 
@@ -94,7 +97,7 @@ def avisar_espelho(emp):
     if idade is None or idade > ESPELHO_VALIDO_MIN:
         quando = "nunca" if idade is None else f"há {int(idade)} min"
         print(f"ATENÇÃO: esta empresa usa Planilha Google e o espelho local foi atualizado {quando}. "
-              f"Baixe as quatro abas antes de confiar nestes dados (passo 'Baixar' em {REF_PLANILHAS}).", file=sys.stderr)
+              f"Baixe as abas da planilha antes de confiar nestes dados (passo 'Baixar' em {REF_PLANILHAS}).", file=sys.stderr)
 
 
 def registrar_pendente(emp, tab, acao, linha):
@@ -231,6 +234,9 @@ def adicionar(emp, tab, dados):
             sys.exit(f"Id {dados['id']} já existe em {tab}.")
     if tab == "ideias":
         dados.setdefault("data", date.today().isoformat())
+    if tab == "contatos":
+        dados.setdefault("data", date.today().isoformat())
+        dados.setdefault("status", "novo")
     if tab == "melhorias":
         dados.setdefault("data", date.today().isoformat())
         dados.setdefault("status", "proposta")

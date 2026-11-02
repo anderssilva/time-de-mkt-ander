@@ -2,6 +2,23 @@
 
 Como atualizar (qualquer versão): no Claude Code, peça "atualiza o time de marketing" (`/mkt:atualizar-time`) e depois digite `/reload-plugins`. Pelo Terminal: `claude plugin marketplace update time-de-mkt && claude plugin update mkt@time-de-mkt`.
 
+## 1.9.0 — 02/11/2026
+**Como atualizar:** pelo jeito normal acima. Com o ok, o time ajusta as pastas das empresas sozinho (cria `05-canais/relacionamento.md` e a tabela `registro/contatos.csv`). No modo Planilha Google, acrescente a aba `contatos` (o time orienta).
+
+- **Atualização no início de toda atividade:** todos os comandos conferem a versão antes de começar (no máximo uma consulta por hora, silenciosa quando está em dia). Se houver versão nova, mostram o que mudou e perguntam uma vez; com o ok, atualizam e ajustam a pasta da empresa. Se o usuário preferir depois, não perguntam de novo por 12 horas (`verificar-atualizacao.py --adiar 12`). Cargos (agentes) não repetem a verificação.
+- **Ganchos com nota:** `scripts/gancho.py` (tamanho, concreto, risco, início, conversa, com veto a saudação e pedido de atenção) e 24 fórmulas de gancho em português (`referencias/ganchos.md`). Roteiros e capas de carrossel sempre com 3 opções e nota.
+- **Folha de tempo do roteiro:** `scripts/tempo-roteiro.py` avisa gancho acima de 3 s, trechos longos, falta de concreto e final que não retoma o gancho. Duração padrão de até 40 s, ajustável pela empresa.
+- **Sem cara de IA:** `scripts/humanizar.py` em português (invisíveis, travessões, palavras e estruturas típicas, ritmo), nota mínima 80 antes de qualquer texto chegar ao responsável.
+- **Legenda conferida:** `scripts/legenda.py` mostra o que aparece antes do "... mais" e confere hashtags (até 3), chamada para ação, links e cara de IA.
+- **Perfil com régua de 100 pontos** (`skills/perfil-redes/regua.md`).
+- **Métricas pela própria conta:** `scripts/desempenho.py` (múltiplo sobre a mediana, envios e salvamentos por mil de alcance), usado na leitura de métricas e no radar.
+- **Relacionamento:** nova skill `relacionamento` e cargo `relacionamento` (Sonnet): comentários classificados e respondidos em ordem, mensagens diretas (no máximo dois acompanhamentos), comentários em outros perfis e nova tabela `contatos` no registro.
+- **Stories:** nova skill `stories`, quadro a quadro, com figurinhas e caminho para a mensagem.
+- **Pesquisa do nicho:** nova skill `referencias-nicho`, cargo `pesquisador` (Sonnet) e `scripts/referencias.py` (ordena pelo múltiplo sobre a mediana de cada perfil e identifica a fórmula do gancho).
+- **Reaproveitamento:** nova skill `reaproveitar`: um conteúdo longo vira uma semana de peças independentes.
+- **README** reescrito com as principais entregas de valor e seus atributos, os programas, e o mapa da jornada atualizado.
+- Créditos: ideias adaptadas do projeto instagram-agent-skill (Jake Schincariol, licença MIT).
+
 ## 1.8.0 — 25/10/2026
 **Como atualizar:** pelo jeito normal acima. Na próxima semana planejada, o time cria `05-canais/` nas empresas. Para empresas já implantadas, peça "avalia o perfil das redes" e mande os prints.
 

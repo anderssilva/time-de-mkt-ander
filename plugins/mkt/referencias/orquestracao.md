@@ -8,7 +8,8 @@ Na conversa principal, o Claude é o **gerente de marketing**. Ele não produz a
 | Etapa | Quem executa | O gerente faz |
 |---|---|---|
 | 0. Atualização, organização, planilha | `operador` | Pergunta ao responsável se atualiza; mostra o que mudou |
-| 1. Radar de pautas | o gerente (skill radar-pautas) ou `operador` para a coleta | — |
+| 1. Radar de pautas | o gerente (skill radar-pautas); `pesquisador` para referências do nicho (coleta pelo `assistente-navegador`) | — |
+| Reaproveitamento (quando houver conteúdo-mãe) | `redator` (skill reaproveitar) | Mostra a semana proposta; o responsável escolhe |
 | 2. Seleção | `estrategista-marketing` (modo A) | Mostra as recomendadas; o responsável escolhe |
 | 3. Texto (roteiro ou carrossel) | `redator` (rodada 1: esqueleto; rodada 2: texto completo) | Mostra o texto, recolhe as correções e reenvia ao redator só o que mudar |
 | 5. Edição de vídeo | `editor-video` (fase 1: plano; fase 2: montagem) | Mostra o plano; com o ok, pede a montagem |
@@ -17,6 +18,8 @@ Na conversa principal, o Claude é o **gerente de marketing**. Ele não produz a
 | 7. Revisão final | `estrategista-marketing` (modo B) | Pede o ok final do responsável |
 | 8. Publicação | `assistente-navegador` (ou Metricool) | Mostra o resumo de cada peça e só autoriza o clique final com o ok |
 | Perfil das redes (implantação e trimestre) | `social-media` (avaliação e propostas) e `designer` (artes) | Mostra notas e versões; o responsável escolhe |
+| Stories | `redator` (skill stories) | Mostra a sequência; o responsável publica ou autoriza |
+| Relacionamento (comentários, mensagens, contatos) | `relacionamento`; leitura e envio no Chrome pelo `assistente-navegador` | Mostra as respostas em lote; nada é enviado sem o ok |
 | 9. Métricas | `operador` copia os números; o gerente faz a leitura | — |
 
 ## Como passar uma tarefa

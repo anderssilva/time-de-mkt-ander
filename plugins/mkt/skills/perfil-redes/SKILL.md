@@ -13,6 +13,8 @@ description: Avalia e melhora como a empresa aparece nas redes e no site — nom
 
 > **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
+> **Atualização (início de toda atividade):** antes de começar, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --rapido --intervalo 1` (rápido, silencioso quando está tudo em dia). Se avisar versão nova: mostre o que mudou e pergunte uma vez se atualiza agora. Com o ok, rode o mesmo programa com `--aplicar`, peça ao usuário para digitar `/reload-plugins` e dizer "continua", rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` (ajusta a pasta da empresa sem apagar nada) e retome a atividade. Se ele preferir depois, rode com `--adiar 12` e siga. Se você é um cargo (agente separado), pule esta verificação: o gerente já fez.
+
 > **Quem executa:** na conversa principal (gerente), passe a avaliação e as propostas ao cargo `social-media` (Sonnet) e a geração das artes ao `designer`; mostre ao responsável o que voltar. Se você já é esse cargo, execute.
 
 ## Quando usar
@@ -26,7 +28,9 @@ description: Avalia e melhora como a empresa aparece nas redes e no site — nom
 3. Pergunte, se ainda não souber: 2 ou 3 perfis de concorrentes ou de referência para comparar (o @ ou o link).
 4. Se o usuário preferir, o `assistente-navegador` pode abrir os perfis **só para ler** e tirar os prints (sem alterar nada).
 
-## Passo 2. Avaliar (nota de 0 a 10 por item, com o porquê em uma linha)
+## Passo 2. Avaliar
+**Instagram:** use a **régua de 100 pontos** em `regua.md` (nesta pasta da skill): nota por item com o porquê em uma linha e a nota total. Os itens abaixo resumem o que conferir.
+
 **Instagram**
 | Item | O que conferir |
 |---|---|
@@ -53,7 +57,8 @@ description: Avalia e melhora como a empresa aparece nas redes e no site — nom
 Compare com os concorrentes indicados e aponte os 3 pontos que mais pesam (do maior para o menor impacto).
 
 ## Passo 3. Propor (o responsável escolhe)
-- **2 ou 3 versões** de nome pesquisável, bio e título do LinkedIn, no tom de voz da empresa, com contagem de caracteres, e só com provas que estejam em `provas.md`. Respeite `compliance.md`.
+- **Na ordem do que mais rende pontos na régua** (o que perdeu mais pontos primeiro).
+- **2 ou 3 versões** de nome pesquisável, bio e título do LinkedIn, no tom de voz da empresa, sem "cara de IA" (`scripts/humanizar.py`), com contagem de caracteres, e só com provas que estejam em `provas.md`. Respeite `compliance.md`.
 - **Link da bio** e botão do LinkedIn: destino recomendado.
 - **Destaques:** quais ter, a ordem e o conteúdo de cada um.
 - **Posts fixados:** quais (pelo registro: os mais salvos ou que mais geraram contato) ou quais criar.

@@ -3,7 +3,7 @@
 Avaliação e mudanças no perfil das redes e no site (skill perfil-redes). Prints de antes em `00-contexto/materiais/perfis/`; artes em `05-canais/artes-perfil/`.
 
 ## Avaliação mais recente
-Data: 
+Data: · Nota do Instagram na régua de 100 pontos: 
 
 | Rede | Item | Nota (0–10) | Por quê |
 |---|---|---|---|

@@ -13,6 +13,8 @@ description: Implanta o departamento de marketing de uma empresa, do diagnóstic
 
 > **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
+> **Atualização (início de toda atividade):** antes de começar, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --rapido --intervalo 1` (rápido, silencioso quando está tudo em dia). Se avisar versão nova: mostre o que mudou e pergunte uma vez se atualiza agora. Com o ok, rode o mesmo programa com `--aplicar`, peça ao usuário para digitar `/reload-plugins` e dizer "continua", rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` (ajusta a pasta da empresa sem apagar nada) e retome a atividade. Se ele preferir depois, rode com `--adiar 12` e siga. Se você é um cargo (agente separado), pule esta verificação: o gerente já fez.
+
 ## Objetivo
 
 Deixar uma empresa com o marketing pronto para rodar toda semana: pasta organizada, contexto completo, identidade visual e verbal, estratégia, plano do trimestre, registro do que já foi publicado e rotinas definidas. Ao final, o responsável pela empresa (sócio ou CEO) consegue operar sozinho seguindo o `LEIA-ME.md` da pasta.
@@ -40,7 +42,7 @@ Estrutura esperada, direto na pasta da empresa (se o modelo não for encontrado,
 ├── 03-producao/             AAAA-MM/Sxx_Pnnn_tema-curto/
 ├── 04-metricas/             leitura-AAAA-MM.md
 ├── 05-canais/               perfil-redes.md, artes-perfil/
-└── registro/                publicacoes.csv, ideias.csv, plano.csv, melhorias.csv
+└── registro/                publicacoes.csv, ideias.csv, plano.csv, melhorias.csv, contatos.csv
 ```
 
 ## Regras de ouro
@@ -111,8 +113,8 @@ Com a estratégia aprovada, rode a skill **perfil-redes**: avaliação da bio, n
 
 ### Etapa 6. Registro e histórico
 1. **Escolha onde guardar.** Pergunte: "Prefere o registro numa **Planilha Google com link** (a equipe vê e edita pelo navegador ou celular) ou nos **arquivos da pasta**?"
-   - **Planilha Google:** siga a seção "Implantação" de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` (cria a planilha com as quatro abas, define o compartilhamento escolhido e registra o link). Requer o conector do Google Planilhas.
-   - **Arquivos da pasta:** os quatro CSV em `registro/` são a fonte oficial e sincronizam pelo Drive; para ver, abra no Google Planilhas e não edite com o Excel.
+   - **Planilha Google:** siga a seção "Implantação" de `${CLAUDE_PLUGIN_ROOT}/referencias/registro-planilhas.md` (cria a planilha com as cinco abas, define o compartilhamento escolhido e registra o link). Requer o conector do Google Planilhas.
+   - **Arquivos da pasta:** os cinco CSV em `registro/` são a fonte oficial e sincronizam pelo Drive; para ver, abra no Google Planilhas e não edite com o Excel.
    Em ambos os casos, crie o registro local (de dentro da pasta da empresa):
    `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/registro.py" iniciar .`
 2. **Importe o histórico** dos últimos 6 meses, por um destes caminhos (pergunte qual):
@@ -121,7 +123,7 @@ Com a estratégia aprovada, rode a skill **perfil-redes**: avaliação da bio, n
    - leitura do perfil pelo navegador, com a conta do usuário logada e com a autorização dele.
 3. Para cada publicação antiga, grave uma linha com `registro.py adicionar . publicacoes '{...}'`, com pelo menos: data_publicacao, canal, formato, **gancho**, **angulo**, resumo, link e status "publicado", em ordem de data (os ids P001, P002… são gerados sozinhos). Gancho e ângulo são o que evita repetir conteúdo.
 4. Grave na aba plano os 3 meses do plano trimestral (`registro.py adicionar . plano '{...}'`).
-5. No modo Planilha Google, termine com o passo **Enviar** da referência e confira as quatro abas.
+5. No modo Planilha Google, termine com o passo **Enviar** da referência e confira as cinco abas.
 
 ### Etapa 7. Ferramentas e rotinas (arquivo `01-plano/rotinas.md`)
 1. **Metricool:** confirme que a conta está no e-mail da empresa (não no pessoal de um sócio), que a marca foi criada e quais redes estão conectadas. Se o conector do Metricool estiver disponível, teste listando as marcas.

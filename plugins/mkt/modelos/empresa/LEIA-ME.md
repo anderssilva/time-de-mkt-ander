@@ -30,7 +30,7 @@ Para rodar a semana inteira em ordem, peça: **"Roda a semana de marketing da [e
 | `02-pautas/` | Radar semanal: pautas propostas e decisão. |
 | `03-producao/AAAA-MM/Sxx_Pnnn_tema/` | Uma pasta por peça (roteiro, legenda, carrossel, vídeo, revisões). |
 | `04-metricas/` | Leituras semanais e mensais dos resultados. |
-| `registro/` | As quatro planilhas (publicações, ideias, plano, melhorias). |
+| `registro/` | As cinco planilhas (publicações, ideias, plano, melhorias, contatos). |
 | `status-implantacao.md` | Andamento da implantação. |
 
 ## Sua semana (tempo estimado)

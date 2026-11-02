@@ -1,13 +1,22 @@
 {
   "name": "mkt",
   "displayName": "Time de Marketing",
-  "version": "1.8.0",
-  "description": "Time de marketing pronto para usar: implantação por empresa, pautas, roteiros, carrosséis, edição de vídeo com motion graphics, controle de qualidade, agendamento, métricas e melhoria contínua.",
+  "version": "1.9.0",
+  "description": "Time de marketing pronto para usar: implantação por empresa, pesquisa do nicho, roteiros com gancho avaliado, carrosséis, vídeo com motion graphics, revisão independente, publicação, relacionamento, perfil das redes, métricas e melhoria contínua.",
   "author": {
     "name": "Time de Marketing"
   },
   "homepage": "https://github.com/anderssilva/time-de-mkt-ander",
   "repository": "https://github.com/anderssilva/time-de-mkt-ander",
   "license": "LicenseRef-Uso-Restrito",
-  "keywords": ["marketing", "conteudo", "instagram", "linkedin", "carrossel", "reels", "motion-graphics", "pt-br"]
+  "keywords": [
+    "marketing",
+    "conteudo",
+    "instagram",
+    "linkedin",
+    "carrossel",
+    "reels",
+    "motion-graphics",
+    "pt-br"
+  ]
 }

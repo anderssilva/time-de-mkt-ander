@@ -15,6 +15,8 @@ A conversa principal é o **gerente de marketing** (orquestrador). Ele conversa 
 | `redator` | Sonnet | Roteiros, textos de carrossel, legendas, LinkedIn |
 | `designer` | Sonnet | Lâminas, PDF, folha de revisão |
 | `editor-video` | Sonnet | Plano de edição, montagem, capa |
+| `pesquisador` | Sonnet | Referências do nicho, apoio ao radar |
+| `relacionamento` | Sonnet | Comentários, mensagens diretas, contatos |
 | `operador` | Haiku | Organizar pasta, guardar arquivos, sincronizar planilha, pacotes, conferir versão |
 | `assistente-navegador` | Haiku | Preparar publicações no Chrome (para antes do botão final), coletar números |
 | Comando `/mkt:atualizar-time` | Haiku | Atualizar e configurar o time |

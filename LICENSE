@@ -20,6 +20,10 @@ Copyright (c) 2026 — titular do repositório anderssilva/time-de-mkt-ander. To
 4. Componentes de terceiros
    Componentes de terceiros seguem as próprias licenças (por exemplo, HyperFrames,
    Apache 2.0). O uso desses componentes não é alterado por esta licença.
+   Partes dos programas gancho.py, tempo-roteiro.py, humanizar.py, legenda.py,
+   desempenho.py e referencias.py, a régua do perfil e as fórmulas de gancho foram
+   adaptadas do projeto instagram-agent-skill, Copyright (c) 2026 Jake Schincariol,
+   distribuído sob a licença MIT (https://github.com/Jakeschincariol/instagram-agent-skill).
 
 5. Garantia
    O material é fornecido "no estado em que se encontra", sem garantia de qualquer tipo.

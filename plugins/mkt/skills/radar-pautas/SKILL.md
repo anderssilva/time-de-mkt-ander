@@ -13,6 +13,8 @@ description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo
 
 > **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
+> **Atualização (início de toda atividade):** antes de começar, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --rapido --intervalo 1` (rápido, silencioso quando está tudo em dia). Se avisar versão nova: mostre o que mudou e pergunte uma vez se atualiza agora. Com o ok, rode o mesmo programa com `--aplicar`, peça ao usuário para digitar `/reload-plugins` e dizer "continua", rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` (ajusta a pasta da empresa sem apagar nada) e retome a atividade. Se ele preferir depois, rode com `--adiar 12` e siga. Se você é um cargo (agente separado), pule esta verificação: o gerente já fez.
+
 ## Antes de começar
 1. Trabalhe dentro da **pasta da empresa** (a pasta onde o Claude Code foi aberto, que tem `00-contexto/` e `registro/`). Se a pasta atual não for de uma empresa, pergunte qual é. Trabalhe só nela.
 2. Se não existirem `00-contexto/contexto-ia.md` e `01-plano/estrategia.md`, pare e sugira a skill estruturar-marketing-empresa.
@@ -22,7 +24,10 @@ description: Pesquisa e propõe as pautas da semana para uma empresa, conferindo
 ## Passo 1. Entender a semana
 - Tema do mês e pilar foco (do plano trimestral).
 - Cadência: quantas peças por canal e formato (da estratégia).
-- O que funcionou: as 3 peças com mais salvamentos e compartilhamentos nos últimos 60 dias (`registro.py listar ... publicacoes status=publicado`). Anote gancho, formato e pilar delas.
+- O que funcionou na própria conta: as 3 melhores peças dos últimos 60 dias pelo `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/desempenho.py" . --dias 60` (múltiplo sobre a mediana e envios por mil de alcance). Anote gancho, formato e pilar delas.
+- O que funciona no nicho: se houver `02-pautas/arquivo-referencias.md` com menos de 30 dias, use as referências de maior múltiplo como inspiração de gancho e formato (skill **referencias-nicho**). Se não houver ou estiver velho, sugira atualizar.
+- Conteúdo-mãe disponível (vídeo longo, palestra, gravação, artigo): sugira a skill **reaproveitar** para virar várias peças de uma vez.
+- Dúvidas reais do público: comentários e mensagens registrados como ideias (origem "comentário") e respostas das caixas de perguntas dos stories.
 - Datas e eventos relevantes do setor na semana.
 
 ## Passo 2. Pesquisar

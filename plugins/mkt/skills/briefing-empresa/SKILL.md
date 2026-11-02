@@ -13,6 +13,8 @@ description: Conduz o briefing (levantamento de contexto) de uma empresa ANTES d
 
 > **Economia:** siga `${CLAUDE_PLUGIN_ROOT}/referencias/economia.md` (modelo certo para cada tarefa, folha de revisão em vez de abrir cada imagem, uma peça por conversa).
 
+> **Atualização (início de toda atividade):** antes de começar, rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/verificar-atualizacao.py" --rapido --intervalo 1` (rápido, silencioso quando está tudo em dia). Se avisar versão nova: mostre o que mudou e pergunte uma vez se atualiza agora. Com o ok, rode o mesmo programa com `--aplicar`, peça ao usuário para digitar `/reload-plugins` e dizer "continua", rode `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/atualizar-pasta.py" . --aplicar` (ajusta a pasta da empresa sem apagar nada) e retome a atividade. Se ele preferir depois, rode com `--adiar 12` e siga. Se você é um cargo (agente separado), pule esta verificação: o gerente já fez.
+
 ## Objetivo
 
 Antes de escrever qualquer texto, roteiro, post, e-mail ou estratégia para uma empresa, a IA precisa conhecê-la. Esta skill transforma a conversa com o usuário em um arquivo `contexto-ia.md` completo, no mesmo formato do formulário `briefing-empresa.html`. Esse arquivo vira a base de todo o trabalho seguinte.
